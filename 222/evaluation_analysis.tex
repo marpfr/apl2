@@ -139,9 +139,13 @@ Für die Motorverluste $Q_V$ erhalten wir in diesem Messgang, nach Formel \eqref
     Q_V = 16.6 ± 0.6 \si{\joule}.
 \end{align}
 
+In \tabref{tab:werte_gebremst} betrachten wir die Werte bei angebrachtem Bremszaum. Diese sind nach den oben genannten Formeln berechnet. Zusätzlich gilt führen wir hier den effektiven Wirkungsgrad als Verhältnis der am Bremszaum verrichteten mechanischeen Arbeit zur zugeführten Wärme,
+\begin{align}
+    \eta_{eff} = \frac{W_D}{Q_{el}}.
+\end{align}
+
 \begin{table}[H]
     \centering
-    \caption{Messwerte mit Unsicherheiten für verschiedene Messungen}
     \begin{tabular}{c c c c c c c}
     \toprule
     \textbf{Einstellung} & \boldmath$F$ & \boldmath$f$ & \boldmath$W_D$ & \boldmath$W_{pV}$ & \boldmath$\eta_{\text{th}}$ & \boldmath$\eta_{\text{eff}}$ \\
@@ -159,21 +163,23 @@ Für die Motorverluste $Q_V$ erhalten wir in diesem Messgang, nach Formel \eqref
      & $\pm 0.02$ & $\pm 0.0099$ & $\pm 0.0314$ & $\pm 0.0225$ & $\pm 0.0007$ & $\pm 0.0009$ \\
     \bottomrule
     \end{tabular}
-    \label{tab:messungen}
+    \label{tab:werte_gebremst}
+    \caption{Messwerte mit Unsicherheiten für verschiedene Messungen}
 \end{table}
 
+Die Werte für den thermischen bzw. effektiven Wirkungsgrad aus \tabref{tab:werte_gebremst} sind noch einmal in den Plots (\ref{fig:eta_th_freq}) bzw. (\ref{fig:eta_eff_freq}) als Funktion der Motorfrequenz $f$ dargestellt.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.9\textwidth]{files/eta_th_brems.png}
-    \caption{Thermischer Wirkungsgrad der Wärmekraftmaschine $\eta_{th}$ nach eingestellter Kraft des Bremszaums.}
-    \label{fig:eta_th_brems}
+    \includegraphics[width=.9\textwidth]{files/eta_th_freq.png}
+    \caption{Thermischer Wirkungsgrad der Wärmekraftmaschine $\eta_{th}$ nach Motorfrequenz.}
+    \label{fig:eta_th_freq}
 \end{figure}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.9\textwidth]{files/eta_eff_brems.png}
-    \caption{Effektiver Wirkungsgrad der Wärmekraftmaschine $\eta_{th}$ nach eingestellter Kraft des Bremszaums.}
-    \label{fig:eta_eff_brems}
+    \includegraphics[width=.9\textwidth]{files/eta_eff_freq.png}
+    \caption{Effektiver Wirkungsgrad der Wärmekraftmaschine $\eta_{th}$ nach Motorfrequenz.}
+    \label{fig:eta_eff_freq}
 \end{figure}
