@@ -1,0 +1,49 @@
+\section{Zusammenfassung und Diskussion}
+
+In Versuch 251 untersuchten wir die statistische Natur des radioaktiven Zerfalls. Hierzu nahmen wir Zerfälle eines $^{60}$Co Präparates mit einem Geiger-Müller-Zählrohr auf. Der Versuch begann mit der Kalibierung des Geiger-Müller-Zählrohrs. Hierbei ermittelten wir die Zählrohrspannung $U_0$, welche wir für den weiteren Betrieb des Zählrohrs über den Versuch verwendeten. Außerdem führten wir einige Messungen zur Beurteilung des Verhaltens der Zählraten im Plateaubereich des Zählrohrs durch. Hierzu betrachteten wir die Zahl registrierter Zerfälle einmal für die Zählrohrspannung $U_0$, sowie $U_0 + 100\si{\volt}$ jeweils über eine Minute und drei Minuten.
+
+Mit einem prozentualen Anstieg von unter $2 \%$ für beide betrachteten Zeiträume waren die Plateauanstiege, wie erwartet sehr gering. Für die Messung über eine Minute lag die Abweichung bei ca. $1.12\sigma$, für die Messung über drei Minuten bei etwa $2.22\sigma$. Beide Werte sind somit innerhalb des $3\sigma$-Bereichs und können als nicht signifikant gewertet werden.
+
+Um eine Genauigkeit von $1\%$ zu erreichen, müssten für nach den Daten der Messung über $1\si{\minute}$ ca. $5.5\si{\day}$ und nach den Daten über $3\si{\minute}$ ca. $4.23\si{\day}$ Tage messen. Der relative Fehler bei unseren Messzeiten entspricht nach $\flatfrac{\sigma_\Delta}{\Delta}$ für $1\si{\minute}$ $89.02\%$ bzw. $45.06\%$ für $3\si{\minute}$. Wir sehen zum einen, dass dieser bereits bei einer Verlängerung der Messung um $2 \si{\minute}$ stark absinkt. Allerdings sorgt die $\frac{1}{\sqrt{t}}$-Abhängigkeit von der Messzeit dafür, dass wir uns bei weiterer Verlängerung der Messzeit nur sehr langsam asymptotisch der 0 annähern. Dies erklärt die sehr hohen Werte im Bereich mehrerer Tage. Dass sich die beiden berechneten Zeiten unterscheiden kann daran liegen, dass die Werte der Messung über $3 \si{\minute}$ bereits eine höhere Genauigkeit haben, von welcher aus es weniger lange dauern würde, die Genauigkeit von $1\%$ über eine längere Messung zu erreichen.
+
+Ließen wir für die Zählraten Werte in einem Vertrauensbereich von $68\%$ ($95\%$) zu, so würden wir eine prozentuale Veränderung dieser von $3.54\%$ ($5.57\%$) über $1 \si{\minute}$ bzw. $2.94\%$ ($4.11\%$) über $3 \si{\minute}$ erhalten. Obwohl wir hiermit bereits sehr große Fehlerbereiche ausschöpfen, ist der Plateauanstieg mit einem Maximum von gerade einmal $5.57\%$ immer noch sehr gering. Dies bestätigt noch einmal die Genauigkeit im Plateaubereich des Zählrohrs, welche für die nun folgenden Versuchsteile benötigt wird.
+
+Nachfolgend betrachteten wir einmal das statistische Verhalten bei einer hohen mittleren Ereigniszahl, für 2000 Messungen in Intervallen von $500\si{\milli\second}$, und einmal bei kleiner mittlerer Ereigniszahl, für 5000 Messungen in Intervallen von $100\si{\milli\second}$. An die aufgenommenen Daten passten wir jeweils eine Gauß- und eine Poissonverteilungfunktion an und berechneten die $\chisq$- und reduzierte $\chisq$-Summe, sowie die Fitwahrscheinlichkeiten zur Beurteilung der Güte der Fits.
+
+Für den Fit an die Daten der hohen mittleren Ereigniszahl erhielten wir die Werte in Tabelle \ref{tab:fit_goodness_large}.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c|c}
+    \multirow{2}{*}{Variable} & \multicolumn{2}{c}{Wert}\\\cline{2-3}
+    & Gauß & Poisson\\\hline
+    $\chisq$ & $18.5$ & $24.6$\\
+    $\chisqrd$ & $0.5$ & $0.7$\\
+    $\mathbb{P}_{\mathrm{Fit}}$ & $99.0 \%$ & $90.0\%$
+  \end{tabular}
+  \caption{Güte der Fits an Daten für hohe mittlere Ereigniszahl}
+  \label{tab:fit_goodness_large}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Da die $\chisq$-Summe die Abweichung des Modells von den gemessenen Daten angibt, ist es ein Ziel, diese möglichst gering zu halten. Dies ist für beide Fit-Funktionen der Fall. Allerdings kann ein zu kleiner $\chisq$-Wert darauf hinweisen, Unsicherheiten überschätzt zu haben oder, dass das Modell überangepasst ist. Der reduzierte $\chisq$ geht optimalerweise gegen 1. Dies deutet darauf hin, dass die Poisson-Verteilung in diesem Fall die richtige Wahl sein könnte. Auch in Anbetracht der nahezu $100\%$-igen Fitwahrscheinlichkeit für die Gaußverteilung, könnte die Vermutung aufkommen, dass hier eine unrealistische Überanpassung der Fall ist. Dahingegen spricht die $90.0\%$-ige Fitwahrscheinlichkeit der Poissonverteilung erneut eher für die Verwendung dieses Modells. Allgemein ist die Wahl des Modells hier nicht ganz eindeutig möglich, da sich die Wahrscheinlichkeitsverteilung, wie im Theorieteil erklärt, in diesem Fall sowohl durch eine Poissonverteilung, als auch, angenähert, durch eine Gaußverteilung interpretieren lässt.
+
+Nun Betrachten wir noch die Resultate für die Fits an die Daten bei kleiner mittlerer Ereigniszahl, in Tabelle \ref{tab:fit_goodness_small}.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c|c}
+    \multirow{2}{*}{Variable} & \multicolumn{2}{c}{Wert}\\\cline{2-3}
+    & Gauß & Poisson\\\hline
+    $\chisq$ & $94.3$ & $5.14$\\
+    $\chisqrd$ & $11.9$ & $0.57$\\
+    $\mathbb{P}_{\mathrm{Fit}}$ & $0.0 \%$ & $82.0\%$
+  \end{tabular}
+  \caption{Güte der Fits an Daten für kleine Ereigniszahl}
+  \label{tab:fit_goodness_small}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Die Beurteilung der Werte ist in diesem Beispiel etwas deutlicher. Wir sehen einen sehr großen Wert für die $\chisq$-Summe im Fall der Gaußverteilung, sowie einen Wert von $\chisqrd$ weit über 1, was auf einen schlechten Fit hinweist. Auch die Fitwahrscheinlichkeiten von $0\%$ deutet darauf hin, dass dieses Modell die Daten quasi gar nicht beschreiben kann. Die entsprechenden Werte für die Poissonverteilung bewegen sich in einem sehr guten Bereich. Mit $0.57$ ist der Wert von $\chisqrd$ zwar unter 1, hier aber in einem akzeptablen Bereich. Die Fitwahrscheinlichkeiten von $89\%$ weist darauf hin, dass das Modell die Daten gut beschreiben kann. Dies ist, wie im Theorieteil eingeführt, für eine kleine mittlere Ereigniszahl auch so zu erwarten.

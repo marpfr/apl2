@@ -1,0 +1,9 @@
+Aufgabe 4
+Erwartungswert: 71.05
+Wurzel Erwartungswert: 8.43
+Sigma für Gauskurve: 8.23
+
+Aufgabe 5
+Erwartungswert: 5.01
+Wurzel Erwartungswert: 2.24
+Sigma für Gauskurve: 2.25

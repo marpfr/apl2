@@ -1,0 +1,104 @@
+% EINIGE COMMANDS
+
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\definecolor{lblue}{RGB}{51,153,255} % Farbe für Notizen und besondere Zeichen
+\newcommand{\bbew}[0]{\bigg| \bigg|} % Um Endergebnisse doppel zu unterstreichen, außer dass die Striche nicht unten sondern zur Seite stehen
+\newcommand{\baro}[0]{\textcolor{lblue}{| }} % Strich um Rechnung von Nebenrechnung/Kommentar zu trennen
+\newcommand{\arrowroa}[0]{\textcolor{lblue}{\to}}
+\newcommand{\ind}[0]{\ \ \ \ \ }
+\newcommand{\indd}[0]{\ind \ind }
+\newcommand{\evalint}[3]{\bqty{#1}_{#2}^{#3}} % Stammfunktion mit eckigen Klammern die automatisch auf die entsprechende Größe gesetzt werden
+\newcommand{\diff}{\mathrm{\ d}} % d aber nicht in kursiv
+\newcommand{\EQ}[0]{\mathrel{\stackon[1pt]{$=$}{$\scriptstyle!$}}} % Gleichheitszeichen mit ! oben drauf
+\newcommand{\limit}[2]{\lim\limits_{#1 \to #2}}
+\DeclareMathOperator{\Lagr}{\mathcal{L}} % Lagrnaginag
+\newcommand{\ELG}[1]{\dv{}{t} \pdv{\Lagr}{\dot{#1}} - \pdv{\Lagr}{#1}} % ELG aber man muss nicht so viel schreiben
+\def\tbs{\textbackslash} % backslash but shorter
+\newcommand{\e}[1]{\text{e}^{#1}}
+\newcommand{\opnorm}[1]{\norm{#1}_{\text{op}}}
+\newcommand{\summ}[2]{\sum\limits_{#1}^{#2}}
+
+\newcommand{\mean}[1]{\langle #1 \rangle}
+
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+
+\newcommand{\abbref}[1]{Abbildung (\ref{#1})}
+\newcommand{\tabref}[1]{Tabelle (\ref{#1})}
+
+\newcommand{\isot}[2]{$^{#1}\mathrm{#2}$}
+
+% EINHEITEN
+
+\newcommand{\gm}[0]{\text{ gm}}
+\newcommand{\cm}[0]{\text{\,cm}}
+\newcommand{\cmm}[0]{\text{ cm}}
+\newcommand{\dm}[0]{\text{ dm}}
+\newcommand{\km}[0]{\text{ km}}
+\newcommand{\kg}[0]{\text{ kg}}
+\newcommand{\m}[0]{\text{ m}}
+\newcommand{\s}[0]{\text{ s}}
+\newcommand{\J}[0]{\text{ J}}
+\newcommand{\Newt}[0]{\text{ N}}
+\newcommand{\rad}[0]{\text{ rad}}
+\newcommand{\mm}[0]{\text{ mm}}
+\newcommand{\mbar}[0]{\text{ mbar}}
+\newcommand{\barp}[0]{\text{ bar}}
+\newcommand{\mPa}[0]{\text{ mPa}}
+\newcommand{\Pa}[0]{\text{ Pa}}
+\newcommand{\K}[0]{\text{ K}}
+\renewcommand{\l}[0]{\text{ l}}
+\newcommand{\mol}[0]{\text{ mol}}
+\newcommand{\Mol}[0]{\text{Mol}}
+\newcommand{\V}[0]{\text{ V}}
+\newcommand{\A}[0]{\text{ A}}
+\newcommand{\mA}[0]{\text{ mA}}
+\newcommand{\muA}[0]{\ \mu\text{A}}
+\newcommand{\Ohm}[0]{\ \Omega}
+\newcommand{\kOhm}[0]{\ \text{k}\Omega}
+\newcommand{\mOhm}[0]{\ \text{m}\Omega}
+\newcommand{\Celsius}[0]{\text{ $^\circ$C}}
+\newcommand{\const}[0]{\text{ const.}}
+
+\newcommand{\idf}[0]{\mathrm{id}}
+
+\newcommand{\err}[1]{\Delta #1}
+\newcommand{\errpdvsq}[2]{\qty(\pdv{#1}{#2} \cdot \err{#2})^2}
+\newcommand{\errsq}[2]{\qty(#1 \cdot \err{#2})^2}
+\newcommand{\errsqval}[2]{\qty(#1 \cdot #2)^2}
+\newcommand{\errpdv}[2]{\pdv{#1}{#2} \cdot \err{#2}}
+
+\newcommand{\chisq}{\chi^{2}}
+\newcommand{\chisqrd}{\chi^{2}_{\mathrm{red}}}
+
+%LA Zeug
+\newcommand{\EndVS}[0]{\mathrm{End}} % Endomorphismen
+\newcommand{\EigVS}[0]{\mathrm{Eig}} % Eigenraum
+\newcommand{\IsomVS}[0]{\mathrm{Isom}} %Isometrien
+\newcommand{\Ann}[0]{\mathrm{Ann}} %Annullator
+\newcommand{\LinSpan}[0]{\mathrm{Span}} %Linearer Spann
+\newcommand{\GL}[0]{\mathrm{GL}} % General Linear Group
+\newcommand{\Mat}[3]{\mathrm{Mat}(#1,#2;#3)} % Matritzenraum
+\newcommand{\idmat}[0]{\mathds{1}} % einheitsmatrix symbol
+\newcommand{\idmatd}[2]{\mathds{1}_{#1 \times #2}} % einheitsmatrix symbol mit suffix
+\newcommand{\im}[0]{\mathrm{im}} % Bildraum
+\newcommand{\id}[0]{\mathrm{id}} % Identitätsabbildung
+\newcommand{\modsp}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.3em}{$#2$}\right.}} % Faktor/Quotient
+\newcommand{\longto}[0]{\longrightarrow} %langes äquivalent zu \to
+\newcommand{\Hau}[2]{\mathrm{Hau_{#1}\qty(#2)}}
+
+\newcommand{\zz}[0]{Z\kern-.3em\raise-0.5ex\hbox{Z}: } % zu zeigen / z.z.
+
+
+
+% MATHEMATISCHE OPERATOREN DIE NICHT IN DEN PACKAGES SIND
+
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\acsinh}{arsinh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arcCsch}
+\DeclareMathOperator{\arccoth}{arcCoth}

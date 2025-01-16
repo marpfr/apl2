@@ -1,0 +1,25 @@
+\section{Zusammenfassung und Diskussion}
+
+Bestandteil dieses Versuchs war es, das Phänomen des thermischen Rauschens quantitativ zu untersuchen. Thermisches Rauschen tritt in einem elektrischen Leiter immer auf, sobald dieser eine Temperatur größer $0\si{\kelvin}$ hat und führt zu einer elektrischen Spannung, der Rauschspannung, im Leiter, ohne dass eine äußere Spannung angelegt ist. Der Effektivwert der Rauschspannung hängt laut der Nyquist-Beziehung, $\mean{U_r^2} = 4kTR\Delta f$, von der Temperatur $T$, dem Widerstand des elektrischen Leiters $R$, der Bandbreite der Messelektronik $\Delta f$, sowie der Boltzmann-Konstante $k$ ab. Letztere zu berechnen war das Ziel des Versuchs.
+
+Der Versuch setzte sich aus zwei Teilen zusammen. Im ersten Versuchsteil bestimmten wir die Rauschbandbreite des Messsystems, zusammengesetzt aus einem Verstärker und einem Bandfilter. Hierzu zeichneten wir mittels eines Computers den Frequenzgang des Messsystems auf. Als Integral unter dem Quadrat des Frequenzgangs ergab sich zu Rauschbandbreite zu
+\begin{align*}
+  B = (5.35 \pm 0.11) \cdot 10^9 \si{\hertz}.
+\end{align*}
+Für den zweiten Versuchsteil nahmen wir für unterschiedliche Widerstände die Effektivwerte der Rauschspannung auf. Da diese, nach der eben genannten Nyquist-Beziehung, in einem linearen Zusammenhang stehen, konnten wir mittels linearer Regression eine Geradensteigung von
+\begin{align*}
+  c = (7.2461 \pm 0.0026) \cdot 10^{-4} \si{\milli\volt\squared\per\ohm}.
+\end{align*}
+aus den gemessenen Werten bestimmen. Gemeinsam mit der zuvor ermittelten Rauschbandbreite ergab sich für die Boltzmannkonstante ein Wert von
+\begin{align*}
+  k = (11.435 \pm 0.004\, \text{(stat.)} \pm 0.229\, \text{(sys.)}) \cdot 10^{-23} \si{\joule\per\kelvin}.
+\end{align*}
+
+Der Literaturwert der Boltzmann konstante $k$ liegt (nach \textit{2022 CODATA recommended values}) bei
+\begin{align*}
+  k = 1.380\, 649 \cdot 10^{-23} \si{\joule\per\kelvin}.
+\end{align*}
+
+Es ist leicht zu erkennen, dass dieser Wert um etwas weniger als einen Faktor 10 von dem hier berechneten Wert abweicht.\newline\noindent
+Für die Beurteilung dieses Fehlers betrachten wir zunächst den Frequenzgang. Aus dem Plot \ref{plot:frequenzgang}, sowie den aufgezeichneten Rohdaten ist zu erkennen, dass das Plateau des Maximums bei ca. 300 bis 400 liegt. Im Vergleich zu anderen Auswertungen, sowie den Plots in der Praktikumsanleitung fällt hier ein Anstieg des Frequenzgangs bis auf einen Wert um 1000 auf. Wir können somit davon ausgehen, dass sich in unsere Messung des Frequenzgangs ein Fehler im Aufbau eingeschlichen hat. Der Fehler im Frequenzgang wirkt sich auf das Integral der Kurve und somit direkt auf die Berechnung der Boltzmannkonstante aus, was schon einmal einen großen Teil der Abweichung erklärt.\newline\noindent
+Weiter möchten wir nun den Fit an die Effektivwerte der Rauschspannung betrachten. Auch wenn der Plot es nicht vermuten lässt, so weißt der berechnete $\chi^2_{red}$-Wert von $16.61$, dieser sollte optimalerweise gegen $1$ gehen, auf einen sehr schlechten Fit hin. Ebenso gilt dies für die berechnete Fitwahrscheinlichkeit von $0.0\%$. Grund für diese Werte könnten die statistischen Fehler sein. Als Fehler der Mittelwerte über eine Serie von ca. 110 Messungen, welche mit hoher Genauigkeit von einem Computer durchgeführt wurden, sind diese sehr klein. Als Nenner in der Berechnung der $\chi^2$ Wert führen diese somit bereits bei geringen Abweichungen der Messwerte von den Funktionswerten zu großen Auswirkungen auf das Ergebnis.

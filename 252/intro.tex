@@ -1,0 +1,44 @@
+Unter der Aktivierung versteht man die Herstellung radioaktiver Quellen durch die Bestrahlung stabiler Isotope mit verschiedenen Teilchen. In Versuch 252 werden Silber und Indium durch die Bestrahlung mit thermischen Neutronen aktiviert und deren Halbwertszeit bestimmt.  
+
+\subsection{Physikalische Grundlagen}
+
+\subsubsection*{Neutronenquelle}
+
+Als Neutronenquelle werden im Versuch Berylliumspäne verwendet, welche $\alpha$-Strahlung, also der Bestrahlung mit Helium-4-Kernen ausgesetzt sind. Durch die Reaktion 
+\begin{align}
+  ^9\mathrm{Be} + \alpha \to ^{12}\mathrm{C} + \mathrm{n}
+\end{align}
+werden im Prozess freie Neutronen erzeugt. Diese sind zu diesem Zeitpunkt mit einer Energie von 1 bis 10 MeV noch zu schnell um für die Aktivierung verwendet zu werden. Bevor sie das Isotop zur Aktivierung erreichen, müssen die erzeugten Neutronen eine Paraffinschicht passieren. Hier werden sie durch die Kollision mit den Wasserstoffkernen des Paraffins abgebremst. Die langsamen Neutronen bei einer Energie von etwa $0.025\si{\electronvolt}$ (bei Zimmertemperatur) werden auch thermische Neutronen genannt, da sie sich mit der Umgebung im thermischen Gleichgewicht befinden.
+
+\subsubsection*{Aktivierung mit thermischen Neutronen}
+Die thermischen Neutronen werden von den Atomkernen zur Aktivierung eingefangen. Die meisten Kerne haben hierfür einen großen Wirkungsquerschnitt. Ein anderer Vorteil der Verwendung von Neutronen für die Aktivierung ist, dass diese nicht von der Coulomb-Wechselwirkung betroffen sind. Durch den Einfang der Neutronen erhöht sich die Massenzahl, wodurch instabile, radioaktive Isotope entstehen können. Im Versuch werden das stabile Indium-Isotop $^{115}\mathrm{In}$ und Silber, welches zu Teilen aus den stabilen Isotopen $^{107}\mathrm{Ag}$ und $^{109}\mathrm{Ag}$ besteht, aktiviert. Hierbei entstehen im ersten Fall die Isomere $^{116}\mathrm{In}$ und $^{116m}\mathrm{In}$ und im zweiten Fall die Isotope $^{108}\mathrm{Ag}$ und $^{110}\mathrm{Ag}$. Bei all diesen handelt es sich um radioaktive $\beta$-Strahler.
+
+\subsubsection*{Aktivität $A(t)$}
+
+Die Zahl der Zerfälle pro Sekunde, genannt Aktivität $A$, eines Kerns während er aktiviert wird kann beschrieben werden durch die Funktion
+\begin{align}
+  A(t) = A_{\infty}(1- \e{-\lambda t}).
+\end{align}
+
+Hier ist $t$ die Bestrahlungsdauer, $\lambda$ die Zerfallskonstante des Isotops und $A_{\infty}$ der Gleichgewichtszustand. Bis zum Gleichgewichtszustand nimmt die Aktivität mit der Bestrahlungsdauer zu, da die Zahl der Zerfälle nach dem Zerfallsgesetz proportional zur Zahl der zur Verfügung stehenden Kerne ist. Nach der Aktivierung verhält sich die Aktivität nach
+\begin{align}
+  A(t) = A_0\e{-\lambda t}.
+\end{align}
+Dieser Zusammenhang ergibt sich aus der zeitlichen Ableitung des Zerfallsgesetzes.
+\begin{align}
+  \dv{t} N_0\e{-\lambda t} = \underbrace{-\lambda N_0}_{A_0}\e{-\lambda t}
+\end{align}
+
+Aus der Zerfallskonstante $\lambda$ lässt sich mit
+\begin{align}
+  T_{\flatfrac{1}{2}} = \frac{\ln 2}{\lambda}
+\end{align}
+die Halbwertszeit $T_{\flatfrac{1}{2}}$ berechnen.
+
+\subsection{Versuchsdurchführung}
+
+Der Versuch setzt sich aus zwei Teilen zusammen, welche ähnlich ablaufen. Für die Messungen wird ein nahezu identischer Aufbau wie in Versuch 251 mit einem Geiger-Müller-Zählrohr eingesetzt. In allen Versuchsteilen wurde das Zählrohr bei einer Spannung von $550\si{\volt}$ betrieben.
+
+\textbf{Messen der Halbwertszeit von aktiviertem Silber.} Bevor das aktivierte Silber in die Vorrichtung eingespannt wird, wird zunächst in einem Leerlauf die Untergrundzählrate bestimmt. Die Messung für diese läuft über 8 Minuten bei einer Torzeit von 10 Sekunden. Nun wird das Silber für 7 Minuten in der Neutronenquelle aktiviert und dann in die Zählvorrichtung eingesetzt. Die Messung wird dann über einen Zeitraum von 400 Sekunden, wieder bei einer Torzeit von 10 Sekunden, durchgeführt. Insgesamt werden 5 Messgänge mit aktiviertem Silber durchgeführt. 
+
+\textbf{Messen der Halbwertszeit von aktiviertem Indium.} Die Indiumpräparate wurden bereits im Vorhinein aktiviert. Es wird hierfür ein einzelner Messgang über 50 Minuten bei einer Torzeit von 120 Sekunden durchgeführt.

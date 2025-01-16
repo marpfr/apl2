@@ -1,0 +1,47 @@
+\section{Zusammenfassung und Diskussion}
+
+Ziel des Versuchs 221 war es, den Adiabatenkoeffizienten $\kappa$ für Argon und Luft über zwei unterschiedliche Verfahren zu bestimmen. Bei einer adiabatischen Zustandsänderung eines Systems findet kein Wärmeaustausch mit der Umgebung statt. Mathematisch folgt diese der Beziehung
+\begin{align}
+  pV^{\kappa} = \const,
+\end{align}
+in welcher der Adiabatenkoeffizienten $\kappa$ als Exponent des Volumens $V$ auftritt. Zur Bestimmung des Adiabatenkoeffizienten wandten wir im Versuch das Verfahren nach Rüchardt und das Verfahren nach Clément-Desormes an.
+
+Beim Verfahren nach Rüchardt wird ein Schwingkörper in einem Glasrohr untersucht, der durch adiabatische Expansion und Kompression in harmonische Schwingungen versetzt wird. Der Adiabatenkoeffizient lässt sich hierbei aus der Periodendauer der Schwingung berechnen.
+
+Wir führten das Verfahren für Argon, sowie für Luft durch. Daraus berechneten wir die Werte
+\begin{align}
+  \kappa_{\text{Luft}} &= 1.369 \pm 0.008 \quad\text{ und}\\[1em]
+  \kappa_{\text{Ar}} &= 1.665 \pm 0.010.
+\end{align}
+
+Der errechnete Wert für Argon lässt sich direkt mit dem im PAP-Skript gegebenen Wert von $\kappa_{\text{Ar, Lit.}} = 1.648$ vergleichen. Um einen Literaturwert für den Adiabatenkoeffizienten von Luft zu erhalten, berechnen wir die gewichtete Summe, basierend auf der Zusammensetzung der Luft, aus den Adiabatenkoeffizienten der verschiedenen Gase. Die Werte sind \tabref{tab:kappa_luft_lit} zu entnehmen.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c|c}
+    Gas & Anteil $[\text{Vol.-}\%]$ & $\kappa$\\\hline
+    Stickstoff & 78.08 & 1.401\\
+    Sauerstoff & 20.95 & 1.398\\
+    Argon & 0.93 & 1.648\\
+    Kohlenstoffdioxid & 0.04 & 1.293\\\hline
+    Luft & & 1.403
+  \end{tabular}
+  \caption{Zusammensetzung der Luft und Adiabatenkoeffizienten der Bestandteile.\\Quelle: Praktikumsanleitung und Wikipedia (\glqq{}Luft\grqq{})}
+  \label{tab:kappa_luft_lit}
+\end{table}
+
+Unter Betrachtung der Fehler, weicht der von uns berechnete Wert für $\kappa_{\text{Ar}}$ um etwa $1.76\sigma$ vom Literaturwert ab, der Fehler liegt also innerhalb des nicht signifikanten Bereichs. Für $\kappa_{\text{Luft}}$ verzeichnen wir eine signifikante Abweichung von etwa $4.29\sigma$.
+
+Bevor wir die möglichen Quellen der Ungenauigkeiten diskutieren, betrachten wir zunächst die Ergebnisse der zweiten Methode. Das Verfahren nach Clément-Desormes nutzt eine schnelle adiabatische Expansion und den anschließenden isochoren Druckausgleich, um den Adiabatenkoeffizienten zu bestimmen. Dabei wird das Druckverhältnis vor und nach dem Ausgleich verwendet, um $\kappa$ zu bestimmen.
+
+Wir führten dieses Verfahren ausschließlich für Luft durch und erhielten damit einen Wert von
+\begin{align}
+  \kappa_{\text{Luft,CD}} &= 1.383 \pm 0.013.
+\end{align}
+Dieser weicht um etwa $1.5\sigma$ vom Literaturwert ($1.403$) ab.
+
+Die zentrale und vermutlich größte Fehlerquelle für beide Verfahren ist die Annahme einer adiabatischen Zustandsänderung. So sind beispielsweise beide Versuchsaufbauten fast vollständig aus Glas. Dies ist zwar ein sehr schlechter Wärmeleiter, jedoch kann trotzdem nicht garantiert werden, dass durch das Material absolut kein Wärmeaustausch mit der Umgebung stattfindet. Auch das, wenn auch sehr kurze, Herausnehmen des Gummistopfens beim Versuch nach Clément-Desormes garantiert nur einen annähernd adiabatischen Prozess. Ebenfalls zentral ist die Annahme idealer, reiner Gase für die mathematische Beschreibung der Prozesse, was in Realität auch nur näherungsweise der Fall ist.
+
+Beim Versuchsaufbau nach Rüchardt kann es trotz der Vorkehrungen zu leichten Reibungsverlusten kommen, wodurch die Periodendauer $T$ beeinflusst wird. Ebenfalls auf die Messung der Periodendauer wirkt sich die Reaktionszeit aus, welche von uns möglicherweise zu gering eingeschätzt wurde. Die sehr starke Abweichung bei der Bestimmung des Adiabatenkoeffizienten für Luft, könnte an einer Abweichung der Gaszusammensetzung der verwendeten Druckluft liegen.
+
+Auch beim Versuchsaufbau nach Clément-Desormes spielen Messungenauigkeiten eine Rolle, hier beim Ablesen der Höhen am Manometer. Weiter ist es möglich, dass wir die Dauer der Angleichung des Systems an die Zimmertemperatur unterschätzt und die Manometerwerte zu früh abgelesen haben.

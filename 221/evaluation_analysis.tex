@@ -1,0 +1,77 @@
+\section{Auswertung}
+
+\subsection{Berechnung des Adiabatenkoeffizienten nach Rüchardt}
+
+Wir beginnen zunächst mit der Berechnung nach Rüchardt. Hierzu ziehen wir die Gleichung (\ref{eq:kappa_ruchart})
+\begin{align}
+  \kappa = \frac{4mV}{r^4 T^2 p}
+\end{align}
+hinzu. Bevor wir die Werte einsetzen können, müssen wir zunächst die Periodendauer einer Schwingung ermitteln. Hierzu mitteln wir zunächst die Zeit für 50 Schwingungen über die drei Messgänge und erhalten somit
+\begin{align}
+  \overline{T}_{50, \text{Luft}} &= (50.30 \pm 0.07) \si{\second},\\[1em]
+  \overline{T}_{50, \text{Ar}} &= (45.45 \pm 0.07) \si{\second}.
+\end{align}
+Der Fehler dieser Angaben ergibt sich aus Reaktionszeit über die Formel $\Delta \overline{T}_{50} = \flatfrac{0.2\si{\second}}{\sqrt{3}}$. Für die Periodendauer einer einzelnen Schwingung teilen wir diese Werte durch 50 und erhalten
+\begin{align}
+  T_{\text{Luft}} &= (1.0061 \pm 0.0014) \si{\second},\\[1em]
+  T_{\text{Ar}} &= (0.9089 \pm 0.0014) \si{\second}.
+\end{align}
+
+Weiter ist noch der Druck $p$ zu berechnen. Diesen erhalten wir, wie in Gleichung \eqref{eq:pressure_sum} beschrieben, aus der Summe des Luftdrucks $p_0$ und des Schweredrucks des Schwingkörpers. Die Fehlerfortpflanzung dieses Wertes folgt der Formel
+\begin{align}
+  \Delta p = \sqrt{\qty(\Delta p)^2 + \qty(\frac{g}{2 \pi r} \cdot \Delta m)^2 + \qty(-\frac{m g}{2 \pi r^2} \cdot \Delta r)^2}.
+\end{align}
+
+Damit erhalten wir den Wert
+\begin{align}
+p &= (100805 \pm 11) \si{\pascal},
+\end{align}
+mit welchem wir weiterrechnen können. Die Angaben für Radius und Masse des Gummipfropfens unterscheiden sich minimal zwischen den Versuchsaufbauten für Luft und Argon. Allerdings liegen die Auswirkungen dieser Unterschiede auf den errechneten Wert von $p$ außerhalb des signifikanten Bereichs.
+
+Alle weiteren Messwerte können wir direkt aus dem Messprotokoll entnehmen und in Gleichung (\ref{eq:kappa_ruchart}) einsetzen. Wir erhalten damit die Werte
+\begin{align}
+  \kappa_{\text{Luft}} &= 1.369 \pm 0.008 \quad\text{ und}\\[1em]
+  \kappa_{\text{Ar}} &= 1.665 \pm 0.010.
+\end{align}
+Zur Angabe des Fehlers $\Delta \kappa$ verwenden wir die quadratische Addition der relativen Fehler der Messwerte nach
+\begin{align}
+  \Delta \kappa = \kappa \sqrt{\qty(\frac{\Delta m}{m})^2 + \qty(\frac{\Delta V}{V})^2 + \qty(4\frac{\Delta r}{r})^2 + \qty(2\frac{\Delta T}{T})^2 + \qty(\frac{\Delta p}{p})^2}.
+\end{align}
+Die Potenzen des Radius $r$ und der Periodendauer $T$ gehen hierbei als Faktoren mit in die Fehlerrechnung ein.
+
+Ein Vergleich der soeben berechneten Werte mit den Literaturwerten findet sich im Diskussionsteil der Ausarbeitung. Zunächst berechnen wir jedoch den Adiabatenkoeffizienten von Luft noch über die zweite Variante.
+
+\subsection{Berechnung des Adiabatenkoeffizienten nach Clément-Desormes}
+
+Anstatt wie zuvor den Mittelwert über die Höhen $h_1$ und $h_3$ aus den fünf Messgängen zu ermitteln, um den Adiabatenkoeffizienten zu bestimmen, berechnen wir fünf Werte für diesen und betrachten anschließend deren Mittelwert. Hierzu ziehen wir Formel \ref{eq:adiabat_nach_cd} 
+\begin{align}
+  \kappa = \frac{h_1}{h_1 - h_3}
+\end{align}
+heran. Für den Fehler $\Delta \kappa$, welcher sich aus dieser Formel ergibt, gilt nach der standardmäßigen Fehlerfortpflanzung
+\begin{align}
+  \Delta \kappa = \frac{1}{(h_1 - h_3)^2} \sqrt{(h_3 \Delta h_1)^2 + (h_1 \Delta h_3)^2}.
+\end{align}
+
+Die fünf verschiedenen berechneten Werte für $\kappa$ sind der nachfolgenden \tabref{tab:kappa_vals} zu entnehmen.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c|c|c|c|c}
+    Messgang & 1 & 2 & 3 & 4 & 5 \\ \hline
+    $\kappa$ & $1.37 \pm 0.04$ & $1.371 \pm 0.030$ & $1.409 \pm 0.029$ & $1.389 \pm 0.030$ & $1.378 \pm 0.030$ \\
+  \end{tabular}
+  \caption{Berechnete Werte für $\kappa$ aus den Messgängen 1 bis 5}
+  \label{tab:kappa_vals}
+\end{table}
+
+Aus der Mittlung über die fünf Werte von $\kappa$ erhalten wir einen finalen Wert von
+\begin{align}
+  \kappa &= 1.383 \pm 0.013.
+\end{align}
+
+Hierbei bestimmten wir den Fehler des Mittelwertes aus den Fehlern der Einzelwerte über die Formel
+\begin{align}
+  \Delta \kappa &= \sqrt{\frac{\sum_{i = 1}^{5} \Delta \kappa^2_i}{5^2}}.
+\end{align}
+
+Auch dieser Wert wird im folgenden Teil diskutiert werden.
