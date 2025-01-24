@@ -1,3 +1,59 @@
+In Versuch 241 setzen wir uns mit sogenannten RLC-Schaltungen, also elektrische Schaltungen, welche Widerstände (R), Spulen (L) und Kondensatoren (C) verbinden. In Wissenschaft und Technik haben diese Schaltungen eine vielfältige und weitreichende Menge an Anwendungsfällen. Hierzu gehört zum Beispiel die Erzeugung von Schwingungen in Funktionsgeneratoren, wie sie auch im Praktikum oft zur Anwendung kommen. Die Frequenzabhängigkeit des Wechselstromwiderstandes, der sogenannten Impedanz, kann dazu verwendet werden, um Filterschaltungen zu realisieren. Weiter finden RLC-Glieder in der Signalverarbeitung und Störunterdrückung Anwendung, um beispielsweise Messsignale aufzubereiten und präzisere Messungen zu ermöglichen. Effekte von Widerständen, Induktivitäten und Kapazitäten treten auch in anderen Bauelementen und Kabeln auf. Das Verständnis der Effekte dieser hilft uns, Schaltungen entsprechend zu optimieren, sowie Fehler und Verfälschungen besser Interpretieren zu können.
+
 \subsection{Physikalische Grundlagen}
+
+\subsubsection*{Verhalten eines RC-Gliedes im Zeitbereich}
+Zunächst betrachten wir das Verhalten eines RC-Gliedes, also einer Schaltung aus einem Widerstand und einem Kondensator in einer Schaltung mit einer Gleichspannungsquelle, wie in Abbildung \todo{abbildung} dargestellt. Wird der Stromkreis geschlossen, so beginnt der Kondensator sich aufzuladen. Der Aufladevorgang ist abschlossen, sobald die Spannung am Kondensator die Eingangsspannung $U_E$ erreicht. Nach der Kirchhoff'schen Maschenregel gilt, dass die Eingangsspannung $U_E$ gleich der Summe der Spannung am Kondensator $U_C$ und am Widerstand $U_R$ entspricht, also
+\begin{align}
+  U_E = U_C + U_R = U_C + R I.
+\end{align}
+Der Strom $I$ entspricht gerade der zeitlichen Änderung der Kondensatorladung $I = \dot{Q} = C \dot{U}_C$, wodurch wir die Differentialgleichung
+\begin{align}
+  U_E = U_C + RC \dot{U}_C
+\end{align}
+erhalten. Als Lösung dieser Differentialgleichung erhalten wir
+\begin{align}
+  U_C(t) = U_E\qty(1 - \e{-\flatfrac{t}{\tau}})
+\end{align}
+Hierbei haben wir mit $\tau = RC$ die Zeitkonstante eingeführt. Erneut nach der Maschenregel können wir aus diesem Ergebnis den Verlauf der Spannung am Widerstand
+\begin{align}
+  U_R(t) = U_E\e{-\flatfrac{t}{\tau}},
+\end{align}
+sowie nach dem Ohm'schen Gesetz den Strom
+\begin{align}
+  I(t) = \frac{U_R(t)}{R} = I_0\e{-\flatfrac{t}{\tau}}
+\end{align} 
+herleiten. Wir sehen nun, dass die Kondensatorladung exponentiell bis $U_E$ ansteigt, während der Strom von $I_0 = \frac{U_E}{R}$ gegenläufig exponentiell bis $0$ abfällt. Die ausschlagebende größe ist bei diesem Prozess die soeben eingeführte Zeitkonstante $\tau$. Diese lässt sich durch die Messung der Halbwertszeit des $T_{\flatfrac{1}{2}}$ der Kondensatorladung nach 
+\begin{align}
+  \frac{U_E}{2} &= U_E\qty(1 - \e{\flatfrac{T_{\ffrac{1}{2}}}{\tau}})\\
+  \iff \tau &= \frac{\Thalf}{\ln 2}
+\end{align}
+bestimmen.
+
+Liegt am RC-Glied eine Rechtecksspannung mit der Periodendauer $T$ an, so wird der Kondensator abwechselnd, abhängig von $\tau$ be- und endladen, wie es in Abbildung \todo{abbildung} dargestellt ist.
+
+\subsubsection*{Impedanz}
+Die Impedanz $Z = \ffrac{U}{I}$ bezeichnet den Wechselstromwiderstand, welchen die Bauelemente in einem Wechselstromkreis aufweisen. Die Wechselspannung sei nun beschrieben durch $U_E(t) = U_0\e{i \omega t}$ mit Amplitude $U_0$ und Kreisfrequenz $\omega = 2\pi f$. Für einen ohmschen Widerstand in einem Wechselstromkreis gilt
+\begin{align}
+  Z_R = \frac{U(t)}{I(t)} = \frac{U_0}{I_0} = R.
+\end{align}
+Die Impedanz ist also identisch mit dem Gleichstromwiderstand. 
+
+Für einen Kondensator in einem Wechselstromkreis gilt
+\begin{align}
+  U_E(t) = \frac{Q}{C} \implies \dot{U}_E = \frac{I(t)}{C} \implies i \omega U_E(t) = \frac{I(t)}{C}.
+\end{align}
+Hierdurch können wir dessen Impedanz herleiten zu
+\begin{align}
+  Z_C = \frac{U_E(t)}{I(t)} = \frac{1}{i \omega C}.
+\end{align}
+Eine solche rein imaginäre Impedanz wird auch Blindwiderstand genannt, da dieser Widerstand keine elektrische Leistung verbraucht. Wir stellen außerdem fest, dass die Impedanz frequenzabhängig ist. Für $\omega \to 0$ ist sie unendlich groß, für $\omega \to \infty$ verschwindet sie. Das Auftreten der imaginären Einheit $\frac{1}{i} = \e{-i \frac{\pi}{2}}$ zeigt außerdem eine Phasenverschiebung des Stromes um $-\frac{\pi}{2}$ gegenüber der Spannung auf.
+
+Für eine Spule mit Induktivität $L$ gilt der Zusammenhang
+\begin{align}
+  U_E(t) &= L \dot{I}(t) = i\omega LI(t)\\
+  \implies Z_E &= i \omega L.
+\end{align}
+Diese ist also ebenfalls rein imaginär und frequenzabhängig. Auch hier zeigt sich das Auftreten der imaginären Einheit $i = \e{i\frac{\pi}{2}}$ in einer Phasenverschiebung des Stroms um $+\frac{\pi}{2}$ gegenüber der Spannung auf.
 
 \subsection{Versuchsdurchführung}
