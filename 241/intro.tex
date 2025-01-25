@@ -51,9 +51,118 @@ Eine solche rein imaginäre Impedanz wird auch Blindwiderstand genannt, da diese
 
 Für eine Spule mit Induktivität $L$ gilt der Zusammenhang
 \begin{align}
-  U_E(t) &= L \dot{I}(t) = i\omega LI(t)\\
+  U_E(t) &= L \dot{I}(t) = i\omega LI(t)\\[1em]
   \implies Z_E &= i \omega L.
 \end{align}
 Diese ist also ebenfalls rein imaginär und frequenzabhängig. Auch hier zeigt sich das Auftreten der imaginären Einheit $i = \e{i\frac{\pi}{2}}$ in einer Phasenverschiebung des Stroms um $+\frac{\pi}{2}$ gegenüber der Spannung auf.
+
+\subsubsection*{Frequenzverhalten von RC-Gliedern}
+
+Die soeben festgestellte Frequenzabhängigkeit der Impedanz von Kondensatoren erlaubt es uns, Filterschaltungen zu bauen. Hierzu betrachten wir erneut RC-Glieder, wie sie bereits im ersten Teil zum Einsatz kamen. Wir betrachten eine Schaltung, wie sie in Abbildung \todo{Abbildung RC Wechselstrom} dargestellt ist.
+
+Die Spannungquelle liefert eine zeitabhängige Wechselspannung, beschrieben durch $U_E(t) = U_0 \e{i\omega t}$. Am Kondensator $C$ nehmen wir eine Spannung ab, für welche nach dem Ohm'schen Gesetz gilt
+\begin{align}
+  U_C(t) = \frac{Z_C}{R + Z_C} U_E(t).
+\end{align}
+Hierbei ist $R$ der ohm'sche Widerstand und $Z_C = \frac{-i}{\omega C}$ die komplexe Impedanz des Kondensators. Setzen wir dies in die obere Gleichung ein, so erhalten wir
+\begin{align}
+  U_C(t) &= \frac{-\ffrac{i}{\omega C}}{R - \ffrac{i}{\omega C}} U_0 \e{i \omega t}\\[1em]
+  \intertext{mit dem Betrag}
+  \qty|U_C| &= \frac{\qty|U_E|}{\sqrt{1 + (\omega R C)^2}}. \label{eq:ampl_tp}
+\end{align}
+
+Am Betrag $\qty|U_C|$ lässt sich erkennen, dass es sich hierbei um einen Tiefpassfilter handelt. Denn, für $\omega \to 0$ geht der Nenner gegen eins und somit $\qty|U_C| \to \qty|U_E|$. Für $\omega \to \infty$ geht auch der Nenner $\to \infty$ und somit $\qty|U_C| \to 0$. Es können also nur niedrige, bzw. tiefe Frequenzen die Schaltung passieren.
+
+Gerade den umgekehrten Effekt erhält man durch Vertauschen des Widerstandes und des Kondensators, wodurch ein Hochpassfilter entsteht. Mit diesem gilt für den Betrag der Spannung am Widerstand
+\begin{align}
+  \qty|U_R| &= \frac{\qty|U_E|}{\sqrt{1 + \frac{1}{(\omega R C)^2}}}.\label{eq:ampl_hp}
+\end{align}
+
+Der Frequenzgang einer solchen Filterschaltung ist definiert als das Verhältnis der Amplituden $\ffrac{\qty|U_E|}{\qty|U_A|}$ über der Frequenz. Die Grenzfrequenz $\omega_g = \frac{1}{RC} = \frac{1}{\tau}$ ist die Frequenz, an welcher die Ausgangsamplitude $\qty|U_A|$ um den Faktor $\frac{1}{\sqrt{2}}$ gegenüber der Eingangsamplitude abgefallen (Tiefpassfilter) bzw. angestiegen (Hochpassfilter) ist. Den Bereich bis zur Grenzfrequenz eines Filters nennt man dessen Bandbreite.
+
+\subsubsection*{RC-Glied als Differenzier- und Integrierglied}
+
+Ein weiterer Anwendungsbereich von Hoch- und Tiefpassfilterschaltungen ist die Anwendung als Differenzier- und Integrierglieder. Betrachten wir zunächst einen Tiefpassfilter. Der Strom $I$ ergibt sich sowohl anhand der zeitlichen Änderung der Kondensatorladung, also auch dem ohm'schen Gesetz, nach
+\begin{align}
+  I = C \dv{U_A}{t} = \frac{U_E - U_A}{R}.
+\end{align}
+Ist nun die Periodendauer $T$ der Eingangsspannung $U_E$ deutlich kleiner als die Zeitkonstante $\tau$, so ist nach \eqref{eq:ampl_tp} $U_A \ll U_E$ und es ergibt sich die Näherung
+\begin{align}
+  \dv{U_A}{t} &\approx \frac{U_E}{RC}.
+  \intertext{Somit entspricht das Ausgangssignal des Tiefpassfilters}
+  U_A &\approx \frac{1}{RC} \int U_E \dd{t}.
+\end{align}
+für die Bedingung $\tau \gg T$ ungefähr dem Integral des Eingangssignals.
+
+Wiederum umgekehrt betrachten wir nun für einen Hochpassfilter die Summe der Teilspannungen. Die Eingangsspannung entspricht der Summe der Spannung am Kondensator
+\begin{align}
+  U_C = \frac{Q}{C} = \frac{1}{C} \int I \dd{t}
+\end{align}
+und der Spannung am Widerstand, also der Ausgangsspannung $U_A$. Für dem Strom gilt somit
+\begin{align}
+  \int I \dd{t} &= C(U_E - U_A) \implies I = C \dv{t} (U_E - U_A).
+\end{align}
+Unter der Annahme, dass $\tau \ll T$ ist nach \eqref{eq:ampl_hp} $U_A \ll U_E$. Es gilt somit
+\begin{align}
+  I &\approx C \dv{t}U_E,
+  \intertext{also}
+  IR = U_A &\approx RC \dv{t} U_E.
+\end{align}
+Das Ausgangssignal des Hochpassfilters stellt also unter der Bedingung, dass $\tau \ll T$ ist, ungefähr die Differentation des Eingangssignals dar.
+
+\subsubsection*{Elektrischer Schwingkreis (RLC-Glied)}
+
+Wir betrachten zunächst einen idealisierten Schaltkreis mit einem Kondensator und einer parallel geschalteten Spule. Entlädt sich der Kondensator, so wird durch den Entladestrom ein Magnetfeld in der Spule erzeugt. Die im Kondensator gespeicherte elektrische Energie wird also allmählich in magnetische Energie umgewandelt. Sobald der Kondensator gänzlich entladen ist, beginnt der Strom abzunehmen und als Konsequenz des Induktionsgesetzes und der Lenz'schen Regel wird in der Spule ein entgegengesetzter Strom erzeugt. Dieser lädt den Kondensator mit umgekehrter Polung wieder auf, die magnetische Energie wird also wieder in elektrische Energie umgewandelt. Dieses wechselwirkende Verhalten gibt den Schwingkreisen ihren Namen. In der Realität sorgen Widerstände in den Bauteilen, sowie dielektrische wie magnetische Verluste dafür, dass die Schwingung nicht ewig anhält, sondern gedämpft ist, soweit sie nicht durch ein kontinuierliches Eingangssignal angeregt ist. Daher betrachten wir nun RLC-Glieder, welche neben der Spule (L) und dem Kondensator (C) auch einen Widerstand (R) enthalten.
+
+In einem RLC-Serienschwingkreis sind die drei Bauteile in Reihe geschaltet. Die Einzelspannungen, die an den einzelnen Bauteilen abfallen sind
+\begin{align}
+  U_R = \frac{R}{I}, \quad U_C = \frac{Q}{C}, \quad U_L = -L\dv{t}I.
+\end{align}
+Nach der Kirchhoff'schen Maschenregel gilt weiter
+\begin{align}
+  U_R + U_C - U_L = 0,
+\end{align}
+die Summe der Teilspannungen muss also verschwinden. Durch Einsetzen und differenzieren erhalten wir hieraus die folgende Gleichung
+\begin{align}
+  L \dv[2]{t} I + R \dv{t} I + \frac{1}{C} I = 0.
+\end{align}
+Dies entspricht der allgemeinen Differentialgleichung für den gedämpften harmonischen Oszillator. Unter der Annahme, dass der Widerstand verschwindet erhalten wir die Differentialgleichung
+\begin{align}
+  \dv[2]{t} I + \omega_0 I = 0
+\end{align}
+eines ungedämpften harmonischen Oszillators mit der Lösung
+\begin{align}
+  I = I_0 \e{i(\omega_0 t + \varphi)}.
+\end{align}
+Hierbei wurden Induktivität und Kapazität zur Eigenfrequenz, definiert durch die Thomson'sche Schwingungsformel,
+\begin{align}
+  \omega_0 = \frac{1}{\sqrt{LC}}
+\end{align}
+zusammengefasst.
+
+Die allgemeine Lösung des gedämpften harmonischen Oszillators ist gegeben durch
+\begin{align}
+  I(t) = I_0 e^{-\frac{R}{2L} t} \qty( c_1 e^{\sqrt{\frac{R^2}{4L^2} - \frac{1}{LC}} t} + c_2 e^{-\sqrt{\frac{R^2}{4L^2} - \frac{1}{LC}} t}).
+\end{align}
+Die Konstanten $c_1$ und $c_2$ hängen dabei von den Anfangsbedingungen ab. Unter der Voraussetzung
+\begin{align}
+  \frac{R^2}{4L^2} < \frac{1}{LC},
+\end{align}
+also einer entsprechend schwachen Dämpfung, spricht man vom sogenannten \textit{Schwingfall}. Nur in diesem Fall kommt es auch tatsächlich zu einer periodischen, exponentiell gedämpften Oszillation des Stroms nach
+\begin{align}
+  I &= I_0 \e{-\frac{R}{2L} t} \e{i(\omega_f t + \varphi)}
+  \intertext{mit}
+  \omega_f &= \sqrt{\frac{1}{LC} - \frac{R^2}{4 L^2}}.
+\end{align}
+
+Wie aus dem Term abzulesen ist, nimmt die Amplitude proportional zu $\e{-\delta t}$ ab. Hierbei ist die Dämpfungskonstante $\delta$ definiert als
+\begin{align}
+  \delta = \frac{R}{2L}.
+\end{align}
+Ihr Kehrwert $\ffrac{1}{\delta}$ ist die Relaxationszeit oder Abklingzeit $\tau_r$. Empirisch kann die Dämpfungskonstante durch das Vermessen der Amplituden und der Periodendauer bestimmt werden. Das logarithmische Dekrement
+\begin{align}
+  \Lambda = \ln(\frac{A_n}{A_{n+1}}) = \delta T
+\end{align}
+stellt den zugehörigen mathematischen Zusammenhang her.
 
 \subsection{Versuchsdurchführung}
