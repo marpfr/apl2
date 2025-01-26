@@ -165,4 +165,55 @@ Ihr Kehrwert $\ffrac{1}{\delta}$ ist die Relaxationszeit oder Abklingzeit $\tau_
 \end{align}
 stellt den zugehörigen mathematischen Zusammenhang her.
 
+\subsubsection*{Frequenzabhängigkeit eines Schwingkreises - Resonanz}
+
+Wird ein Schwingkreis durch ein extern anliegendes Sinussignal angeregt, oszilliert dieser mit derselben Frequenz wie das angelegte Signal. Wie bereits im Abschnitt zu Impedanzen betrachtet, hängt jedoch die Amplitude des Ausgangssignals von der eingehenden Frequenz ab. Für die Gesamtimpedanz $Z_g$ in einem Serienschwingkreis gilt
+\begin{align}
+  Z_g = Z_R + Z_C + Z_L = R + i\qty(\omega L - \frac{1}{\omega C}).
+\end{align}
+Hieraus folgt für den Strom im Schwingkreis nach dem ohm'schen Gesetz
+\begin{align}
+  I = \frac{U_E}{Z_g} = \frac{1}{R + i\qty(\omega L - \frac{1}{\omega C})} U_0 \e{i(\omega t - \varphi)},
+\end{align}
+wobei $U_E(t) = U_0 \e{i(\omega t)}$ das Eingangssignal darstellt. Dessen Betrag
+\begin{align}
+  I_0(\omega) = \frac{U_0}{\sqrt{(R^2 + \qty(\omega L - \frac{1}{\omega C}))^2}}
+\end{align}
+ist abhängig von der Anregungsfrequenz $\omega$ und nimmt bei der Resonanzfrequenz $\omega_R$
+\begin{align}
+  \omega_R = \sqrt{\frac{1}{LC}}
+\end{align}
+das Maximum von $I_0(\omega_R) = \ffrac{U_0}{R}$ an. Es wirkt im Resonanzfall nur der ohm'sche Widerstand, die Schaltung stellt hier also einen Kurzschluss dar. Für die Phasenverschiebung gilt
+\begin{align}
+  \tan \varphi = \frac{\omega L - \ffrac{1}{(\omega C)}}{R},
+\end{align}
+im Resonanzfall sind Strom und Spannung also in Phase.
+
+Für die Amplituden der Spannungen an den einzelnen Bauteilen gelten die Zusammenhänge
+\begin{align}
+\qty| U_R | = \frac{R}{\qty( R^2 + \qty( \omega L - \frac{1}{\omega C} )^2 )^{\ffrac{1}{2}}} U_0,\\
+\qty| U_C | = \frac{1/(\omega C)}{\qty( R^2 + \qty( \omega L - \frac{1}{\omega C} )^2 )^{\ffrac{1}{2}}} U_0,\\
+\qty| U_L | = \frac{\omega L}{\qty( R^2 + \qty( \omega L - \frac{1}{\omega C} )^2 )^{\ffrac{1}{2}}} U_0.\\
+\end{align}
+
+Betrachten wir die Amplitude $\qty| U_R |$ der Spannung am Widerstand so zeigt sich für verschiedene Werte des Widerstandes das in \todo{abbb} abgebildete Verhalten. Da, wie soeben gezeigt, im Resonanzfall die Gesamtimpedanz von Spule und Kondensator verschwindet, fällt die gesamte Eingangsspannung am Widerstand ab. Die Ausgangsamplitude hier in etwa der Eingangsamplitude. Für von der Resonanzfrequenz abweichende Frequenzen, werden Spule und Kondensator nicht kurzgeschlossen, es fällt also ein teil der Spannung auch an diesen Bauteilen ab. Nach diesem Wirkungsprinzip stellt der Serienschwingkreis einen Bandpass-Filter dar, welcher nur ein bestimmtes Frequenzband um die Resonanzfrequenz passieren lässt. Die Bandbreite ist hier, ähnlich zum Hoch- und Tiefpassfilter, durch die Frequenzen definiert, bei welchen die Amplitude auf das $\sqrt{2}$-Fache gedämpft wird:
+\begin{align}
+  \Delta \omega = \omega_1 - \omega_2 = \frac{R}{L} = 2\delta.
+\end{align}
+
+Abbildung \todo{Abbildung} zeigt nun die Amplituden der Spannungen an allen drei Bauteilen. Zunächst fällt auf, dass die Resonanzfrequenzen für Spule ($\omega_L$) und Kondensator ($\omega_C$) nach rechts bzw. links zur Resonanzfrequenz des Widerstandes verschoben sind. Für diese gilt
+\begin{align}
+  \omega_C &= \sqrt{\omega_R^2 - 2\delta^2},\\
+  \omega_L &= \sqrt{\omega_R^2 + 2\delta^2}.
+\end{align}
+
+Weiter fällt auf, dass hier die Ausgangsamplituden über den Wert der Eingangsamplitude hinaus steigen. Diese sogenannte Resonanzüberhöhung kommt ohne verstärkendes Bauteil zustande und folgt aufgrund der Phasenverschiebung der Spannungen an Spule und Kondensator immer noch den Vorgaben der Maschenregel. Die Stärke der Resonanzüberhöhung hängt vom ohm'schen Widerstand ab. Bei kleinerem Widerstand beobachten wir eine stärkere Überhöhung, mit zunehmendem Widerstand wird sie immer geringer, bis die Maxima nicht mehr sichtbar sind.
+
+Zum Vergleich betrachten wir nun noch einen Parallelschwingkreis, wie er in Abbildung \todo{abbildung} dargestellt ist. Für die Impedanz in der Parallelschaltung gilt
+\begin{align}
+  \frac{1}{Z_P} &= \frac{1}{Z_C} + \frac{1}{Z_L}\\[1em]
+  \iff Z_P &= \qty|\frac{1}{\omega L - \frac{1}{\omega C}}|.
+\end{align}
+Nähert man sich der Resonanzfrequenz $\omega_0 = \ffrac{1}{\sqrt{LC}}$ an, so geht der Nenner gegen 0, die Impedanz also ins Unendliche. An dieser Stelle wirkt der LC-Parallelkreis wie ein Isolator, bildet also eine sogenannte Bandsperre für Frequenz im Bereich um $\omega_0$.
+
 \subsection{Versuchsdurchführung}
