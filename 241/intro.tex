@@ -216,4 +216,66 @@ Zum Vergleich betrachten wir nun noch einen Parallelschwingkreis, wie er in Abbi
 \end{align}
 Nähert man sich der Resonanzfrequenz $\omega_0 = \ffrac{1}{\sqrt{LC}}$ an, so geht der Nenner gegen 0, die Impedanz also ins Unendliche. An dieser Stelle wirkt der LC-Parallelkreis wie ein Isolator, bildet also eine sogenannte Bandsperre für Frequenz im Bereich um $\omega_0$.
 
+\subsubsection*{Anwendungen von LC-Gliedern: Radioempfänger}
+
+Ein Anwendungsbereich von LC-Gliedern als Bandpassfiltern sind Radioempfänger. Bevor ein Signal empfangen werden kann, muss es jedoch zunächst gesendet werden. Radio Sender nutzen die sogenannte Modulation, um ein das niederfrequente Signal, welche Musik und Sprache enthält, im Bereich von $100 \si{\hertz}$ bis $4 \si{\kilo\hertz}$ einem höherfrequenten Signal aufzuprägen. Dies ist notwendig, da nur so eine effektive Abstrahlung des Signals durch eine Antenne möglich ist. Bei der Amplitudenmodulation wird das hochfrequente Trägersignal mit dem zu übertragenden Signal multipliziert und so dessen Amplitude entsprechend verändert. Das modulierte Signal kann dann mit einer Antenne gesendet und empfangen werden. 
+
+Um das empfangene Signal hörbar zu machen, muss es zunächst auf den rein positiven oder rein negativen Teil der Schwingung abgeschnitten werden. Diese Demodulation ist notwendig, da das eingehende symmetrische Signal im Mittelwert verschwindet und somit keine Schwingung der Lautsprechermembran auslöst. Durch einen Kondensator kann dann, aufgrund dessen frequenzabhängiger Impedanz $Z \propto \ffrac{1}{\omega}$, das hochfrequente Trägersignal herausgefiltert werden. Dem Ganzen kann ein LC-Schwingkreis vorgeschaltet werden, um die Wahl eines Senders zu ermöglichen. Jeder Sender sendet auf einer anderen Trägerfrequenz und ohne Filterschaltung würde jede dieser Frequenzen gleichermaßen empfangen und am Lautsprecher wiedergegeben werden. Wie zuvor beschrieben, wirkt ein LC-Schwingkreis wie ein Bandpassfilter. Stimmt man nun die Resonanzfrequenz des Schwingkreises genau so ab, dass diese der Trägerfrequenz eines bestimmten Radiosenders entspricht, so kann nur dessen Signal den Filter passieren. Um Sender mit dicht beieinanderliegenden Trägerfrequenzen zu trennen, ist eine hohe Güte und geringe Bandbreite des Schwingkreises erforderlich, weshalb in alten Radioempfängern mehrere verstärkte Kreise in Reihe geschaltet wurden, um die eine steilere Durchlasskurve und bessere Trennschärfe zu gewährleisten.
+
 \subsection{Versuchsdurchführung}
+
+Der Versuch umfasst insgesamt neun Versuchsteile, von welchen der erste Teil Wechselstromeigenschaften passiver Bauteile und charakteristischen Größen von RC-Filtern und RLC-Schwingkreisen und der zweite Teil mit der praktischen Anwendung von RLC-Schaltungen umfasst. Die grundlegende Schaltung, welche für nahezu alle Versuchsteile zum Einsatz kommt, ist in \todo{abbildung} zu sehen.
+
+\textbf{Aufgabe 1: Bestimmung der Zeitkonstante eines RC-Gliedes.} Für ein Rechteckssignal, welches wir mit dem Frequenzgenerator generieren, bestimmen wir in einer RC-Schaltung für verschiedene Werte von Kapazität und Widerstand die Halbwertszeit der Kondensatorentladung. Wir vermessen die Halbwertszeit für die Werte
+\begin{enumerate}
+  \item $C = 470 \si{\nano\farad}$, $R = 1 \si{\kilo\ohm}$
+  \item $C = 4.7 \si{\nano\farad}$, $R = 10 \si{\kilo\ohm}$
+  \item $C = 47 \si{\nano\farad}$, $R = 1 \si{\kilo\ohm}$
+\end{enumerate}
+anhand der Spannung am Kondensator. Weiter prüfen wir durch Abnahme der Spannung am Widerstand, dass die Zeitkonstante des Stromverlaufs der des Spannungsverlaufs am Kondensator gleicht.
+
+\textbf{Aufgabe 2: RC-Glied als Integrator und Differentiator.} In eine RC-Scahltung mit einem $47 \si{\nano\farad}$ Kondensator und einem Potentiometer ($5\si{\kilo\ohm}$) geben wir durch einen Signalgenerator verschiedenförmige Eingangssignale ein. Wir greifen die Spannung am Kondensator ab. Durch Anpassung des Wertes am Potentiometer beobachten wir die Wirkung der Schaltung als Integrator auf das jeweilige Eingangssignal. Im zweiten Teil vertauschen wir Kapazität und Widerstand, greifen die Spannung am Widerstand ab und erhalten so einen Differentiator. Mit diesem führen wir die gleichen Untersuchungen durch.
+
+\textbf{Aufgabe 3: Frequenz- und Phasengang eines RC-Glieds.} Für eine Tief- und eine Hochpassfilterschaltung aus einem $47\si{\nano\farad}$ Kondensator und einem $1 \si{\kilo\ohm}$ Widerstand nehmen wir jeweils den Frequenzgang für einen Bereich von $100\si{\hertz}$ bis $100\si{\kilo\hertz}$ auf. Als Eingangssignal verwenden wir jeweils ein Sinussignal mit $2 \si{\volt}$ peak-to-peak. Aus dem Frequenzgang vermessen wir jeweils die Grenzfrequenz der Filterschaltung. Weiter bestimmen wir durch manuelles Messen der Phasenverschiebung zwischen Ein- und Ausgangsspannung den Phasengang des Hochpassfilters.
+
+\textbf{Aufgabe 4: Frequenzgang eines Serienschwingkreis.} Wir erweitern den eben untersuchten RC-Schaltkreis mit der Spule $L_1$ zu einem Serienschwingkreis. Wir verwenden das gleiche Eingangssignal wie zuvor und zeichnen den Frequenzgang für einen Bereich von $1 \si{\kilo\hertz}$ bis $10 \si{\kilo\hertz}$, jeweils für die Widerstände $R = 1 \si{\kilo\ohm}$, $220 \si{\ohm}$ und $47 \si{\ohm}$ auf. Die Ausgangsspannung nehmen wir hierzu am Widerstand ab. Aus dem Frequenzgang bestimmen wir die Resonanzfrequenz $f_R$, die Bandbreite $\Delta f$, sowie die Effektivwerte der Aus- und Eingangsspannung bei der Resonanzfrequenz.
+
+\textbf{Aufgabe 5: Resonanzüberhöhung.} Für einen Serienschwingkreis mit Kapazität $47 \si{\nano\farad}$, Widerstand $220 \si{\ohm}$ und Induktivität $L_1$ zeichnen wir den Frequenzgang jeweils einmal über jedes Bauteil auf. Aus den Maxima der Verläufe bestimmen wir die Resonanzfrequenzen.
+
+\textbf{Aufgabe 6: Bestimmung der Dämpfungskonstante eines freien, gedämpften Schwingkreises.} Wir betrachten einen Serienschwingkreis mit Kapazität $47 \si{\nano\farad}$, Widerstand $47 \si{\ohm}$ und Induktivität $L_1$ und greifen die Ausgangsspannung über die Spule ab. Als Eingangssignal generieren wir mit dem Funktiongenerator ein Rechteckssignal, dessen Frequenz so gewählt ist, dass ein kompletter gedämpfter Schwingungsvorgang pro Ausschlag möglich ist. Um das logarithmische Dekrement bestimmen zu können, vermessen wir die Amplituden von fünf benachbarten Schwingungen. Wir ersetzen dann den Widerstand durch einen Potentiometer, um den Schwingungsvorgang abhängig von der Dämpfung beobachten zu können.
+
+\textbf{Aufgabe 7: Parallelschwingkreis - Bandsperre.} Nun betrachten wir einen Parallelschwingkreis mit Kapazität $47 \si{\nano\farad}$, Widerstand $1 \si{\kilo\ohm}$ und Induktivität $L_1$. Wir zeichnen den Frequenzgang der Schaltung für einen Frequenzbereich von $100 \si{\hertz}$ bis $100 \si{\kilo\hertz}$ auf und bestimmen aus diesem die Resonanzfrequenz des Schwingkreises.
+
+\textbf{Aufgabe 8: Signalformung.} In diesem Aufgabenteil verwenden wir verschiedene Filterschaltungen, um bestimmte Frequenzanteile aus einer Menge an überlagerten Signalen herauszufiltern. Mithilfe des Signalgenerators erzeugen wir ein Signal, welches aus drei überlagerten Sinussignalen unterschiedlicher Frequenz ($100 \si{\hertz}, 4 \si{\kilo\hertz}, 8 \si{\kilo\hertz}$) und Amplitude, sowie jede Menge weiterer hinzuaddierter Störsignale besteht. Mithilfe des \textit{Spectrum Analyzer} der Oszilloskopsoftware vermessen wir für jeden der folgenden verwendeten Filterschaltungen die Amplitude und Frequenz der drei stärksten Signale des Frequenzspektrums:
+
+\begin{multicols}{2}
+  \begin{enumerate}[label=\arabic*.]
+    \item Ohne Filter, $R = 220 \si{\ohm}$
+    \item RC- und LC-Schaltungen; Hoch-/Tiefpassfilter
+    \begin{enumerate}[label=\alph*)]
+      \item Hochpass, $R = 220 \si{\ohm}, C = 470 \si{\nano\farad}$
+      \item Tiefpass, $R = 220 \si{\ohm}, C = 470 \si{\nano\farad}$
+      \item LC-Tiefpass, $L = L_1, C = 47 \si{\nano\farad}$
+    \end{enumerate}
+    \item RLC-Schaltung; Bandpass-Filter
+    \begin{enumerate}[label=\alph*)]
+      \item $\qty|U_A|$ über Kondensator
+      \begin{enumerate}
+        \item $R = 1 \si{\kilo\ohm}, L = L_1, C = 47 \si{\nano\farad}$
+        \item $R = 47 \si{\ohm}, L = L_1, C = 47 \si{\nano\farad}$
+      \end{enumerate}
+      \item $\qty|U_A|$ über Spule
+      \begin{enumerate}
+        \item $R = 1 \si{\kilo\ohm}, L = L_1, C = 47 \si{\nano\farad}$
+        \item $R = 47 \si{\ohm}, L = L_1, C = 47 \si{\nano\farad}$
+      \end{enumerate}
+      \item $\qty|U_A|$ über Widerstand
+      \begin{enumerate}
+        \item $R = 1 \si{\kilo\ohm}, L = L_1, C = 47 \si{\nano\farad}$
+        \item $R = 47 \si{\ohm}, L = L_1, C = 47 \si{\nano\farad}$
+      \end{enumerate}
+    \end{enumerate}
+  \end{enumerate}
+  \vspace*{5em}
+\end{multicols}
+
