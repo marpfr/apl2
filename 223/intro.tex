@@ -8,7 +8,24 @@ Als vereinfachtes Modell der Brown'schen Bewegung betrachten wir einen eindimens
 \begin{align}
   \binom{n}{\frac{1}{2}(n+m)} = \frac{n!}{\qty(\frac{1}{2}(n+m))!\qty(\frac{1}{2}(n-m))!}
 \end{align}
-Wege, die das Teilchen gelaufen sein könnte.
+Wege, die das Teilchen gelaufen sein könnte. Die Wahrscheinlichkeit, dass sich das Teilchen nach $n$ Stößen an der Position $x = m\delta$ befindet ist binomialverteilt nach
+\begin{align}
+  P(m;n) = \binom{n}{\frac{1}{2}(n+m)} p^{\frac{n+m}{2}} (1-p)^{\frac{n-m}{2}}.
+\end{align}
+Die Wahrscheinlichkeit $p$ für einen Sprung nach links bzw. nach rechts ist für beide Richtungen $p = \frac{1}{2}$. Somit können wir die Wahrscheinlichkeitsfunktion vereinfachen zu
+\begin{align}
+  P(m;n) = \frac{n!}{\qty(\frac{1}{2}(n+m))!\qty(\frac{1}{2}(n-m))}\qty(\frac{1}{2})^n.
+\end{align}
+
+Da das Zeitintervall $\tau$ zwischen den Stößen sehr klein ist, wird $n = \frac{t}{\tau}$ sehr groß. Somit können $n!$ und $m!$ mit der Stirling'schen Formel
+\begin{align*}
+  n! &= (2\pi n)^{\frac{1}{2}} n^n \e{-n}
+  \intertext{angenähert und die Wahrscheinlichkeitsfunktion zu}
+  P(m;n) &= \sqrt{\frac{2}{\pi n}} \e{-\frac{m^2}{2n}}
+\end{align*}
+umgeformt werden.
+
+
 
 \subsection{Versuchsdurchführung}
 
