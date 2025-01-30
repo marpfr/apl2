@@ -3,7 +3,16 @@ In Versuch 241 setzen wir uns mit sogenannten RLC-Schaltungen, also elektrische 
 \subsection{Physikalische Grundlagen}
 
 \subsubsection*{Verhalten eines RC-Gliedes im Zeitbereich}
-Zunächst betrachten wir das Verhalten eines RC-Gliedes, also einer Schaltung aus einem Widerstand und einem Kondensator in einer Schaltung mit einer Gleichspannungsquelle, wie in Abbildung \todo{abbildung} dargestellt. Wird der Stromkreis geschlossen, so beginnt der Kondensator sich aufzuladen. Der Aufladevorgang ist abschlossen, sobald die Spannung am Kondensator die Eingangsspannung $U_E$ erreicht. Nach der Kirchhoff'schen Maschenregel gilt, dass die Eingangsspannung $U_E$ gleich der Summe der Spannung am Kondensator $U_C$ und am Widerstand $U_R$ entspricht, also
+Zunächst betrachten wir das Verhalten eines RC-Gliedes, also einer Schaltung aus einem Widerstand und einem Kondensator in einer Schaltung mit einer Gleichspannungsquelle, wie in \abbref{fig:schaltpl_rc_ac} dargestellt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.70\textwidth]{files/script/schaltpl_rc_dc.png}
+  \caption{Schaltplan eines RC-Gliedes mit Gleichspannungsquelle}
+  \label{fig:schaltpl_rc_ac}
+\end{figure}
+
+Wird der Stromkreis geschlossen, so beginnt der Kondensator sich aufzuladen. Der Aufladevorgang ist abschlossen, sobald die Spannung am Kondensator die Eingangsspannung $U_E$ erreicht. Nach der Kirchhoff'schen Maschenregel gilt, dass die Eingangsspannung $U_E$ gleich der Summe der Spannung am Kondensator $U_C$ und am Widerstand $U_R$ entspricht, also
 \begin{align}
   U_E = U_C + U_R = U_C + R I.
 \end{align}
@@ -30,7 +39,14 @@ herleiten. Wir sehen nun, dass die Kondensatorladung exponentiell bis $U_E$ anst
 \end{align}
 bestimmen.
 
-Liegt am RC-Glied eine Rechtecksspannung mit der Periodendauer $T$ an, so wird der Kondensator abwechselnd, abhängig von $\tau$ be- und endladen, wie es in Abbildung \todo{abbildung} dargestellt ist.
+Liegt am RC-Glied eine Rechtecksspannung mit der Periodendauer $T$ an, so wird der Kondensator abwechselnd, abhängig von $\tau$ be- und endladen, wie es in \abbref{fig:spannung_rc_rechteck} dargestellt ist.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.65\textwidth]{files/script/spannung_rc_rechteck.png}
+  \caption{Spannungs- und Stromverlauf am Kondensator im RC-Glied bei eingehendem Rechteckssignal}
+  \label{fig:spannung_rc_rechteck}
+\end{figure}
 
 \subsubsection*{Impedanz}
 Die Impedanz $Z = \ffrac{U}{I}$ bezeichnet den Wechselstromwiderstand, welchen die Bauelemente in einem Wechselstromkreis aufweisen. Die Wechselspannung sei nun beschrieben durch $U_E(t) = U_0\e{i \omega t}$ mit Amplitude $U_0$ und Kreisfrequenz $\omega = 2\pi f$. Für einen ohmschen Widerstand in einem Wechselstromkreis gilt
@@ -58,7 +74,14 @@ Diese ist also ebenfalls rein imaginär und frequenzabhängig. Auch hier zeigt s
 
 \subsubsection*{Frequenzverhalten von RC-Gliedern}
 
-Die soeben festgestellte Frequenzabhängigkeit der Impedanz von Kondensatoren erlaubt es uns, Filterschaltungen zu bauen. Hierzu betrachten wir erneut RC-Glieder, wie sie bereits im ersten Teil zum Einsatz kamen. Wir betrachten eine Schaltung, wie sie in Abbildung \todo{Abbildung RC Wechselstrom} dargestellt ist.
+Die soeben festgestellte Frequenzabhängigkeit der Impedanz von Kondensatoren erlaubt es uns, Filterschaltungen zu bauen. Hierzu betrachten wir erneut RC-Glieder, wie sie bereits im ersten Teil zum Einsatz kamen. Wir betrachten eine Schaltung, wie sie in \abbref{fig:schaltpl_rc_ac} dargestellt ist.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.3\textwidth]{files/script/schaltpl_rc_ac.png}
+  \caption{Schaltplan eines RC-Gliedes mit Wechselspannungsquelle}
+  \label{fig:schaltpl_rc_ac}
+\end{figure}
 
 Die Spannungquelle liefert eine zeitabhängige Wechselspannung, beschrieben durch $U_E(t) = U_0 \e{i\omega t}$. Am Kondensator $C$ nehmen wir eine Spannung ab, für welche nach dem Ohm'schen Gesetz gilt
 \begin{align}
@@ -78,7 +101,14 @@ Gerade den umgekehrten Effekt erhält man durch Vertauschen des Widerstandes und
   \qty|U_R| &= \frac{\qty|U_E|}{\sqrt{1 + \frac{1}{(\omega R C)^2}}}.\label{eq:ampl_hp}
 \end{align}
 
-Der Frequenzgang einer solchen Filterschaltung ist definiert als das Verhältnis der Amplituden $\ffrac{\qty|U_E|}{\qty|U_A|}$ über der Frequenz. Die Grenzfrequenz $\omega_g = \frac{1}{RC} = \frac{1}{\tau}$ ist die Frequenz, an welcher die Ausgangsamplitude $\qty|U_A|$ um den Faktor $\frac{1}{\sqrt{2}}$ gegenüber der Eingangsamplitude abgefallen (Tiefpassfilter) bzw. angestiegen (Hochpassfilter) ist. Den Bereich bis zur Grenzfrequenz eines Filters nennt man dessen Bandbreite.
+Der Frequenzgang (vergleich \abbref{fig:frequenzgang_tiefpass}) einer solchen Filterschaltung ist definiert als das Verhältnis der Amplituden $\ffrac{\qty|U_A|}{\qty|U_E|}$ über der Frequenz. Die Grenzfrequenz $\omega_g = \frac{1}{RC} = \frac{1}{\tau}$ ist die Frequenz, an welcher die Ausgangsamplitude $\qty|U_A|$ um den Faktor $\frac{1}{\sqrt{2}}$ gegenüber der Eingangsamplitude $\qty|U_E|$ abgefallen (Tiefpassfilter) bzw. angestiegen (Hochpassfilter) ist. Den Bereich bis zur Grenzfrequenz eines Filters nennt man dessen Bandbreite.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.80\textwidth]{files/script/frequenzgang_tiefpass.png}
+  \caption{Frequenzgang eines Tiefpassfilters}
+  \label{fig:frequenzgang_tiefpass}
+\end{figure}
 
 \subsubsection*{RC-Glied als Differenzier- und Integrierglied}
 
@@ -193,15 +223,31 @@ Für die Amplituden der Spannungen an den einzelnen Bauteilen gelten die Zusamme
 \begin{align}
 \qty| U_R | = \frac{R}{\qty( R^2 + \qty( \omega L - \frac{1}{\omega C} )^2 )^{\ffrac{1}{2}}} U_0,\\
 \qty| U_C | = \frac{1/(\omega C)}{\qty( R^2 + \qty( \omega L - \frac{1}{\omega C} )^2 )^{\ffrac{1}{2}}} U_0,\\
-\qty| U_L | = \frac{\omega L}{\qty( R^2 + \qty( \omega L - \frac{1}{\omega C} )^2 )^{\ffrac{1}{2}}} U_0.\\
+\qty| U_L | = \frac{\omega L}{\qty( R^2 + \qty( \omega L - \frac{1}{\omega C} )^2 )^{\ffrac{1}{2}}} U_0.
 \end{align}
 
-Betrachten wir die Amplitude $\qty| U_R |$ der Spannung am Widerstand so zeigt sich für verschiedene Werte des Widerstandes das in \todo{abbb} abgebildete Verhalten. Da, wie soeben gezeigt, im Resonanzfall die Gesamtimpedanz von Spule und Kondensator verschwindet, fällt die gesamte Eingangsspannung am Widerstand ab. Die Ausgangsamplitude hier in etwa der Eingangsamplitude. Für von der Resonanzfrequenz abweichende Frequenzen, werden Spule und Kondensator nicht kurzgeschlossen, es fällt also ein teil der Spannung auch an diesen Bauteilen ab. Nach diesem Wirkungsprinzip stellt der Serienschwingkreis einen Bandpass-Filter dar, welcher nur ein bestimmtes Frequenzband um die Resonanzfrequenz passieren lässt. Die Bandbreite ist hier, ähnlich zum Hoch- und Tiefpassfilter, durch die Frequenzen definiert, bei welchen die Amplitude auf das $\sqrt{2}$-Fache gedämpft wird:
+Betrachten wir die Amplitude $\qty| U_R |$ der Spannung am Widerstand so zeigt sich für verschiedene Werte des Widerstandes das in \abbref{fig:resonanzkurve_widerstaende} abgebildete Verhalten. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.70\textwidth]{files/script/resonanzkurve_widerstaende.png}
+  \caption{Resonanzkurven im RLC-Schwingkreis für verschiedene Werte des Widerstands}
+  \label{fig:resonanzkurve_widerstaende}
+\end{figure}
+
+Da, wie soeben gezeigt, im Resonanzfall die Gesamtimpedanz von Spule und Kondensator verschwindet, fällt die gesamte Eingangsspannung am Widerstand ab. Die Ausgangsamplitude hier in etwa der Eingangsamplitude. Für von der Resonanzfrequenz abweichende Frequenzen, werden Spule und Kondensator nicht kurzgeschlossen, es fällt also ein teil der Spannung auch an diesen Bauteilen ab. Nach diesem Wirkungsprinzip stellt der Serienschwingkreis einen Bandpass-Filter dar, welcher nur ein bestimmtes Frequenzband um die Resonanzfrequenz passieren lässt. Die Bandbreite ist hier, ähnlich zum Hoch- und Tiefpassfilter, durch die Frequenzen definiert, bei welchen die Amplitude auf das $\sqrt{2}$-Fache gedämpft wird:
 \begin{align}
   \Delta \omega = \omega_1 - \omega_2 = \frac{R}{L} = 2\delta.
 \end{align}
 
-Abbildung \todo{Abbildung} zeigt nun die Amplituden der Spannungen an allen drei Bauteilen. Zunächst fällt auf, dass die Resonanzfrequenzen für Spule ($\omega_L$) und Kondensator ($\omega_C$) nach rechts bzw. links zur Resonanzfrequenz des Widerstandes verschoben sind. Für diese gilt
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.70\textwidth]{files/script/resonanzkurve_rlc.png}
+  \caption{Resonanzkurven im RLC-Schwingkreis, abgenommen an den drei verschiedenen Bauteilen}
+  \label{fig:resonanzkurve_rlc}
+\end{figure}
+
+\abbref{fig:resonanzkurve_rlc} zeigt nun die Amplituden der Spannungen an allen drei Bauteilen. Zunächst fällt auf, dass die Resonanzfrequenzen für Spule ($\omega_L$) und Kondensator ($\omega_C$) nach rechts bzw. links zur Resonanzfrequenz des Widerstandes verschoben sind. Für diese gilt
 \begin{align}
   \omega_C &= \sqrt{\omega_R^2 - 2\delta^2},\\
   \omega_L &= \sqrt{\omega_R^2 + 2\delta^2}.
@@ -209,12 +255,19 @@ Abbildung \todo{Abbildung} zeigt nun die Amplituden der Spannungen an allen drei
 
 Weiter fällt auf, dass hier die Ausgangsamplituden über den Wert der Eingangsamplitude hinaus steigen. Diese sogenannte Resonanzüberhöhung kommt ohne verstärkendes Bauteil zustande und folgt aufgrund der Phasenverschiebung der Spannungen an Spule und Kondensator immer noch den Vorgaben der Maschenregel. Die Stärke der Resonanzüberhöhung hängt vom ohm'schen Widerstand ab. Bei kleinerem Widerstand beobachten wir eine stärkere Überhöhung, mit zunehmendem Widerstand wird sie immer geringer, bis die Maxima nicht mehr sichtbar sind.
 
-Zum Vergleich betrachten wir nun noch einen Parallelschwingkreis, wie er in Abbildung \todo{abbildung} dargestellt ist. Für die Impedanz in der Parallelschaltung gilt
+Zum Vergleich betrachten wir nun noch einen Parallelschwingkreis, wie er in \abbref{fig:parallelschwingkreis} dargestellt ist. Für die Impedanz in der Parallelschaltung gilt
 \begin{align}
   \frac{1}{Z_P} &= \frac{1}{Z_C} + \frac{1}{Z_L}\\[1em]
   \iff Z_P &= \qty|\frac{1}{\omega L - \frac{1}{\omega C}}|.
 \end{align}
 Nähert man sich der Resonanzfrequenz $\omega_0 = \ffrac{1}{\sqrt{LC}}$ an, so geht der Nenner gegen 0, die Impedanz also ins Unendliche. An dieser Stelle wirkt der LC-Parallelkreis wie ein Isolator, bildet also eine sogenannte Bandsperre für Frequenz im Bereich um $\omega_0$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.70\textwidth]{files/script/parallelschwingkreis.png}
+  \caption{Schaltplan des Parallelschwingkreis}
+  \label{fig:parallelschwingkreis}
+\end{figure}
 
 \subsubsection*{Anwendungen von LC-Gliedern: Radioempfänger}
 
@@ -224,7 +277,14 @@ Um das empfangene Signal hörbar zu machen, muss es zunächst auf den rein posit
 
 \subsection{Versuchsdurchführung}
 
-Der Versuch umfasst insgesamt neun Versuchsteile, von welchen der erste Teil Wechselstromeigenschaften passiver Bauteile und charakteristischen Größen von RC-Filtern und RLC-Schwingkreisen und der zweite Teil mit der praktischen Anwendung von RLC-Schaltungen umfasst. Die grundlegende Schaltung, welche für nahezu alle Versuchsteile zum Einsatz kommt, ist in \todo{abbildung} zu sehen.
+Der Versuch umfasst insgesamt neun Versuchsteile, von welchen der erste Teil Wechselstromeigenschaften passiver Bauteile und charakteristischen Größen von RC-Filtern und RLC-Schwingkreisen und der zweite Teil mit der praktischen Anwendung von RLC-Schaltungen umfasst. Die grundlegende Schaltung, welche für nahezu alle Versuchsteile zum Einsatz kommt, ist in \abbref{fig:schaltplan_versuchsdurchfuehrung} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.70\textwidth]{files/script/schaltplan_versuchsdurchfuehrung.png}
+  \caption{Allgemeiner Schaltplan für die Versuchsdurchführung}
+  \label{fig:schaltplan_versuchsdurchfuehrung}
+\end{figure}
 
 \textbf{Aufgabe 1: Bestimmung der Zeitkonstante eines RC-Gliedes.} Für ein Rechteckssignal, welches wir mit dem Frequenzgenerator generieren, bestimmen wir in einer RC-Schaltung für verschiedene Werte von Kapazität und Widerstand die Halbwertszeit der Kondensatorentladung. Wir vermessen die Halbwertszeit für die Werte
 \begin{enumerate}
@@ -279,3 +339,6 @@ anhand der Spannung am Kondensator. Weiter prüfen wir durch Abnahme der Spannun
   \vspace*{5em}
 \end{multicols}
 
+\textbf{Aufgabe 9: Aufbau eines einfachen AM-Empfängers.} Wir bauen aus dem Drehkondensator ($500\si{\pico\farad}$) und der Spule $L_2$ einen Parallelschwingkreis als Bandpassfilter auf. Diesen verbinden wir mit der Antennenbuchse. Zunächst greifen wir die Spannung direkt am Drehkondensator mit dem Oszilloskop ab und beobachten die Wirkung des Filters auf das Frequenzspektrum. Hierzu variieren wir die Kapazitäten durch den Drehkondensator und die Induktivität durch einen Eisenkern in der Spule.
+
+Dann fügen wir in die Schaltung eine Diode zur demodulation und einen hochohmigen Kopfhörer mit ein. Mit diesem einfachen Radioempfänger versuchen wir nun, durch Anpassung des Drehkondensators das von einer Antenne im Raum entsendete Radiosignal hörbar zu machen.
