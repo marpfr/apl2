@@ -18,13 +18,63 @@ Die Wahrscheinlichkeit $p$ für einen Sprung nach links bzw. nach rechts ist fü
 \end{align}
 
 Da das Zeitintervall $\tau$ zwischen den Stößen sehr klein ist, wird $n = \frac{t}{\tau}$ sehr groß. Somit können $n!$ und $m!$ mit der Stirling'schen Formel
-\begin{align*}
+\begin{align}
   n! &= (2\pi n)^{\frac{1}{2}} n^n \e{-n}
   \intertext{angenähert und die Wahrscheinlichkeitsfunktion zu}
   P(m;n) &= \sqrt{\frac{2}{\pi n}} \e{-\frac{m^2}{2n}}
-\end{align*}
-umgeformt werden.
+\end{align}
+umgeformt werden
 
+Wir möchten nun von der diskreten Verteilung der Variablen $m$ und $n$ zu einer kontinuierlichen Verteilung für die leichter messbaren Variablen $x$ und $t$ übergehen. $m$ ist entweder gerade oder ungerade, somit ist $\Delta m = \pm 2$. Betrachtet auf ein Intervall $\qty[x, x + \Delta x]$, kann sich ein Teilchen an $\frac{\Delta x}{\Delta m \delta} = \frac{\Delta x}{2 \delta}$ verschiedenen Positionen befinden. Wir können die Variable $m$ also entsprechend
+\begin{align}
+  P(m;n)\frac{\Delta x}{2 \delta} = P(x;n) \Delta x
+\end{align}
+substituieren. Weiter setzen wir $n = \flatfrac{t}{\tau}$, $m = \flatfrac{x}{\delta}$ und führen den Diffusionskoeffizienten 
+\begin{align}
+  D = \frac{\delta^2}{2\tau}
+\end{align}
+ein. Damit erhalten wir die Funktion
+\begin{align}
+  P(x;t)\Delta x = \frac{\Delta x}{\sqrt{4 \pi D t}}\e{-\frac{x^2}{4 D t}}
+\end{align}
+für die Wahrscheinlichkeit, dass sich ein Teilchen nach der Zeit $t$ im Intervall $\qty[x, x + \Delta x]$ befindet. Setzen wir 
+\begin{gather}
+  \mu = \expval{x} = \int_{-\infty}^{\infty} x P(x;t) \dd{x} = 0,\\
+  \sigma^2 = \expval{x^2} = \int_{-\infty}^{\infty} x^2 P(x;t) \dd{x} = 2Dt,
+  \intertext{so lässt sich diese mit einer Gaussverteilung}
+  G(x;\mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}\e{-\frac{(\mu-x)^2}{2\sigma^2}}
+\end{gather}
+um $x = 0$ identifizieren. Aus der Definition der Varianz $\sigma$ ergibt sich sogleich die Einstein-Smoluchowski-Gleichung
+\begin{align}
+  \sqrt{\expval{x^2}} = \sqrt{2Dt}.
+\end{align}
+Welche besagt, dass der mittlere Abstand eines Teilchens von dessen Ursprungsort mit $\sqrt{t}$ zunimmt.
+
+Diese Gesetzmäßigkeiten lassen sich leicht von der bisherigen eindimensionalen Betrachtung auf höhere Dimensionen erweitern. Es gilt dann für das mittlere Verschiebungsquadrat
+\begin{align}
+  \expval{r^2} = \expval{x^2} + \expval{y^2}.
+\end{align}
+
+Durch die Isotropie der Brown'schen Bewegung gilt im zweidimensionalen Fall $\sqrt{\expval{r^2}} = \sqrt{4Dt}$ und im dreidimensionalen Fall $\sqrt{\expval{r^2}} = \sqrt{6Dt}$. Nach Einstein gilt für den zuvor eingeführten Diffusionskoeffizienten
+\begin{align}
+  D = \frac{kT}{f}.
+\end{align}
+Dieser gibt die Beweglichkeit eines Teilchens, abhängig von der Boltzmannkonstante $k$, der Temperatur $T$ und dem Reibungskoeffizienten $f$ an. Letzterer lässt sich für kugelförmige Partikel mit dem Radius $a$, suspendiert in einer Flüssigkeit mit Viskosität $\eta$ nach dem Stokes'schen Gesetz
+\begin{align}
+  f = 6\pi\eta a
+\end{align}
+berechnen. Es gilt also 
+\begin{align}
+  D = \frac{kT}{6\pi\eta a}.
+\end{align}
+
+Setzen wir dies in die Definition des mittleren Verschiebungsquadrats in zwei Dimensionen ein, so erhalten wir
+\begin{gather}
+  \expval{r^2} = \frac{4kT}{6\pi\eta a} t
+  \intertext{und schließlich}
+  k = \frac{6\pi\eta a}{4 T t} \expval{r^2}
+\end{gather}
+zur experimentellen Bestimmung der Boltzmannkonstante $k$.
 
 
 \subsection{Versuchsdurchführung}
