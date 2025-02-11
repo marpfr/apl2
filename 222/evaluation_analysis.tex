@@ -1,5 +1,7 @@
 \section{Auswertung}
 
+\textit{Hinweis: Soweit nicht anders angegeben, werden im folgenden Abschnitt alle Fehler nach der standardmäßigen Gauß'schen Fehlerfortpflanzung berechnet.}
+
 \subsection{Betrieb als Kältemaschine und quantitative Bestimmung der Kälteleistung}
 
 Zentral für die Bestimmung des Wirkungsgrades ist die Relation
@@ -15,20 +17,22 @@ Damit erhalten wir für $Q_2$ einen Wert von
     Q_2 = (4.21 \pm 0.05) \si{\joule}.
 \end{align*}
 Die Wärmemenge $Q_1$, welche an das Kühlwasser abgegeben wird, berechnen wir über die kalorische Zustandsgleichung
-\begin{align}
-    Q_1 = \frac{c_W \rho_W \Delta T \dot{V}}{f}. \label{eq:kalo_zust}
-\end{align}
+\begin{gather}
+    Q_1 = \frac{c_W \rho_W \Delta T \dot{V}}{f} \label{eq:kalo_zust}\\
+    \intertext{mit}
+    \Delta Q_1 = Q_1 \cdot \sqrt{\relerrsq{(\Delta T)} + \relerrsq{\dot{V}} + \relerrsq{f}}.
+\end{gather}
 Dafür setzen wir einen Durchfluss von $\dot{V} = (4.205 \pm 0.012) \unit{\meter\squared\per\second}$ und eine Temperaturdifferenz von $\Delta T = (1.70 \pm 0.15) \si{\kelvin}$ ein und erhalten
 \begin{align}
     Q_1 = (5.6 \pm 0.5) \si{\joule}.
 \end{align}
 
 Wie dem Messprotokoll zu entnehmen ist, stammen in den bisherigen Rechnungen Werte wie die Drehzahl $f$ und der Durchfluss $\dot{V}$ aus einer Reihe von $N$ Messungen $x_i$. Für diese, sowie alle folgenden Fälle verwenden wir den klassischen Mittelwert 
-\begin{align}
-\overline{x} &= \frac{1}{N}\sum_{i = 1}^N x_i, 
+\begin{gather}
+\overline{x} = \frac{1}{N}\sum_{i = 1}^N x_i, 
 \intertext{sowie dem Standardfehler des Mittels nach}
-\sigma_{\overline{x}} &= \frac{1}{\sqrt{N}}\sqrt{\frac{1}{N - 1}\sum_{i = 1}^N\qty(\overline{x} - x_i)^2}
-\end{align}
+\sigma_{\overline{x}} = \frac{1}{\sqrt{N}}\sqrt{\frac{1}{N - 1}\sum_{i = 1}^N\qty(\overline{x} - x_i)^2}
+\end{gather}
 und rechnen mit $x = \overline{x} \pm \sigma_{\overline{x}}$.
 
 Zur Bestimmung der pro Umdrehung zugeführten mechanischen Arbeit durch den Motor ziehen wir die Werte $I_M$ und $U_M$ aus dem zweiten Aufgabenteil heran. Dies ist erlaubt, da der Motor für beide Versuchsteile unter den gleichen Bedingungen betrieben wurde. Mit diesen Werten gilt
@@ -68,7 +72,7 @@ Der Verlauf der Temperatur zeigt, ausgehen von der Ausgangstemperatur von etwa $
     \label{fig:tempverlauf_warm}
 \end{figure}
 
-Der Temperaturverlauf beim Betrieb als Wärmepumpe, zu sehen in \abbref{fig:tempverlauf_warm}, zeigt im Wesentlichen das gleiche Verhalten, nur in umgekehrter Reihenfolge. Was allerdings besonders auffällt, ist, dass der gesamte Prozess der Erwärmung des Wassers wesentlich schneller abzulaufen scheint. \todo{WARUM?}
+Der Temperaturverlauf beim Betrieb als Wärmepumpe, zu sehen in \abbref{fig:tempverlauf_warm}, zeigt im Wesentlichen das gleiche Verhalten, nur in umgekehrter Reihenfolge. Was allerdings besonders auffällt, ist, dass der gesamte Prozess der Erwärmung des Wassers wesentlich schneller abzulaufen scheint. Dies könnte unter anderem durch einen Beitrag der Umgebungswärme, eine gezieltere Wärmeübertragung, und einen weniger energieintensiven Phasenübergang verursacht sein.
 
 Nun möchten wir zusätzlich in diesem Versuchsteil die Kälteleistung der Kältemaschine berechnen. Dazu verwendeten wir die Gefrierzeit $t_f = (180 \pm 2)\si{\second}$, welche wir aus der Länge des Plateaus im Temperaturverlauf bestimmt haben. Für die notwendige Energie, um die Menge $V_W$ Wasser zu vollständig zu gefrieren gilt der Zusammenhang
 \begin{align}
@@ -122,8 +126,8 @@ Wir berechnen die angegebenen Werte zunächst für die Leerlaufmessung ohne, das
     \centering
     \begin{tabular}{l | c | c | c | c | c | c | c | c}
     \textbf{} & \boldmath$f\,\qty[\si{\per\second}]$ & \boldmath$P_{\text{el}}\,\qty[\si{\joule\per\second}]$ & \boldmath$Q_{\text{el}}\,\qty[\si{\joule}]$ & \boldmath$P_{\text{ab}}\,\qty[\si{\joule\per\second}]$ & \boldmath$Q_{\text{ab}}\,\qty[\si{\joule}]$ & \boldmath$P_{pV}\,\qty[\si{\joule\per\second}]$ & \boldmath$Q_{pV}\,\qty[\si{\joule}]$ & \boldmath$\eta_{\text{th}}$ \\\hline
-    Wert & $4.815$ & $144.8$ & $30.08$ & $57$ & $11.9$ & $7.49$ & $1.556$ & $0.0517$ \\\hline
-    Fehler & $\pm 0.011$ & $\pm 0.7$ & $\pm 0.16$ & $\pm 3$ & $\pm 0.6$ & $\pm 0.09$ & $\pm 0.017$ & $\pm 0.0006$ \\
+    Wert & $4.815$ & $144.8$ & $30.08$ & $57.3$ & $11.9$ & $7.49$ & $1.556$ & $0.0517$ \\\hline
+    Fehler & $\pm 0.011$ & $\pm 0.7$ & $\pm 0.16$ & $\pm 2.5$ & $\pm 0.6$ & $\pm 0.09$ & $\pm 0.017$ & $\pm 0.0007$ \\
     \end{tabular}
     \caption{Berechnete Werte aus der Leerlaufmessung}
     \label{tab:werte_leerlauf}
@@ -150,17 +154,17 @@ In \tabref{tab:werte_gebremst} betrachten wir die Werte bei angebrachtem Bremsza
     \toprule
     \textbf{Einstellung} & \boldmath$F\,\qty[\si{\newton}]$ & \boldmath$f\,\qty[\si{\per\second}]$ & \boldmath$W_D\,\qty[\si{\joule}]$ & \boldmath$W_{pV}\,\qty[\si{\joule}]$ & \boldmath$\eta_{\text{th}}$ & \boldmath$\eta_{\text{eff}}$ \\
     \midrule
-    \multirow{2}{*}{\boldmath$0.8\si{\newton}$} & $0.80$ & $3.1942$ & $1.2566$ & $2.7388$ & $0.0604$ & $0.0277$ \\
-     & $\pm 0.02$ & $\pm 0.0116$ & $\pm 0.0314$ & $\pm 0.0267$ & $\pm 0.0007$ & $\pm 0.0007$ \\
+    \multirow{2}{*}{\boldmath$0.8\si{\newton}$} & $0.80$ & $3.194$ & $1.26$ & $2.739$ & $0.0604$ & $0.0277$ \\
+     & $\pm 0.02$ & $\pm 0.012$ & $\pm 0.04$ & $\pm 0.027$ & $\pm 0.0007$ & $\pm 0.0008$ \\
     \midrule
-    \multirow{2}{*}{\boldmath$0.6\si{\newton}$} & $0.60$ & $3.5054$ & $0.9425$ & $2.5510$ & $0.0617$ & $0.0228$ \\
-     & $\pm 0.02$ & $\pm 0.0065$ & $\pm 0.0314$ & $\pm 0.0065$ & $\pm 0.0004$ & $\pm 0.0008$ \\
+    \multirow{2}{*}{\boldmath$0.6\si{\newton}$} & $0.60$ & $3.505$ & $0.94$ & $2.551$ & $0.0617$ & $0.0228$ \\
+     & $\pm 0.02$ & $\pm 0.007$ & $\pm 0.04$ & $\pm 0.007$ & $\pm 0.0004$ & $\pm 0.0008$ \\
     \midrule
-    \multirow{2}{*}{\boldmath$0.4\si{\newton}$} & $0.40$ & $3.8312$ & $0.6283$ & $2.3157$ & $0.0613$ & $0.0166$ \\
-     & $\pm 0.02$ & $\pm 0.0057$ & $\pm 0.0314$ & $\pm 0.0132$ & $\pm 0.0005$ & $\pm 0.0008$ \\
+    \multirow{2}{*}{\boldmath$0.4\si{\newton}$} & $0.40$ & $3.831$ & $0.63$ & $2.316$ & $0.0613$ & $0.0166$ \\
+     & $\pm 0.02$ & $\pm 0.006$ & $\pm 0.04$ & $\pm 0.014$ & $\pm 0.0005$ & $\pm 0.0009$ \\
     \midrule
-    \multirow{2}{*}{\boldmath$0.2\si{\newton}$} & $0.20$ & $4.2450$ & $0.3142$ & $2.0890$ & $0.0612$ & $0.0092$ \\
-     & $\pm 0.02$ & $\pm 0.0099$ & $\pm 0.0314$ & $\pm 0.0225$ & $\pm 0.0007$ & $\pm 0.0009$ \\
+    \multirow{2}{*}{\boldmath$0.2\si{\newton}$} & $0.20$ & $4.245$ & $0.31$ & $2.089$ & $0.0612$ & $0.0092$ \\
+     & $\pm 0.02$ & $\pm 0.010$ & $\pm 0.04$ & $\pm 0.023$ & $\pm 0.0008$ & $\pm 0.0010$ \\
     \bottomrule
     \end{tabular}
     \label{tab:werte_gebremst}

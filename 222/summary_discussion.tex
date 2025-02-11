@@ -33,7 +33,7 @@ Diese Kühlleistung ist sehr viel geringer, als die zuvor mittels der Kompensati
 
 In Versuchsteil drei beschäftigen wir uns mit der Umwandlung von zugeführter Wärme in mechanische Arbeit. Hierzu brachten wir wieder die Heizwendel am Zylinder des Motors an. In einer Leerlaufmessung bestimmten wir zunächst die zugeführte elektrische Leistung und Wärme, die an das Kühlsystem abgeführte Wärme, sowie die vom Motor aufgebrachte mechanische Arbeit. Für letzteres zeichneten wir mit der Software \textit{Cassy Lab} das $pV$-Diagramm des Kreisprozesses auf und berechneten die mechanische Arbeit aus dessen Fläche. Als Verhältnis der mechanischen Arbeit zur zugeführten elektrischen Energie bestimmten wir den thermischen Wirkungsgrad zu
 \begin{align*}
-  \eta_{th} = 0.0517 \pm 0.00006.
+  \eta_{th} = 0.0517 \pm 0.0007.
 \end{align*}
 Dieser ist sehr gering, was sich auch in den sehr hohen Verlusten in einer Höhe von
 \begin{align*}
@@ -49,22 +49,22 @@ Für den zweiten Abschnitt des dritten Versuchsteils brachten wir an der Antrieb
   \toprule
   \textbf{Eingestellte Kraft} & \boldmath$f\,\qty[\si{\per\second}]$ & \boldmath$\eta_{\text{th}}$ & \boldmath$\eta_{\text{eff}}$ \\
   \midrule
-  \multirow{2}{*}{\boldmath$0.8\si{\newton}$} & $3.1942$& $0.0604$ & $0.0277$ \\
-   & $\pm 0.0116$ & $\pm 0.0007$ & $\pm 0.0007$ \\
+  \multirow{2}{*}{\boldmath$0.8\si{\newton}$} & $3.194$& $0.0604$ & $0.0277$ \\
+   & $\pm 0.012$ & $\pm 0.0007$ & $\pm 0.0008$ \\
   \midrule
-  \multirow{2}{*}{\boldmath$0.6\si{\newton}$} & $3.5054$ & $0.0617$ & $0.0228$ \\
-   & $\pm 0.0065$ & $\pm 0.0004$ & $\pm 0.0008$ \\
+  \multirow{2}{*}{\boldmath$0.6\si{\newton}$} & $3.505$ & $0.0617$ & $0.0228$ \\
+   & $\pm 0.007$ & $\pm 0.0004$ & $\pm 0.0008$ \\
   \midrule
-  \multirow{2}{*}{\boldmath$0.4\si{\newton}$} &  $3.8312$& $0.0613$ & $0.0166$ \\
-   &  $\pm 0.0057$& $\pm 0.0005$ & $\pm 0.0008$ \\
+  \multirow{2}{*}{\boldmath$0.4\si{\newton}$} &  $3.831$& $0.0613$ & $0.0166$ \\
+   &  $\pm 0.006$& $\pm 0.0005$ & $\pm 0.0009$ \\
   \midrule
-  \multirow{2}{*}{\boldmath$0.2\si{\newton}$} &  $4.2450$& $0.0612$ & $0.0092$ \\
-   &  $\pm 0.0099$ & $\pm 0.0007$ & $\pm 0.0009$ \\
+  \multirow{2}{*}{\boldmath$0.2\si{\newton}$} &  $4.245$& $0.0612$ & $0.0092$ \\
+   &  $\pm 0.0010$ & $\pm 0.0008$ & $\pm 0.0010$ \\
   \bottomrule
   \end{tabular}
   \label{tab:werte_gebremst_kurz}
   \caption{Berechneter thermischer und effektiver Wirkungsgrad mit Unsicherheiten für verschiedene Bremskrafteinstellungen}
 \end{table}
-Betrachten wir den funktionalen Verlauf der Wirkungsgrade, auch noch einmal grafisch dargestellt in den Abbildungen (\ref{fig:eta_th_freq}) und (\ref{fig:eta_eff_freq}), fällt auf, dass der thermische Wirkungsgrad, unter Beachtung der großen Fehlerbereiche, weitestgehend konstant bleibt, während der effektive Wirkungsgrad mit steigender Motorfrequenz abfällt. Diese Beobachtungen lassen sich bereits durch die mathematische Betrachtung erklären. Sowohl die mechanische Arbeit, als auch die $Q_{el}$ skalieren gleichermaßen mit der Motorfrequenz $f$. Diese kürzt sich durch die relative Betrachtung heraus. 
+Betrachten wir den funktionalen Verlauf der Wirkungsgrade, auch noch einmal grafisch dargestellt in den Abbildungen (\ref{fig:eta_th_freq}) und (\ref{fig:eta_eff_freq}), fällt auf, dass der thermische Wirkungsgrad, unter Beachtung der großen Fehlerbereiche, weitestgehend konstant bleibt, während der effektive Wirkungsgrad mit steigender Motorfrequenz abfällt. Diese Beobachtungen lassen sich bereits durch die mathematische Betrachtung erklären. Der thermische Wirkungsgrad lässt sich durch Einsetzen auf das Verhältnis $\eta_{th} = \frac{P_{pV}}{P_{el}} \frac{f}{f}$ bringen, hier kürzt sich die Frequenz $f$ also heraus, was die Unabhängigkeit von dieser erklärt. Den effektiven Wirkungsgrad führen wir auf den Bruch $\eta_{eff} = \frac{2 \pi D f}{P_{el}}$ zurück. Wodurch sich die Proportionalität zur Frequenz zeigt.
 
 Die beiden Wirkungsgrade sind unterschiedlich, weil $\eta_{th}$ die gesamte mechanische Arbeit im thermodynamischen Kreisprozess betrachtet, während nur $\eta_{eff}$ die effektiv abgegebene Arbeit am Bremszaum berücksichtigt. Die Diskrepanz resultiert aus Reibungsverlusten, ungenutzter Energie und Ineffizienzen im Motor.
