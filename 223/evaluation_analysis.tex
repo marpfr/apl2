@@ -11,7 +11,6 @@ Wir betrachten zunächst den Weg unseres ausgewählten Partikels in der zweidime
   \caption{Aufgezeichneter Weg des Partikels in der zweidimensionalen Ebene.}
   \label{fig:brown1}
 \end{figure}
-
 Aus der Änderung zweier nebeneinander liegender $x$- und $y$-Koordinaten
 \begin{gather}
   \Delta x_i = x_{i+1} - x_i\\
@@ -28,17 +27,16 @@ Nach Gleichung \eqref{eq:k_boltz} können wir nun einen Wert für die Boltzmannk
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.90\textwidth]{files/viskositaet_ablesen.png}
+  \includegraphics[width=.80\textwidth]{files/viskositaet_ablesen.png}
   \caption{Temperaturabhängigkeit der Viskosität von Wasser.}
   \label{fig:viskositaet_ablesen.png}
 \end{figure}
-
 Wie in der Abbildung zu sehen, können wir am Grafen bei $22.2\si{\celsius}$ eine Viskosität von in etwa $(9.50 \pm 0.01) \cdot 10^{-4} \si{\pascal\per\second}$ ablesen.
 
 
 Damit erhalten wir für die Boltzmannkonstante einen Wert von
 \begin{align}
-  k_{1} = (1.21 \pm  0.12) \cdot 10^{-23}.
+  k_{1} = (1.21 \pm  0.12) \cdot 10^{-23} \si{\joule\per\kelvin}.
 \end{align}
 Aufgrund der großen Anzahl an Variablen in dieser Formel verwenden wir hier für die Fehlerberechnung die relativen Fehler:
 \begin{align}
@@ -49,7 +47,7 @@ Um den Diffusionskoeffizienten $D$ zu berechnen stellen wir die Gleichung $\sqrt
 \begin{gather}
   D = \frac{1}{4} \frac{\overline{\expval{r^2}}}{\overline{t}}
   \intertext{und erhalten}
-  D = (5.3 \pm 0.5) \cdot 10^{-13}
+  D = (5.3 \pm 0.5) \cdot 10^{-13} \si{\meter\squared\per\second}
 \end{gather}
 mit Fehler nach der klassischen Gauß'schen Fehlerfortpflanzung.
 
@@ -63,7 +61,6 @@ Wir möchten nun die mathematische Aussage prüfen, dass die Wahrscheinlichkeit,
   \caption{Histogramm der mittleren Verschiebungsquadrate in in $x$- und $y$-Richtung.}
   \label{fig:brown2}
 \end{figure}
-
 $\mu$ und $\sigma^2$ der im Plot in blau dargestellten Gaußkurve berechnen wir aus den Daten anhand der standardmäßigen Formeln für Mittelwert und Standardabweichung
 \begin{gather}
   \mu = \frac{1}{N} \sum_{i = 1}^N x_i,\\
@@ -82,7 +79,6 @@ Für einen weiteren Ansatz zur Berechnung der Boltzmannkonstante betrachten wir 
   \caption{Kumulative Verschiebung eines Partikels als Funktion der Zeit.}
   \label{fig:brown3}
 \end{figure}
-
 An die Verteilung fitten wir eine standardmäßige lineare Funktion der Form $mx + b$, im Plot dargestellt in Blau. Die optimierten Werte für $m$ und $b$, sowie deren Fehler, sind in der Legende des Plots angegeben. Mit der Steigung $m$ der Geraden können wir nun das Verhältnis $\frac{\overline{\expval{r^2}}}{\overline{t}}$ in der ursprünglichen Formel für die Boltzmannkonstante ersetzen. Es gilt also
 \begin{gather}
   k_{2} = \frac{6\pi\eta a m}{4 T}\\
@@ -92,10 +88,10 @@ An die Verteilung fitten wir eine standardmäßige lineare Funktion der Form $mx
 
 Wir berechnen damit einen Wert von
 \begin{align}
-  k_{2} = (1.26 \pm 0.06) \cdot 10^{-23}.
+  k_{2} = (1.26 \pm 0.06) \cdot 10^{-23} \si{\joule\per\kelvin}.
 \end{align}
 
 Die Formel für den Diffusionskoeffizienten reduziert sich unter Verwendung der Steigung $m$ auf
 \begin{align}
-  D = \frac{1}{4} m = (5.53 \pm 0.07) \cdot 10^{-13}.
+  D = \frac{1}{4} m = (5.53 \pm 0.07) \cdot 10^{-13} \si{\meter\squared\per\second}.
 \end{align}

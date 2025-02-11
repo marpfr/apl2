@@ -1,9 +1,39 @@
 \section{Zusammenfassung und Diskussion}
 
-Die Brown'schen Bewegung beschreibt die zufälligen Zickzackbewebungen kleiner Teilchen in einer Flüssigkeit oder einem Gas, die durch Stöße mit den umgebenden Molekülen verursacht werden. Sie wurde 1827 von Robert Brown beobachtet und später durch die kinetische Gastheorie und Albert Einsteins mathematische Beschreibung erklärt. Bei Betrachtung des mittleren Verschiebungsquadrats, welches ein Partikel durch die Brown'sche Bewegung zurücklegt ergibt sich ein direkter mathematischer Zusammenhang zwischen diesem und der Boltzmannkonstante, nach der Formel
-
+Die Brown'schen Bewegung beschreibt die zufälligen Zickzackbewebungen kleiner Teilchen in einer Flüssigkeit oder einem Gas, die bei einer Temperatur über $0\si{\kelvin}$ durch Stöße mit den umgebenden Molekülen verursacht werden. Sie wurde 1827 von Robert Brown beobachtet und später durch die kinetische Gastheorie und Albert Einsteins mathematische Beschreibung erklärt. Bei Betrachtung des mittleren Verschiebungsquadrats, welches ein Partikel durch seine Brown'sche Bewegung zurücklegt ergibt sich ein direkter mathematischer Zusammenhang zwischen diesem und der Boltzmannkonstante, nach der Formel
 \begin{gather*}
   k = \frac{6\pi\eta a}{4 T t} \expval{r^2}.
 \end{gather*}
+In dieser Formel lässt sich der Faktor
+\begin{gather*}
+ \frac{kT}{6 \pi \eta a}
+\end{gather*}
+mit dem Diffusionskoeffizienten $D$ identifizieren, welcher die Beweglichkeit eines Teilchens angibt.
 
-Ziel von Versuch 223 war es, die Boltzmannkonstante anhand der Brown'schen Bewegung von in Flüssigkeit suspendierten Latexpartikeln zu bestimmen. 
+Ziel von Versuch 223 war es, die Boltzmannkonstante anhand der Brown'schen Bewegung von in Flüssigkeit suspendierten Latexpartikeln zu bestimmen. Hierzu haben wir die Bewegung in der horizontalen Ebene eines einzelnen Latexpartikels mit einem Mikroskop über einen Zeitraum von $150\si{\second}$ beobachtet und aufgezeichnet. Aus den zurückgelegten Wegstrecken pro Sekunde haben wir das mittlere Verschiebungsquadrat des Partikels zu
+\begin{align*}
+  \overline{\expval{r^2}} = (2.12 \pm 0.18) \cdot 10^{-12} \si{\meter\squared}
+\end{align*}
+berechnet. Mit der oben genannten Formel konnten wir daraus für die Boltzmannkonstante einen Wert von
+\begin{align*}
+  k_{1} = (1.21 \pm  0.12) \cdot 10^{-23}\si{\joule\per\kelvin}
+\end{align*}
+berechnen. Außerdem haben wir für den Diffusionskoeffizienten eines Latexpartikels einen Wert von 
+\begin{align*}
+  D = (5.3 \pm 0.5) \cdot 10^{-13} \si{\meter\squared\per\second}
+\end{align*}
+bestimmt.
+
+Der von uns hier berechnete Wert für die Boltzmannkonstante weicht um etwa $1.6\sigma$ vom Literaturwert\footnote{$k = 1.380\,649 \cdot 10^{-23}\si{\joule\per\kelvin}$, 2022 CODATA recommended values} ab. Die Abweichung ist damit zwar als nicht signifikant einzustufen, dennoch bietet es sich an, auf einige mögliche Fehlerquellen einzugehen. Zum einen ist es wichtig zu bemerken, dass wir, wie bereits erwähnt, die Bewegung des Partikels nur in zwei Dimensionen, anstatt der möglichen drei betrachtet haben. Die führt zu einer Unterschätzung des mittleren Verschiebungsquadrates und somit auch der Boltzmannkonstante. Weiter spielen Umgebungseffekte eine Rolle. So können eine schwankende Temperatur um die Probe, beispielsweise verursacht durch das Mikroskop, oder auch eine imperfekte Abdichtung der Suspension zu Bewegungen der Flüssigkeit und der Partikel, unabhängig von der eigentlichen Brown'schen Bewegung führen.
+
+Die mathematische Theorie hinter der Brown'schen Bewegung sagt voraus, dass die Wahrscheinlichkeit, ein Partikel nach der Zeit $t$ im Intervall $\qty[x, x + \Delta x]$ zu finden, Gaußverteilt ist. Um dies zu bestätigen haben wir alle mittleren Verschiebungsquadrate gemeinsam in einem Histogramm geplottet, siehe \abbref{fig:brown2}. Trotz der vorliegenden vergleichsweise geringen Menge an Daten konnte die Form des Histogramms bereits sehr gut mit einer Gaußkurve umschrieben werden.
+
+Mit der Betrachtung der kumulativen Verteilung der Verschiebungsquadrate als Funktion der Zeit haben wir im letzten Teil der Auswertung die Boltzmannkonstante noch auf einem weiteren Weg berechnet. Anhand eines Fits einer linearen Funktion haben wir hierbei die Steigung der kumulativen Verteilung ermittelt, welche in der Berechnung der Boltzmannkonstante nun den Faktor $\frac{\expval{r^2}}{t}$ ersetzt. Der berechnete Wert beläuft sich auf
+\begin{align*}
+  k_{2} = (1.26 \pm 0.06) \cdot 10^{-23},
+\end{align*}
+was in etwa $0.44\sigma$ vom zuvor berechneten Wert abweicht. Für den Diffusionskoeffizienten haben wir in diesem Verfahren einen Wert von
+\begin{align*}
+  D = (5.53 \pm 0.07) \cdot 10^{-13}
+\end{align*}
+ermittelt, welcher um ca. $0.54\sigma$ vorherigen Wert abweicht. Die Abweichungen sind nicht von den zuvor Berechneten werden sind nicht signifikant und sollten vermutlich hauptsächlich auf den Fit an die kumulative Verteilung zurückzuführen sein. Betrachten wir \abbref{fig:brown3} der Auswertung, so ist zu sehen, dass die Datenpunkte sehr stark um die optimierte Gerade schwanken. Diese Ungenauigkeit zeigt sich in den berechneten Werten wieder.
