@@ -52,7 +52,7 @@ Welche besagt, dass der mittlere Abstand eines Teilchens von dessen Ursprungsort
 
 Diese Gesetzmäßigkeiten lassen sich leicht von der bisherigen eindimensionalen Betrachtung auf höhere Dimensionen erweitern. Es gilt dann für das mittlere Verschiebungsquadrat
 \begin{align}
-  \expval{r^2} = \expval{x^2} + \expval{y^2}.
+  \expval{r^2} = \expval{x^2} + \expval{y^2}. \label{eq:r_squared}
 \end{align}
 
 Durch die Isotropie der Brown'schen Bewegung gilt im zweidimensionalen Fall $\sqrt{\expval{r^2}} = \sqrt{4Dt}$ und im dreidimensionalen Fall $\sqrt{\expval{r^2}} = \sqrt{6Dt}$. Nach Einstein gilt für den zuvor eingeführten Diffusionskoeffizienten
@@ -72,20 +72,18 @@ Setzen wir dies in die Definition des mittleren Verschiebungsquadrats in zwei Di
 \begin{gather}
   \expval{r^2} = \frac{4kT}{6\pi\eta a} t
   \intertext{und schließlich}
-  k = \frac{6\pi\eta a}{4 T t} \expval{r^2}
+  k = \frac{6\pi\eta a}{4 T t} \expval{r^2}\label{eq:k_boltz}
 \end{gather}
 zur experimentellen Bestimmung der Boltzmannkonstante $k$.
 
-
+\newpage\noindent
 \subsection{Versuchsdurchführung}
-
-
 
 \textbf{Herstellen der Probe suspendierter Latexpartikel.} Bevor wir mit der eigentlichen Messung beginnen können, müssen wir eine Probe auf einem Objektivträger präparieren. Dieser widmen wir uns im ersten Versuchsteil. Hierzu kleben wir ein Stück doppelseitiges Klebeband, aus dessen Mitte wir ein Loch ausgestanzt hatten, auf den Objektivträger. In den ausgestanzten Bereich pipettieren wir ca. $150\si{\micro\liter}$ der Probeflüssigkeit und kleben dann ein weiteres Deckglas darauf, um die Flüssigkeit einzuschließen. Dabei achten wir auf die Vermeidung von Luftblasen in der Flüssigkeit. Wir spannen nun den Objektivträger in das Mikroskop ein. Nach dem Einstellen des Objektivs \textit{100/1.25 oil} verwenden wir den groben und feinen Fokusantrieb des Mikroskops, um die suspendierten Latexpartikel in der Probe zu fokussieren. 
 
 Für alle folgenden Schritte verwenden wir die Funktionen, darunter eine Video- und Bildübertragung, Aufzeichnung und Maßstab-Kalibrierung, der Mikroskopsoftware am PC.
 
-\textbf{Aufnahme einer Bildfolge.} Aus den sichtbaren Partikeln wählen wir einen eher mittig gelegenen aus, um möglichst zu vermeiden, dass dieser während der Messung aus dem Bild wandert. \abbref{fig:bild105} zeigt einen Schnappschuss aus dem Zeitraum der Messung, der beobachtete Partikel ist hier mit einem Kreis markiert. Nun nehmen wir eine Folge von 156 Bildern auf und notieren im Nachhinein noch die Raumtemperatur für die späteren Berechnungen.
+\textbf{Aufnahme einer Bildfolge.} Aus den sichtbaren Partikeln wählen wir einen eher mittig gelegenen aus, um möglichst zu vermeiden, dass dieser während der Messung aus dem Bild wandert. \abbref{fig:bild105} zeigt einen Schnappschuss aus dem Zeitraum der Messung, das beobachtete Partikel ist hier mit einem Kreis markiert. Nun nehmen wir eine Folge von 156 Bildern auf und notieren im Nachhinein noch die Raumtemperatur für die späteren Berechnungen.
 
 \begin{figure}[H]
   \centering
@@ -94,7 +92,7 @@ Für alle folgenden Schritte verwenden wir die Funktionen, darunter eine Video- 
   \label{fig:bild105}
 \end{figure}
 
-\textbf{Eichen des abgebildeten Ausschnitts mit einem Mikrometermaßstab.} Um in der nachfolgenden Auswertung mit den korrekten Längeneinheiten rechnen zu können, nutzen wir einen Mikrometermaßstab, um den Abbildungsmaßstab zu ermitteln. \abbref{fig:calibration} zeigt, wie der Mikrometermaßstab unter dem Mikroskop aussieht. Außerdem sind in der Abbildung die beiden Messpunkte zu sehen, welche wir benutzen, um den Abbildungsmaßstab zu ermitteln.
+\textbf{Eichen des abgebildeten Ausschnitts mit einem Mikrometermaßstab.} Um in der nachfolgenden Auswertung mit den korrekten Längeneinheiten rechnen zu können, nutzen wir einen Mikrometermaßstab, um den Abbildungsmaßstab zu ermitteln. \abbref{fig:calibration} zeigt, wie der Mikrometermaßstab unter dem Mikroskop aussieht. Je zwei Teilstriche auf der Skala sind $10\si{\micro\meter}$ voneinander entfernt. In der Abbildung sind außerdem die beiden Messpunkte zu sehen, welche von der Software zur Berechnung des Abbildungsmaßstabs benutzt wird.
 
 \begin{figure}[H]
   \centering
@@ -102,3 +100,5 @@ Für alle folgenden Schritte verwenden wir die Funktionen, darunter eine Video- 
   \caption{testest}
   \label{fig:calibration}
 \end{figure}
+
+\textbf{Vermessen der Partikelpositionen für jedes Bild der auf genommenen Folge.} Abschließend müssen wir das von uns zuvor ausgewählte Partikel auf jedem der aufgenommenen Fotos markieren. Hierbei hilft uns zu Teilen wieder die Mikroskopsoftware. Da diese jedoch das ausgewählte Partikel nicht automatisch erkennt, müssen wir diesen für jedes Bild einzeln manuell suchen und auswählen. Die ausgewählten Positionen werden von der Software automatisch in einer Textdatei zur Auswertung gespeichert.
