@@ -4,7 +4,8 @@
 
 Wir verwenden die in Aufgabenteil 1 gemessenen Halbwertszeiten, um die Zeitkonstante nach Gleichung \eqref{eq:zeitkonst} zu berechnen. Den theoretischen Wert der Zeitkonstante ermitteln wir anhand der Formel $\tau = RC$ mit dem Widerstand $R$ und der Kapazität $C$. Die resultate der Berechnungen für alle vier Konfigurationen der RC-Schaltung sind \tabref{tab:a1_zeitkonst} zu entnehmen.
 
-\begin{table}[h]
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c | c | c | c |}
       \hline
@@ -20,6 +21,7 @@ Wir verwenden die in Aufgabenteil 1 gemessenen Halbwertszeiten, um die Zeitkonst
   \caption{Messwerte und berechnete Größen}
   \label{tab:a1_zeitkonst}
 \end{table}
+\renewcommand{\arraystretch}{1}
 
 \abbref{fig:aufgabe1_rc_signalverlauf} zeigt exemplarisch den Spannungsverlauf für die letzte angegebene Schaltungskonfiguration. 
 
@@ -136,6 +138,7 @@ und somit durch
 \end{align}
 eine weitere Formel, um den Gesamtwiderstand zu berechnen. Die folgende Tabelle zeigt nun die in den drei Messgängen aufgezeichneten Werte der Ein- und Ausgangsspannung $U_E$ und $U_A$, der Resonanzfrequenz $\omega_R$, sowie der Bandbreite $\Delta \omega$. Als Induktivität verwenden wir den zuvor berechneten Mittelwert. Weiter enthält die Tabelle die berechneten Werte für $R + R_V$, den verwendeten Widerstand, sowie deren Differenz, also die Verlustleistung $R_V$.
 
+\renewcommand{\arraystretch}{1.5}
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|c|c|c|}
@@ -160,3 +163,111 @@ eine weitere Formel, um den Gesamtwiderstand zu berechnen. Die folgende Tabelle 
     \hline
   \end{tabular}
 \end{table}
+\renewcommand{\arraystretch}{1}
+
+\todo{Vergleich der Werte aus Bandbreite und Amplituden}\\
+\todo{Weirde Fehler??}
+
+\textit{Ich habe mir herausgenommen, die Aufgaben etwas umzusortieren.}
+
+\subsection{Bestimmung der Dämpfungskonstanten eines freien, gedämpften Schwingkreises}
+
+Anstatt eines kontinuierlichen Signals geben wir nun mit dem Funktionsgenerator ein Rechteckssignal in den Serienschwingkreis ein, um wiederholt einen auslaufenden Schwingungprozess anzustoßen (vgl. \abbref{fig:aufgabe6_schwingung_gedaempft}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{files/aufgabe6_schwingung_gedaempft.png}
+  \caption{Gedämpfte Schwingung}
+  \label{fig:aufgabe6_schwingung_gedaempft}
+\end{figure}
+
+Für je zwei benachbarte Amplituden der Schwingung berechnen wir nun das logarithmische Dekrement nach Formel \eqref{eq:log_dekr}.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+  \centering
+  \caption{Logarithmisches Dekrement für je zwei benachbarten Amplituden der gedämpften Schwingung.}
+  \begin{tabular}{c|c|c}
+    $A_n\,[\si{\volt}]$ & $A_{n+1}\,[\si{\volt}]$ & $\Lambda$\\\hline
+    $0.74 \pm 0.02$ & $0.50 \pm 0.02$ &	$0.39 \pm 0.05 $\\
+    $0.50 \pm 0.02$ & $0.36 \pm 0.02$ &	$0.33 \pm 0.07 $\\
+    $0.36 \pm 0.02$ & $0.26 \pm 0.02$ &	$0.33 \pm 0.10 $\\
+    $0.26 \pm 0.02$ & $0.18 \pm 0.02$ &	$0.37 \pm 0.14 $\\
+    \hline\hline
+    \multicolumn{2}{c}{Mittelwert} & $0.35 \pm 0.05$\\\hline
+  \end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Für Periodendauer einer Schwingung haben wir einen Wert von $T = 0.26 \pm 0.02\si{\milli\second}$ gemessen. Diesen verwenden wir nun, um über den zweiten Teil der \eqref{eq:log_dekr} die Dämpfungskonstante $\delta$ beziehungsweise den Gesamtwiderstand nach
+\begin{gather}
+  \Lambda = \delta T = \frac{R}{2L} T \iff R = \frac{2 \Lambda L}{T}
+  \intertext{mit Fehler}
+  \Delta R = R \cdot \sqrt{\relerrsq{\Lambda} + \relerrsq{L} + \relerrsq{T}}
+\end{gather}
+zu berechnen. Unter anderem ziehen wir die berechnete Induktivität $L$ aus dem vorherigen Abschnitt hinzu. Damit erhalten wir einen Wert von
+\begin{align}
+  R = (99 \pm 60)\,\si{\ohm}.
+\end{align}
+Bei diesem handelt es sich wieder um den Gesamtwiderstand der RLC-Schaltung, also mit dem einberechneten Verlusten $R_V$ durch die Spule. Vergleichen wir den hier berechneten Wert mit dem Wert des vorherigen Abschnitts ($(128 \pm 75) \,\si{\ohm}$), verzeichnen wir eine Abweichung von etwa $0.31\sigma$.
+
+\subsection{Resonanzüberhöhung}
+Wir betrachten nun die Frequenzgänge der einzelnen Bauteile im RLC-Serienschwingkreis genauer. Diese sind gemeinsam in \abbref{fig:aufgabe5_resonanzueberhoehung} geplottet: In Rot der Frequenzgang des Kondensators, in Blau der Frequenzgang der Spule und in Schwarz der Frequenzgang des Widerstandes. Deutlich zu erkennen ist im Plot die Resonanzüberhöhung in den Frequenzgängen des Kondensators und der Spule.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{files/aufgabe5_resonanzueberhoehung.png}
+  \caption{Frequenzgänge der einzelnen Bauteile Kondensator (rot), Spule (blau) und Widerstand (schwarz) im RLC-Serienschwingkreis.}
+  \label{fig:aufgabe5_resonanzueberhoehung}
+\end{figure}
+
+Wir möchten nun unsere vermessenen Resonanzfrequenzen mit den entsprechenden theoretischen Werten vergleichen. Dazu berechnen wir zunächst die Dämpfungskonstante nach der Formel aus dem vorherigen Abschnitt zu
+\begin{align}
+  \delta = (3028 \pm 1758)\si{\per\second}.
+\end{align}
+
+Weiter berechnen wir die Resonanzfrequenz des Widerstandes nach \eqref{eq:rlc_omega_r} zu
+\begin{align}
+  \omega_R = (3910 \pm 20)\si{\per\second}.
+\end{align}
+
+Die Resonanzfrequenz des Kondensators berechnen wir mit der Formel \eqref{eq:rlc_omega_c}. Für den Fehler des Ergebnisses gilt hierbei
+\begin{align}
+  \Delta \omega_C = \sqrt{\qty(\frac{\omega_R \Delta \omega_R}{\omega_C})^2 + \qty(\frac{\delta \Delta \delta}{\omega_C})^2}.
+\end{align}
+Die Formel für die Resonanzfrequenz der Spule \eqref{eq:rlc_omega_l} ist dazu sehr ähnlich. Ihr Fehler berechnet sich nach der gleichen Formel wie beim Kondensator, wir ersetzen lediglich $\omega_C$ durch $\omega_L$. \tabref{tab:omega_vergleich} enthält nun die berechneten Werte, die gemessenen Werte, sowie die berechnete Abweichung.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+  \centering
+  \caption{Vergleich der gemessenen und theoretisch vorhergesagten Werte der Resonanzfrequenzen der Bauteile im RLC-Serienschwingkreis.}\vspace*{0.5em}
+  \label{tab:omega_vergleich}
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+    & $\omega_R\,[\si{\per\second}]$ & $\omega_C\,[\si{\per\second}]$ & $\omega_L\,[\si{\per\second}]$\\\hline
+    Gemessener Wert & $3910 \pm 20$ & $3800 \pm 20$ & $4040 \pm 20$ \\\hline
+    Theoretischer Wert & $3851 \pm 1131$ & $3791 \pm 1149$ & $3911 \pm 1114$\\\hline\hline
+    Abweichung & $0.06\sigma$ & $0.009\sigma$ & $0.12\sigma$\\
+    \hline
+  \end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+\subsection{Parallelschwingkreis-Bandsperre}
+
+Bevor wir zum anwendungsbezogenen Teil des Versuchs fortfahren, betrachten wir abschließend einen Parallelschwingkreis. Wir haben die Ausgangsspannung über den Widerstand abgegriffen erneut den Frequenzgang, zu sehen in \abbref{fig:aufgabe7_parallel_bandsperre}, aufgezeichnet.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{files/aufgabe7_parallel_bandsperre.png}
+  \caption{Frequenzgang des RLC-Parallelschwingkreis.}
+  \label{fig:aufgabe7_parallel_bandsperre}
+\end{figure}
+
+Aus dem Grafen können wir ablesen, dass die Bandsperre bei einer Resonanzfrequenz von $(3.94 \pm 0.02)\si{\kilo\hertz}$ greift. Die Ausgangsamplitude sinkt an dieser Stelle also auf $0\si{\volt}$ ab. Die Theorie sagt voraus, dass für die Resonanzfrequenz gilt $\omega_0 = \flatfrac{1}{\sqrt{LC}}$. Wir setzen die Werte für Kapazität und Induktivität ein und erhalten damit einen Wert von
+\begin{align}
+  \omega_0 &= (3851 \pm 1131) \si{\per\second}.
+\end{align}
+Dieser weicht um $0.078\sigma$ von dem von uns gemessenen Wert ab.

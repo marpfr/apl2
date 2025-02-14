@@ -191,7 +191,7 @@ Wie aus dem Term abzulesen ist, nimmt die Amplitude proportional zu $\e{-\delta 
 \end{align}
 Ihr Kehrwert $\ffrac{1}{\delta}$ ist die Relaxationszeit oder Abklingzeit $\tau_r$. Empirisch kann die Dämpfungskonstante durch das Vermessen der Amplituden und der Periodendauer bestimmt werden. Das logarithmische Dekrement
 \begin{align}
-  \Lambda = \ln(\frac{A_n}{A_{n+1}}) = \delta T
+  \Lambda = \ln(\frac{A_n}{A_{n+1}}) = \delta T\label{eq:log_dekr}
 \end{align}
 stellt den zugehörigen mathematischen Zusammenhang her.
 
@@ -249,8 +249,8 @@ Da, wie soeben gezeigt, im Resonanzfall die Gesamtimpedanz von Spule und Kondens
 
 \abbref{fig:resonanzkurve_rlc} zeigt nun die Amplituden der Spannungen an allen drei Bauteilen. Zunächst fällt auf, dass die Resonanzfrequenzen für Spule ($\omega_L$) und Kondensator ($\omega_C$) nach rechts bzw. links zur Resonanzfrequenz des Widerstandes verschoben sind. Für diese gilt
 \begin{align}
-  \omega_C &= \sqrt{\omega_R^2 - 2\delta^2},\\
-  \omega_L &= \sqrt{\omega_R^2 + 2\delta^2}.
+  \omega_C &= \sqrt{\omega_R^2 - 2\delta^2},\label{eq:rlc_omega_c}\\
+  \omega_L &= \sqrt{\omega_R^2 + 2\delta^2}.\label{eq:rlc_omega_l}
 \end{align}
 
 Weiter fällt auf, dass hier die Ausgangsamplituden über den Wert der Eingangsamplitude hinaus steigen. Diese sogenannte Resonanzüberhöhung kommt ohne verstärkendes Bauteil zustande und folgt aufgrund der Phasenverschiebung der Spannungen an Spule und Kondensator immer noch den Vorgaben der Maschenregel. Die Stärke der Resonanzüberhöhung hängt vom ohm'schen Widerstand ab. Bei kleinerem Widerstand beobachten wir eine stärkere Überhöhung, mit zunehmendem Widerstand wird sie immer geringer, bis die Maxima nicht mehr sichtbar sind.
