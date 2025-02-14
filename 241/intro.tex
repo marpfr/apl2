@@ -211,7 +211,7 @@ wobei $U_E(t) = U_0 \e{i(\omega t)}$ das Eingangssignal darstellt. Dessen Betrag
 \end{align}
 ist abhängig von der Anregungsfrequenz $\omega$ und nimmt bei der Resonanzfrequenz $\omega_R$
 \begin{align}
-  \omega_R = \sqrt{\frac{1}{LC}}
+  \omega_R = \sqrt{\frac{1}{LC}}\label{eq:rlc_omega_r}
 \end{align}
 das Maximum von $I_0(\omega_R) = \ffrac{U_0}{R}$ an. Es wirkt im Resonanzfall nur der ohm'sche Widerstand, die Schaltung stellt hier also einen Kurzschluss dar. Für die Phasenverschiebung gilt
 \begin{align}
@@ -237,7 +237,7 @@ Betrachten wir die Amplitude $\qty| U_R |$ der Spannung am Widerstand so zeigt s
 
 Da, wie soeben gezeigt, im Resonanzfall die Gesamtimpedanz von Spule und Kondensator verschwindet, fällt die gesamte Eingangsspannung am Widerstand ab. Die Ausgangsamplitude hier in etwa der Eingangsamplitude. Für von der Resonanzfrequenz abweichende Frequenzen, werden Spule und Kondensator nicht kurzgeschlossen, es fällt also ein teil der Spannung auch an diesen Bauteilen ab. Nach diesem Wirkungsprinzip stellt der Serienschwingkreis einen Bandpass-Filter dar, welcher nur ein bestimmtes Frequenzband um die Resonanzfrequenz passieren lässt. Die Bandbreite ist hier, ähnlich zum Hoch- und Tiefpassfilter, durch die Frequenzen definiert, bei welchen die Amplitude auf das $\sqrt{2}$-Fache gedämpft wird:
 \begin{align}
-  \Delta \omega = \omega_1 - \omega_2 = \frac{R}{L} = 2\delta.
+  \Delta \omega = \omega_1 - \omega_2 = \frac{R}{L} = 2\delta.\label{eq:rlc_bandbreite}
 \end{align}
 
 \begin{figure}[H]

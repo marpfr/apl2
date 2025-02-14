@@ -107,4 +107,56 @@ Damit können wir aus der Funktion eine Grenzfrequenz von
 \begin{align}
   f_{\mathrm{Grenz}} = (3.65 \pm 1.48) \si{\kilo\hertz}
 \end{align}
-interpolieren. Diese ist ebenfalls in Grün in \abbref{fig:phaseshift_hp_fit} markiert. Von der zuvor vermessenen Grenzfrequenz weicht diese um etwa $2.47\sigma$ ab, was innerhalb des $3\sigma$-Bereichs noch als eine nicht signifikant Abweichung angesehen werden kann.
+interpolieren. Diese ist ebenfalls in Grün in \abbref{fig:phaseshift_hp_fit} markiert. Von der zuvor vermessenen Grenzfrequenz weicht diese um etwa $2.47\sigma$ ab, was innerhalb des $3\sigma$-Bereichs noch als eine nicht signifikante Abweichung angesehen werden kann.
+
+\subsection{Frequenzgang eines Serienschwingkreises}
+
+Für diesen Aufgabenteil betrachten wir erstmals einen Serienschwingkreis, also eine Schaltung bestehend aus Kondensator, Widerstand und Spule. Im ersten Schritt möchten wir die Induktivität der verbauten Spule berechnen, dazu ziehen wir \eqref{eq:rlc_omega_r} hinzu und stellen diese um nach
+\begin{align}
+  L &= \frac{1}{\omega_R^2 C}
+\end{align}
+mit der Kapazität $C$, sowie gemessenen Resonanzfrequenz $\omega_R$, welche wir zuvor durch den Faktor $2\pi$ noch in eine Kreisfrequenz umrechnen. In der Durchführung haben wir die Messungen für drei unterschiedliche Widerstände durchgeführt, also drei verschiedene Resonanzfrequenzen gemessen. Für die drei Frequenzen berechnen wir jeweils eine Induktivität und nehmen davon den Mittelwert von
+\begin{align}
+  L = (3.63 \pm 2.11) \cdot 10^{-2} \si{\henry}
+\end{align}
+als Wert für die Induktivität der Spule.
+
+Als Nächstes betrachten wir die Verluste, welche in der Spule durch ihren eigenen ohmschen Widerstand, magnetische Verluste des Spulenkerns, sowie den Skineffekt entstehen. Um diese Verluste zu quantifizieren, nehmen wir die Existenz eines weiteren Verlustwiderstandes $R_V$ in der Schaltung an. \eqref{eq:rlc_bandbreite} stellt einen Zusammenhang zwischen dem Gesamtwiderstand und der Bandbreite der RLC-Schaltung her, welchen wir entsprechend umstellen zu
+\begin{align}
+  R + R_V = \Delta \omega \cdot L.
+\end{align}
+
+Wie im Theorieteil beschrieben stellt das RLC-Glied im Resonanzfall bei $\omega_R$ einen Kurzschluss dar, da die Impedanz des LC-Gliedes verschwindet. Für das Verhältnis von Ein- und Ausgangsspannung, letztere abgenommen am Widerstand $R$, ergibt sich somit der einfache Zusammenhang
+\begin{align}
+  U_A = \frac{R}{R + R_V} U_E
+\end{align}
+und somit durch
+\begin{align}
+  R + R_V &= R \frac{U_E}{U_A}
+\end{align}
+eine weitere Formel, um den Gesamtwiderstand zu berechnen. Die folgende Tabelle zeigt nun die in den drei Messgängen aufgezeichneten Werte der Ein- und Ausgangsspannung $U_E$ und $U_A$, der Resonanzfrequenz $\omega_R$, sowie der Bandbreite $\Delta \omega$. Als Induktivität verwenden wir den zuvor berechneten Mittelwert. Weiter enthält die Tabelle die berechneten Werte für $R + R_V$, den verwendeten Widerstand, sowie deren Differenz, also die Verlustleistung $R_V$.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{2}{|c|}{$R\,[\si{\ohm}]$} & $1000 \pm 50$ & $220 \pm 11$ & $47.0 \pm 2.4$ \\
+    \hline
+    \multicolumn{2}{|c|}{$U_E\,[\si{\volt}]$} & $0.661 \pm 0.001$ & $0.650 \pm 0.001$ & $0.627 \pm 0.001$ \\
+    \hline
+    \multicolumn{2}{|c|}{$U_A\,[\si{\volt}]$} & $0.640 \pm 0.020$ & $0.530 \pm 0.020$ & $0.270 \pm 0.020$ \\
+    \hline
+    \multicolumn{2}{|c|}{$\Delta \omega\,[\si{\per\second} \cdot 10^3]$} & $30.91 \pm 0.19$ & $8.11 \pm 0.19$ & $3.52 \pm 0.19$ \\
+    \hline
+    \hline
+    \multirow{2}{*}{Aus Bandbreite} & $R + R_V\,[\si{\ohm}]$ & $1123 \pm 650$ & $294 \pm 171$ & $128 \pm 75$ \\
+    \cline{2-5}
+    & $R_V\,[\si{\ohm}]$ & $123 \pm 652$ & $74 \pm 171$ & $80 \pm 75$ \\
+    \hline
+    \hline
+    \multirow{2}{*}{Aus Amplituden} & $R + R_V\,[\si{\ohm}]$  & $1033 \pm 61$ & $270 \pm 17$ & $109 \pm 10$ \\
+    \cline{2-5}
+    & $R_V\,[\si{\ohm}]$ & $33 \pm 79$ & $49.811 \pm 21$ & $62.144 \pm 11$ \\
+    \hline
+  \end{tabular}
+\end{table}
