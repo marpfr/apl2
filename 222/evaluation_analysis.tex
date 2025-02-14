@@ -12,7 +12,11 @@ dabei entspricht die dem oberen Zylinderteil entzogene Wärmemenge $Q_2$ gerade 
 \begin{align}
     Q_2 = W_M = \frac{P_H}{f} = \frac{I_H U_H}{f}.
 \end{align}
-Damit erhalten wir für $Q_2$ einen Wert von
+Für die Leistung der Heizung berechnen wir einen Wert von
+\begin{align*}
+    P_H = (22.29 \pm 0.25) \si{\watt}.
+\end{align*}
+Diese entspricht auch der Kälteleistung des Motors. Weiter erhalten wir damit für $Q_2$ einen Wert von
 \begin{align*}
     Q_2 = (4.21 \pm 0.05) \si{\joule}.
 \end{align*}
@@ -54,7 +58,7 @@ also in etwa $44\%$.
 
 \subsection{Betrieb als Kältemaschine und Wärmepumpe}
 
-Abbildung \abbref{fig:tempverlauf_kalt} zeigt dem Temperaturverlauf des Wassers im Reagenzglas, welches am oberen Zylinderbereich angebracht ist.
+\abbref{fig:tempverlauf_kalt} zeigt dem Temperaturverlauf des Wassers im Reagenzglas, welches am oberen Zylinderbereich angebracht ist.
 
 \begin{figure}[H]
     \centering
@@ -73,6 +77,15 @@ Der Verlauf der Temperatur zeigt, ausgehen von der Ausgangstemperatur von etwa $
 \end{figure}
 
 Der Temperaturverlauf beim Betrieb als Wärmepumpe, zu sehen in \abbref{fig:tempverlauf_warm}, zeigt im Wesentlichen das gleiche Verhalten, nur in umgekehrter Reihenfolge. Was allerdings besonders auffällt, ist, dass der gesamte Prozess der Erwärmung des Wassers wesentlich schneller abzulaufen scheint. Dies könnte unter anderem durch einen Beitrag der Umgebungswärme, eine gezieltere Wärmeübertragung, und einen weniger energieintensiven Phasenübergang verursacht sein.
+
+\abbref{fig:aufgabe2_kuehltemp} zeigt im Vergleich den Temperaturverlauf des in den Motorkolben zu- (rot) und abfließenden (grün) Kühlwassers. Im Bereich von etwa 15:37 bis 15:49 der Zeitskala läuft der Motor als Kältemaschine, im darauf folgenden Bereich als Wärmepumpe. Wir können beobachten, dass während des Betriebs als Kältemaschine die Temperatur des abfließenden Kühlwassers auf einem höheren Niveau liegt. Dies lieg daran, dass die Wärme, die dem Wasser im Reagenzglas entzogen wird, an das Kühlwasser abgegeben wird. Sobald um etwa 15:49 auf den Betrieb als Wärmepumpe umgeschaltet wird, ist zu beobachten, dass die Temperatur des abfließenden Kühlwassers wieder abfällt und sich in etwa an die Temperatur des zufließenden Kühlwassers angleicht. Die Wärme wird hier also weitestgehend an das Reagenzglas abgegeben und nicht durch das Kühlsystem abtransportiert.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\textwidth]{files/aufgabe2_kuehltemp.png}
+    \caption{Temperaturverlauf des Kühlwassers beim Betrieb als Kältemaschine und Wärmepumpe. T1 entspricht der Temperatur des abfließenden, T2 der des zufließenden Kühlwassers.}
+    \label{fig:aufgabe2_kuehltemp}
+\end{figure}
 
 Nun möchten wir zusätzlich in diesem Versuchsteil die Kälteleistung der Kältemaschine berechnen. Dazu verwendeten wir die Gefrierzeit $t_f = (180 \pm 2)\si{\second}$, welche wir aus der Länge des Plateaus im Temperaturverlauf bestimmt haben. Für die notwendige Energie, um die Menge $V_W$ Wasser zu vollständig zu gefrieren gilt der Zusammenhang
 \begin{align}
