@@ -271,3 +271,74 @@ Aus dem Grafen können wir ablesen, dass die Bandsperre bei einer Resonanzfreque
   \omega_0 &= (3851 \pm 1131) \si{\per\second}.
 \end{align}
 Dieser weicht um $0.078\sigma$ von dem von uns gemessenen Wert ab.
+\newpage
+\subsection{Signalformung}
+
+In diesem Aufgabenteil betrachten wir nun die zuvor ausgiebig untersuchten Schaltungen im realitätsnahen Einsatz als Filter. Dafür generieren wir mit dem Frequenzgenerator ein Signal, welches sich aus drei überlagerten Sinussignale der Frequenzen $100\si{\hertz}$, $4\si{\kilo\hertz}$ und $8\si{\kilo\hertz}$, sowie weiteren weniger starken Störsignalen zusammensetzt. 
+
+\subsubsection*{Ohne Filter}
+
+Das zunächst ungefilterte Signal, sowie dessen Spektrum sind in \abbref{fig:aufgabe8_teil1_osz} zu sehen. Im Spektrum sind bereits jetzt ziemlich eindeutig die drei starken überlagerten Signalanteil bei den oben genannten Frequenzen zu erkennen. Im Oszilloskopbild liegen Aus- und Eingangsspannung ohne Filter genau übereinander, deshalb ist die Ausgabe in Grün dargestellt und es sind keine zwei Signale zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil1_osz.png}
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil1_spectrum.png}
+  \caption{Ausgangsspannung und Frequenzspektrum des überlagerten Signals ohne Filter.}
+  \label{fig:aufgabe8_teil1_osz}
+\end{figure}
+
+\newpage
+\subsubsection*{Hochpassfilter}
+Als Erstes betrachten wir das Signal gefiltert durch einen Hochpassfilter mit einem $220\si{\ohm}$ Widerstand und einem $470\si{\nano\farad}$ Kondensator. Im Frequenzspektrum in \abbref{fig:aufgabe8_teil2_hochpass} ist zu erkennen, dass der $100\si{\hertz}$-Signalanteil stark gedämpft wurde, während die anderen beiden, höherfrequente Signalanteile weitestgehend unverändert bleiben. Auch in der Signalformung des Ausgangssignals (blau) ist zu erkennen, dass die überliegende niedrigfrequente Sinusform stark abgeschwächt ist.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_hochpass_oszi.png}
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_hochpass_spectrum.png}
+  \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit Hochpassfilter.}
+  \label{fig:aufgabe8_teil2_hochpass}
+\end{figure}
+
+\newpage
+\subsubsection*{Tiefpassfilter}
+
+Vertauschen wir Widerstand und Kondensator an der vorherigen Schaltung, so erhalten wir einen Tiefpassfilter. Wie zu erwarten, können wir im Spektrum beobachten, dass nun der Signalanteil der niedrigen $100\si{\hertz}$-Frequenz den Filter unverändert passieren kann. Sehr stark gedämpft wird nun das $8\si{\kilo\hertz}$ und auch das $4\si{\kilo\hertz}$-Signal erfährt eine leichte Dämpfung. Es ist außerdem zu sehen, dass der gesamte Untergrund des Spektrums gedämpft ist. Im Oszilloskopbild ist zu sehen, dass das Ausgangssignal (blau) die $100\si{\hertz}$-Schwingung unverändert beibehält, während die Schwingungen darum nur noch sehr klein sind.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_tiefpass_oszi.png}
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_tiefpass_spectrum.png}
+  \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit Tiefpassfilter.}
+  \label{fig:aufgabe8_teil2_tiefpass}
+\end{figure}
+
+\newpage
+\subsubsection*{$LC$-Tiefpassfilter}
+
+\small{\textrightarrow\textit{Wir verwenden hier nun einen $47\si{\nano\farad}$ Kondensator.}}
+\normalsize
+
+Möchten wir das $8\si{\kilo\hertz}$-Signal weitestgehend unabhängig vom $4\si{\kilo\hertz}$-Signal dämpfen, benötigen wir einen Filter mit einem stärkeren Dämpfungsverlauf. Tauschen wir den Widerstand durch eine Spule aus, so erhalten wir einen $LC$-Tiefpassfilter, mit welchem genau dies erreicht werden kann. Dies spiegelt sich auch sehr deutlich im Spektrum wieder. Der $8\si{\kilo\hertz}$-Anteil verschwindet nun quasi komplett im Untergrund, während das $4\si{\kilo\hertz}$ sehr deutlich hervorsticht. Es zeigt sich nun sogar eine Resonanzüberhöhung. Der $100\si{\hertz}$-Signalanteil ist jedoch weiterhin präsent, wie es auch bei einem Tiefpassfilter zu erwarten ist. Die Beobachtungen im Spektrum spiegeln sich auch, wie zuvor, sehr gut in der Signalformung des Ausgangssignals wider.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_lc_tiefpass_oszi.png}
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_lc_tiefpass_spectrum.png}
+  \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit $LC$-Tiefpassfilter.}
+  \label{fig:aufgabe8_teil2_lc_tiefpass}
+\end{figure}
+
+Bisher haben wir beobachtet, dass wir es mit den verwendeten Filterschaltungen nicht schaffen, das  $4\si{\kilo\hertz}$-Signal zu isolieren und nur die Signalanteile darum zu dämpfen. Bei der Verwendung eines Hoch- bzw. Tiefpassfilters ist dies auch klar, da diese ab ihrer Grenzfrequenz greifen und sich dann auf alle niedrigeren bzw. höheren Frequenzen auswirken. Um nur den Bereich um den $4\si{\kilo\hertz}$-Bereich durchzulassen, benötigen wir also einen Bandpassfilter, welchen wir uns in den folgenden Teilen anschauen.
+\newpage
+\subsubsection*{Bandpassfilter}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil3_clR_47ohm_bandpass_oszi.png}
+  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil3_clR_47ohm_bandpass_spectrum.png}
+  \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit $RLC$-Bandpassfilter mit $47\si{\kilo\ohm}$ Widerstand, bei Spannungsabnahme über den Widerstand.}
+  \label{fig:aufgabe8_teil3_clR_47ohm_bandpass}
+\end{figure}
