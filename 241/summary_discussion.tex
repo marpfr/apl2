@@ -1,12 +1,81 @@
 \section{Zusammenfassung und Diskussion}
 
-\begin{align}
-  x &= 3 \frac{1}{|\cm|}\\
-  x &= 3 \cmm\\
-  H &= \frac{\vec{p}^2}{2m}+ \frac{m}{2} \omega^2 \vec{q}\\
-  \vec{p}^2 &= \delta_{ij} p_i p_j\\
-  \vec{q}^2 &= \delta_{kl} q_k q_l\\
-  \qty{L_i, H} &=\qty{\varepsilon_{abc} q_b p_c, \frac{\delta_{ij} p_i p_j}{2m}+ \frac{m}{2} \omega^2 \delta_{kl} q_k q_l}\\
-  &= \varepsilon_{abc} \qty{q_b p_c, \frac{\delta_{ij} p_i p_j}{2m}+ \frac{m}{2} \omega^2 \delta_{kl} q_k q_l}\\
-  &= \varepsilon_{abc} \qty(\frac{1}{2m} \qty{q_b p_c, \delta_{ij} p_i p_j} + \frac{m}{2} \omega^2 \qty{q_b p_c, \delta_{kl} q_k q_l})\\
-\end{align}
+Werden die elementaren elektronischen Bauteile Widerstand, Kondensator und Spule gemeinsam in einem Schaltkreis verbunden, weisen diese für unterschiedliche Konfigurationen besondere Verhaltensweisen im Zusammenhang mit Wechselspannung auf. RC-Glieder, also Schaltungen aus einem Widerstand und einer Spule können beispielsweise als Hoch- oder Tiefpassfilter verwendet werden, während das Hinzuschalten einer Spule einen Schwingkreis erzeugt. Derartige Schaltungen waren das Zentralversuchsobjekt in Versuch 241.
+
+Im ersten Versuchsteil haben wir ein RC-Glied betrachtet. Hierzu haben wir für verschiedene Werte von Kapazität und Widerstand haben wir die Zeitkonstante $\tau$ zunächst aus unseren Beobachtungen am Oszilloskop bestimmt und zum Vergleich den zugehörigen theoretisch vorausgesagten Wert berechnet. Die Werte sind in der untenstehenden \tabref{tab:zsmf_a1_zeitkonst} noch einmal zusammengefasst.
+
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+  \centering
+  \caption{Messwerte und berechnete Größen der Zeitkonstante $\tau$.}
+  \vspace*{1em}
+  \begin{tabular}{| c | c | c | c | c |}
+      \hline
+      $C\ [\si{\nano\farad}]$ & $R\ [\si{\kilo\ohm}]$ & $\tau_{\text{theo}}\  [\si{\second}]$ & $\tau_{\text{exp}}\ [\si{\second}]$ & Abw. \\
+      \hline
+      $470$ & $1.00$ & $(47 \pm 6) \times 10^{-5}$ & $(43 \pm 15) \times 10^{-5}$ & $0.25\sigma$ \\
+      \hline
+      $4.70$ & $10.00$ & $(4.7 \pm 0.6) \times 10^{-5}$ & $(6.49 \pm 0.15) \times 10^{-5}$ & $3.29\sigma$ \\
+      \hline
+      $47.00$ & $1.00$ & $(4.7 \pm 0.6) \times 10^{-5}$ & $(4.91 \pm 0.15) \times 10^{-5}$ & $0.38\sigma$ \\
+      \hline
+  \end{tabular}
+  \label{tab:zsmf_a1_zeitkonst}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Es ist zu sehen, dass in zwei von drei Fällen der gemessene Wert sehr gut mit dem theoretisch vorhergesagten Wert übereinstimmt. Die sehr starke Abweichung bei der Konfiguration mit $C = 4.7\si{\nano\farad}, R = 10\si{\kilo\ohm}$ fällt deutlich heraus und ist vermutlich auf einen groben Messfehler oder einen Fehler in den verwendeten Bauteilen zurückzuführen.
+
+Im zweiten Versuchsteil haben wir qualitativ die Wirkung eines RC-Gliedes als Differentiator und Integrator untersucht. Je nachdem, ob wir die Ausgangsspannung am Kondensator oder am Widerstand abgenommen haben, hat diese in etwa die Form des differenzierten bzw. integrierten Eingangssignals dargestellt. Durch Manipulation des Widerstandes mithilfe eines Potentiometers konnten wir bestätigen, dass dieser Wert eine maßgebliche Auswirkung auf die Annäherung des Ausgangssignals an die entsprechende Form hat.
+
+RC-Schaltungen wirken für eingehende Signale wie ein Hoch- oder Tiefpassfilter, je nachdem ob die Ausgangsspannung über den Kondensator oder die Spule abgegriffen wird. Den Frequenz- und Phasengang dieser Filterschaltungen haben wir im dritten Versuchsteil untersucht. Mithilfe der Oszilloskopsoftware haben wir die Frequenzgänge je für eine Tiefpass- und eine Hochpassfilterschaltung aufgezeichnet. Aus den Frequenzgängen haben wir die Grenzfrequenz, also die Frequenz ab welcher die Wirkung des Filters greift bestimmt. Hierbei haben wir einen Wert von 
+\begin{gather*}
+  f_{G,TP} = (9.46 \pm 0.02)\si{\kilo\hertz}
+  \intertext{für den Tiefpassfilter und}
+  f_{G,HP} = (3.31 \pm 0.02)\si{\kilo\hertz} 
+\end{gather*}
+für den Hochpassfilter gemessen. Für den Hochpassfilter haben wir uns zusätzlich dazu noch den Phasengang angeschaut. Da dieser nicht automatisch von der Oszilloskopsoftware aufgezeichnet werden konnte, haben wir diesen manuell aus der zeitlichen Verschiebung von Ein- und Ausgangssignal gemessen. Die Messung haben wir für verschiedene Frequenzen durchgeführt und die resultierenden Phasen darüber in ein Diagramm aufgetragen. Durch eine Interpolation der gemessenen Werte haben wir dann die Frequenz bei einer Phase von $45\si{\degree}$ und damit einen zweiten Wert für die Grenzfrequenz bestimmt. Dieser beläuft sich auf
+\begin{align*}
+  f_{G,HP,\varphi} &= (3.65 \pm 1.48)\si{\hertz} 
+\end{align*}
+und weicht damit um etwa $2.47\sigma$ vom zuvor bestimmten Wert ab. Aus der Vorhersage der Theorie haben wir für die Grenzfrequenz einen Wert von
+\begin{align*}
+  f_{G,theo} &= (3.4 \pm 0.4)\si{\kilo\hertz}
+\end{align*}
+berechnet. Mit einer Abweichung von nur etwa $0.21\sigma$ liegt dieser Wert sehr nah an dem Wert, welchen wir aus dem Frequenzgang bestimmt haben. Die Abweichung zum aus dem Phasengang interpolierten Wert ist mit etwa $2.47\sigma$ wieder sehr hoch. Die starke Abweichung des interpolierten Wertes von den zwei anderen lässt sich vermutlich einerseits auf Messungenauigkeiten bei der Vermessung der Phasenverschiebung, sowie den Fehler aus der Interpolation zurückführen.
+
+Aufgrund des in der Auswertung genannten Fehlers bei der Aufzeichnung der Frequenzgänge lohnt sich ein Vergleich mit der Grenzfrequenz des Tiefpassfilters nicht.
+
+Im vierten Aufgabenteil haben wir durch Hinzuschalten einer Spule erstmals ein RLC-Glied betrachtet. Für eine eingehende Wechselspannung wirkt ein RLC-Glied wie ein Bandpassfilter, also eine Kombination aus einem Hoch- und einem Tiefpassfilter. Für drei unterschiedliche Werte des Widerstandes haben wir Ein- und Ausgangsamplitude, sowie die Resonanzfrequenz und die Bandbreite der Filterschaltung gemessen. Aus Resonanzfrequenz haben wir dann zusammen mit der Kapazität des verbauten Kondensators die Induktivität der Spule zu
+\begin{align*}
+  L = (3.63 \pm 0.22) \cdot 10^{-2}\si{\henry}
+\end{align*}
+bestimmt. Daraufhin haben wir die durch die Spule verursachten Verluste in der RLC-Schaltung untersucht. Um diese zu quantifizieren haben wir die Existenz eines zusätzlichen Verlustwiderstandes $R_V$ angenommen, mit welchem sich der Gesamtwiderstand der Schaltung auf $R + R_V$ beläuft. Den Gesamtwiderstand haben wir dann auf zwei verschiedenen Wegen, über die Bandbreite und die Induktivität, sowie über das Verhältnis der von Ein- und Ausgangsspannung bestimmt. In \tabref{tab:zsmf_verlustwiderstand} sind die Resultate der beiden Rechenwege noch einmal zusammengefasst dargestellt.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+  \centering
+  \caption{Resultate und Abweichungen für die Berechnung des Verlustwiderstandes.}
+  \vspace*{1em}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{2}{|c|}{$R\,[\si{\ohm}]$} & $1000 \pm 50$ & $220 \pm 11$ & $47.0 \pm 2.4$ \\
+    \hline
+    \hline
+    \multirow{2}{*}{Aus Bandbreite} & $R + R_V\,[\si{\ohm}]$ & $1123 \pm 650$ & $294 \pm 171$ & $128 \pm 75$ \\
+    \cline{2-5}
+    & $R_V\,[\si{\ohm}]$ & $123 \pm 652$ & $74 \pm 171$ & $80 \pm 75$ \\
+    \hline
+    \hline
+    \multirow{2}{*}{Aus Amplituden} & $R + R_V\,[\si{\ohm}]$  & $1033 \pm 61$ & $270 \pm 17$ & $109 \pm 10$ \\
+    \cline{2-5}
+    & $R_V\,[\si{\ohm}]$ & $33 \pm 79$ & $49.811 \pm 21$ & $62.144 \pm 11$ \\
+    \hline\hline
+    \multicolumn{2}{|c|}{Abweichung} & $0.792\sigma$ & $0.838\sigma$ & $1.296\sigma$ \\\hline
+  \end{tabular}
+  \label{tab:zsmf_verlustwiderstand}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Die Abweichungen zwischen den Resultaten der beiden Rechenwege sind mit Größen um $1\sigma$ relativ gering und vermutlich hauptsächlich auf Messungenauigkeiten zurückzuführen. 

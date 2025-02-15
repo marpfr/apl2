@@ -7,6 +7,8 @@ Wir verwenden die in Aufgabenteil 1 gemessenen Halbwertszeiten, um die Zeitkonst
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[H]
   \centering
+  \caption{Messwerte und berechnete Größen der Zeitkonstante $\tau$.}
+  \vspace*{1em}
   \begin{tabular}{| c | c | c | c | c | c |}
       \hline
       $C\ [\si{\nano\farad}]$ & $R\ [\si{\kilo\ohm}]$ & $f\ [\si{\hertz}]$ & $\tau_{\text{theo}}\  [\si{\second}]$ & $\tau_{\text{exp}}\ [\si{\second}]$ & Abw. \\
@@ -18,7 +20,6 @@ Wir verwenden die in Aufgabenteil 1 gemessenen Halbwertszeiten, um die Zeitkonst
       $47.00 \pm 4.70$ & $1.00 \pm 0.05$ & $165 \pm 1$ & $(4.7 \pm 0.6) \times 10^{-5}$ & $(4.91 \pm 0.15) \times 10^{-5}$ & $0.38\sigma$ \\
       \hline
   \end{tabular}
-  \caption{Messwerte und berechnete Größen}
   \label{tab:a1_zeitkonst}
 \end{table}
 \renewcommand{\arraystretch}{1}
@@ -64,7 +65,10 @@ Wie bereits dem Versuchsprotokoll zu entnehmen können wir beim Aufbau der RC-Sc
 
 \subsection{Frequenz- und Phasengang eines RC-Glied}
 
-In diesem Teil der Auswertung bestimmen wir aus dem aufgezeichneten Frequenzgängen eines Tief- und Hochpassfilters die Grenzfrequenz bestimmen. Wie in den theoretischen Grundlagen erklärt, ist die Grenzfrequenz der Filterschaltung dadurch zu erkennen, dass bei ihr die Amplitude um den Faktor $\flatfrac{1}{\sqrt{2}}$ abgefallen ist. Mit der \textit{Curser}-Funktion des Oszilloskops können wir damit eine Grenzfrequenz von $(9.46 \pm 0.02)\si{\hertz}$ für den Tiefpassfilter und eine Grenzfrequenz von $(3.31 \pm 0.02) \si{\hertz}$ für den Hochpassfilter ablesen. Die untenstehenden Abbildungen zeigen noch einmal die Frequenzgänge des Tiefpassfilters (\ref{fig:aufgabe3_tiefpass}) und Hochpassfilters (\ref{fig:aufgabe3_hochpass}), jeweils mit dem Cursor an der Grenzfrequenz.
+\small \textit{Für diesen Aufgabenteil ist anzumerken, dass wir bei der Durchführung leider den Frequenzgang nicht ab $100\si{\hertz}$ wie vorgegeben, sondern erst ab $1\si{\kilo\hertz}$ aufgezeichnet haben. Damit ist die lineare Interpolation, welche in der Auswertung gefordert wird, nicht zielführend und wird im folgenden deshalb ausgelassen. Außerdem ist unsere abgelesene Grenzfrequenz des Tiefpassfilters jenseits von Gut und Böse.}
+\normalsize
+
+In diesem Teil der Auswertung bestimmen wir aus dem aufgezeichneten Frequenzgängen eines Tief- und Hochpassfilters die Grenzfrequenz bestimmen. Wie in den theoretischen Grundlagen erklärt, ist die Grenzfrequenz der Filterschaltung dadurch zu erkennen, dass bei ihr die Amplitude um den Faktor $\flatfrac{1}{\sqrt{2}}$ abgefallen ist. Mit der \textit{Curser}-Funktion des Oszilloskops können wir damit eine Grenzfrequenz von $(9.46 \pm 0.02)\si{\kilo\hertz}$ für den Tiefpassfilter und eine Grenzfrequenz von $(3.31 \pm 0.02) \si{\kilo\hertz}$ für den Hochpassfilter ablesen. Die untenstehenden Abbildungen zeigen noch einmal die Frequenzgänge des Tiefpassfilters (\ref{fig:aufgabe3_tiefpass}) und Hochpassfilters (\ref{fig:aufgabe3_hochpass}), jeweils mit dem Cursor an der Grenzfrequenz.
 
 
 \begin{figure}[H]
@@ -111,6 +115,17 @@ Damit können wir aus der Funktion eine Grenzfrequenz von
 \end{align}
 interpolieren. Diese ist ebenfalls in Grün in \abbref{fig:phaseshift_hp_fit} markiert. Von der zuvor vermessenen Grenzfrequenz weicht diese um etwa $2.47\sigma$ ab, was innerhalb des $3\sigma$-Bereichs noch als eine nicht signifikante Abweichung angesehen werden kann.
 
+Nach der Theorie gilt für die Grenzfrequenz des Hoch- bzw. Tiefpassfilter die Gleichung
+\begin{align}
+  f_G &= \frac{1}{CR} \qty[\times \frac{1}{2 \pi}].
+\end{align}
+Setzen wir für die entsprechenden Werte der Kapazität $C = 47\si{\nano\farad}$ und des Widerstands $R = 1\si{\kilo\ohm}$ ein, so erhalten wir dazu einen Wert von
+\begin{align}
+  f_{Grenz} = (3.4 \pm 0.4)\si{\kilo\hertz}.
+\end{align}
+
+Dieser weicht um $0.21\sigma$ vom ausgemessenen Wert aus dem ersten Teil und um $2.47\sigma$ vom interpolierten Wert ab.
+
 \subsection{Frequenzgang eines Serienschwingkreises}
 
 Für diesen Aufgabenteil betrachten wir erstmals einen Serienschwingkreis, also eine Schaltung bestehend aus Kondensator, Widerstand und Spule. Im ersten Schritt möchten wir die Induktivität der verbauten Spule berechnen, dazu ziehen wir \eqref{eq:rlc_omega_r} hinzu und stellen diese um nach
@@ -119,7 +134,7 @@ Für diesen Aufgabenteil betrachten wir erstmals einen Serienschwingkreis, also 
 \end{align}
 mit der Kapazität $C$, sowie gemessenen Resonanzfrequenz $\omega_R$, welche wir zuvor durch den Faktor $2\pi$ noch in eine Kreisfrequenz umrechnen. In der Durchführung haben wir die Messungen für drei unterschiedliche Widerstände durchgeführt, also drei verschiedene Resonanzfrequenzen gemessen. Für die drei Frequenzen berechnen wir jeweils eine Induktivität und nehmen davon den Mittelwert von
 \begin{align}
-  L = (3.63 \pm 2.11) \cdot 10^{-2} \si{\henry}
+  L = (3.63 \pm 0.22) \cdot 10^{-2} \si{\henry}
 \end{align}
 als Wert für die Induktivität der Spule.
 
@@ -136,11 +151,13 @@ und somit durch
 \begin{align}
   R + R_V &= R \frac{U_E}{U_A}
 \end{align}
-eine weitere Formel, um den Gesamtwiderstand zu berechnen. Die folgende Tabelle zeigt nun die in den drei Messgängen aufgezeichneten Werte der Ein- und Ausgangsspannung $U_E$ und $U_A$, der Resonanzfrequenz $\omega_R$, sowie der Bandbreite $\Delta \omega$. Als Induktivität verwenden wir den zuvor berechneten Mittelwert. Weiter enthält die Tabelle die berechneten Werte für $R + R_V$, den verwendeten Widerstand, sowie deren Differenz, also die Verlustleistung $R_V$.
+eine weitere Formel, um den Gesamtwiderstand zu berechnen. Die folgende \tabref{tab:verlustwiderstand} zeigt nun die in den drei Messgängen aufgezeichneten Werte der Ein- und Ausgangsspannung $U_E$ und $U_A$, der Resonanzfrequenz $\omega_R$, sowie der Bandbreite $\Delta \omega$. Als Induktivität verwenden wir den zuvor berechneten Mittelwert. Weiter enthält die Tabelle die berechneten Werte für $R + R_V$, den verwendeten Widerstand, sowie deren Differenz, also die Verlustleistung $R_V$.
 
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[H]
   \centering
+  \caption{Messwerte und Resultate für die Berechnung des Verlustwiderstandes.}
+  \vspace*{1em}
   \begin{tabular}{|c|c|c|c|c|}
     \hline
     \multicolumn{2}{|c|}{$R\,[\si{\ohm}]$} & $1000 \pm 50$ & $220 \pm 11$ & $47.0 \pm 2.4$ \\
@@ -162,11 +179,9 @@ eine weitere Formel, um den Gesamtwiderstand zu berechnen. Die folgende Tabelle 
     & $R_V\,[\si{\ohm}]$ & $33 \pm 79$ & $49.811 \pm 21$ & $62.144 \pm 11$ \\
     \hline
   \end{tabular}
+  \label{tab:verlustwiderstand}
 \end{table}
 \renewcommand{\arraystretch}{1}
-
-\todo{Vergleich der Werte aus Bandbreite und Amplituden}\\
-\todo{Weirde Fehler??}
 
 \textit{Ich habe mir herausgenommen, die Aufgaben etwas umzusortieren.}
 
@@ -282,11 +297,26 @@ Das zunächst ungefilterte Signal, sowie dessen Spektrum sind in \abbref{fig:auf
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil1_osz.png}
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil1_spectrum.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil1_osz.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil1_spectrum.png}
   \caption{Ausgangsspannung und Frequenzspektrum des überlagerten Signals ohne Filter.}
   \label{fig:aufgabe8_teil1_osz}
 \end{figure}
+
+Ohne Filterung liegen die Amplituden der Signalanteile bei etwa
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c c}
+    $100\si{\hertz}$: & $-3.06 \pm 0.02\,\mathrm{dBV}$,\\
+    $4\si{\kilo\hertz}$: & $-8.06 \pm 0.02\,\mathrm{dBV}$,\\
+    $8\si{\kilo\hertz}$: & $-22.13 \pm 0.02\,\mathrm{dBV}$.\\
+  \end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Wobei die Einheit dBV die gemessene Spannung in Bezug auf den Referenzwert von $1\si{\volt}$ angibt.
 
 \newpage
 \subsubsection*{Hochpassfilter}
@@ -295,24 +325,63 @@ Als Erstes betrachten wir das Signal gefiltert durch einen Hochpassfilter mit ei
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_hochpass_oszi.png}
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_hochpass_spectrum.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil2_hochpass_oszi.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil2_hochpass_spectrum.png}
   \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit Hochpassfilter.}
   \label{fig:aufgabe8_teil2_hochpass}
 \end{figure}
 
+Um bei den verschiedenen Filterschaltungen die Dämpfungen berechnen und vergleichen zu können betrachten wir das Verhältnis zwischen der ungefilterten und der gefilterten Amplitude. \tabref{tab:dmpf_hochpass} fasst die Werte für den  Hochpassfilter zusammen.
+
+\begin{table}[H]
+  \centering
+  \caption{Dämpfung der einzelnen Signalanteile beim $RC$-Hochpassfilter.}
+  \vspace*{1em}
+  \label{tab:dmpf_hochpass}
+  \begin{tabular}{c|c|c|c}
+    Signalanteil & Ungefilterte Amp. [dBV] & Gefilterte Amp. [dBV] & Dämpfung\\\hline
+    100 Hz & $-3.06 \pm 0.02$ & $-26.81 \pm 0.02$ & $0.1141 \pm 0.0008$\\
+    4 kHz & $-8.06 \pm 0.02$ & $-8.69 \pm 0.02$ & $0.928 \pm 0.004$\\
+    8 kHz & $-22.13 \pm 0.02$ & $-22.44 \pm 0.02$ & $0.9862 \pm 0.0013$
+  \end{tabular}
+\end{table}
+
+
+%4kHz ValErr(-8.06, 0.02) ValErr(-8.69, 0.02) ValErr(0.9275028768699656, 0.0031390427356231265)
+%8kHz ValErr(-22.13, 0.02) ValErr(-22.44, 0.02) ValErr(0.9861853832442067, 0.0012517639252519503)
+%100Hz ValErr(-3.06, 0.02) ValErr(-26.81, 0.02) ValErr(0.11413651622528907, 0.0007508336411163078)
+
 \newpage
 \subsubsection*{Tiefpassfilter}
 
-Vertauschen wir Widerstand und Kondensator an der vorherigen Schaltung, so erhalten wir einen Tiefpassfilter. Wie zu erwarten, können wir im Spektrum beobachten, dass nun der Signalanteil der niedrigen $100\si{\hertz}$-Frequenz den Filter unverändert passieren kann. Sehr stark gedämpft wird nun das $8\si{\kilo\hertz}$ und auch das $4\si{\kilo\hertz}$-Signal erfährt eine leichte Dämpfung. Es ist außerdem zu sehen, dass der gesamte Untergrund des Spektrums gedämpft ist. Im Oszilloskopbild ist zu sehen, dass das Ausgangssignal (blau) die $100\si{\hertz}$-Schwingung unverändert beibehält, während die Schwingungen darum nur noch sehr klein sind.
+Vertauschen wir Widerstand und Kondensator an der vorherigen Schaltung, so erhalten wir einen Tiefpassfilter. Wie zu erwarten, können wir im Spektrum (vgl. \abbref{fig:aufgabe8_teil2_tiefpass}) beobachten, dass nun der Signalanteil der niedrigen $100\si{\hertz}$-Frequenz den Filter unverändert passieren kann. Sehr stark gedämpft wird nun das $8\si{\kilo\hertz}$ und auch das $4\si{\kilo\hertz}$-Signal erfährt eine leichte Dämpfung. Es ist außerdem zu sehen, dass der gesamte Untergrund des Spektrums gedämpft ist. Im Oszilloskopbild ist zu sehen, dass das Ausgangssignal (blau) die $100\si{\hertz}$-Schwingung unverändert beibehält, während die Schwingungen darum nur noch sehr klein sind.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_tiefpass_oszi.png}
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_tiefpass_spectrum.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil2_tiefpass_oszi.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil2_tiefpass_spectrum.png}
   \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit Tiefpassfilter.}
   \label{fig:aufgabe8_teil2_tiefpass}
 \end{figure}
+
+Auch hier betrachten wir noch einmal die Dämpfung der einzelnen Signalanteile, zusammengefasst in \tabref{tab:dmpf_tiefpass}.
+
+\begin{table}[H]
+  \centering
+  \caption{Dämpfung der einzelnen Signalanteile beim $RC$-Tiefpassfilter.}
+  \vspace*{1em}
+  \label{tab:dmpf_tiefpass}
+  \begin{tabular}{c|c|c|c}
+    Signalanteil & Ungefilterte Amp. [dBV] & Gefilterte Amp. [dBV] & Dämpfung\\\hline
+    100 Hz & $-3.06 \pm 0.02$ & $-2.75 \pm 0.02$ & $1.113 \pm 0.011$\\
+    4 kHz & $-8.06 \pm 0.02$ & $-15.88 \pm 0.02$ & $0.5076 \pm 0.0015$\\
+    8 kHz & $-22.13 \pm 0.02$ & $-51.19 \pm 0.02$ & $0.4323 \pm 0.0005$
+  \end{tabular}
+\end{table}
+
+%4kHz ValErr(-8.06, 0.02) ValErr(-15.88, 0.02) ValErr(0.5075566750629723, 0.001412385144501711)
+%8kHz ValErr(-22.13, 0.02) ValErr(-51.19, 0.02) ValErr(0.4323109982418441, 0.0004256480161859309)
+%100Hz ValErr(-3.06, 0.02) ValErr(-2.75, 0.02) ValErr(1.1127272727272728, 0.01088035483979233)
 
 \newpage
 \subsubsection*{$LC$-Tiefpassfilter}
@@ -320,25 +389,41 @@ Vertauschen wir Widerstand und Kondensator an der vorherigen Schaltung, so erhal
 \small{\textrightarrow\textit{Wir verwenden hier nun einen $47\si{\nano\farad}$ Kondensator.}}
 \normalsize
 
-Möchten wir das $8\si{\kilo\hertz}$-Signal weitestgehend unabhängig vom $4\si{\kilo\hertz}$-Signal dämpfen, benötigen wir einen Filter mit einem stärkeren Dämpfungsverlauf. Tauschen wir den Widerstand durch eine Spule aus, so erhalten wir einen $LC$-Tiefpassfilter, mit welchem genau dies erreicht werden kann. Dies spiegelt sich auch sehr deutlich im Spektrum wieder. Der $8\si{\kilo\hertz}$-Anteil verschwindet nun quasi komplett im Untergrund, während das $4\si{\kilo\hertz}$ sehr deutlich hervorsticht. Es zeigt sich nun sogar eine Resonanzüberhöhung. Der $100\si{\hertz}$-Signalanteil ist jedoch weiterhin präsent, wie es auch bei einem Tiefpassfilter zu erwarten ist. Die Beobachtungen im Spektrum spiegeln sich auch, wie zuvor, sehr gut in der Signalformung des Ausgangssignals wider.
+Möchten wir das $8\si{\kilo\hertz}$-Signal weitestgehend unabhängig vom $4\si{\kilo\hertz}$-Signal dämpfen, benötigen wir einen Filter mit einem stärkeren Dämpfungsverlauf. Tauschen wir den Widerstand durch eine Spule aus, so erhalten wir einen $LC$-Tiefpassfilter, mit welchem genau dies erreicht werden kann. Dies spiegelt sich auch sehr deutlich im Spektrum (vgl. \abbref{fig:aufgabe8_teil2_lc_tiefpass}) wider. Der $8\si{\kilo\hertz}$-Anteil verschwindet nun quasi komplett im Untergrund, während das $4\si{\kilo\hertz}$ sehr deutlich hervorsticht. Es zeigt sich nun sogar eine Resonanzüberhöhung. Der $100\si{\hertz}$-Signalanteil ist jedoch weiterhin präsent, wie es auch bei einem Tiefpassfilter zu erwarten ist. Die Beobachtungen im Spektrum spiegeln sich auch, wie zuvor, sehr gut in der Signalformung des Ausgangssignals wider.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_lc_tiefpass_oszi.png}
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil2_lc_tiefpass_spectrum.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil2_lc_tiefpass_oszi.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil2_lc_tiefpass_spectrum.png}
   \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit $LC$-Tiefpassfilter.}
   \label{fig:aufgabe8_teil2_lc_tiefpass}
 \end{figure}
 
 Bisher haben wir beobachtet, dass wir es mit den verwendeten Filterschaltungen nicht schaffen, das  $4\si{\kilo\hertz}$-Signal zu isolieren und nur die Signalanteile darum zu dämpfen. Bei der Verwendung eines Hoch- bzw. Tiefpassfilters ist dies auch klar, da diese ab ihrer Grenzfrequenz greifen und sich dann auf alle niedrigeren bzw. höheren Frequenzen auswirken. Um nur den Bereich um den $4\si{\kilo\hertz}$-Bereich durchzulassen, benötigen wir also einen Bandpassfilter, welchen wir uns in den folgenden Teilen anschauen.
+
 \newpage
 \subsubsection*{Bandpassfilter}
+
+Zum Test des Bandpassfilters haben wir gleich mehrere Konfigurationen der RLC-Schaltung untersucht. Hierbei haben wir das Ausgangssignal je einmal an allen Bauteilen abgenommen und dies jeweils mit einem verbauten $1\si{\kilo\ohm}$- und einem $47\si{\ohm}$-Widerstand. Hieraus nehmen wir sechs verschiedene Resultate, also zwölf Plots mit. Um die Auswertung dieser abzukürzen, möchten wir uns hier auf das (subjektiv) beste Resultate beschränken.
+
+\abbref{fig:aufgabe8_teil3_clR_47ohm_bandpass} zeigt das Signal bei Filterung durch einen RLC-Bandpassfilter mit $47\si{\ohm}$-Widerstand und Abnahme der Ausgangsspannung an selbigem. Wir können im Spektrum beobachten, dass der $8\si{\kilo\hertz}$-Signalanteil quasi komplett im Untergrund verschwindet. Auch der $100\si{\hertz}$-Anteil sticht nur noch leicht aus dem Untergrund hervor. Mittig ist nun, wie gewollt isoliert, der $4\si{\kilo\hertz}$-Anteil deutlich sichtbar. Auch die Signalform des Ausgangssignals zeigt, dass es sich quasi nur noch um eine einfache Sinusform ohne starke Überlagerungen handelt.
 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil3_clR_47ohm_bandpass_oszi.png}
-  \includegraphics[width=.9\textwidth]{files/aufgabe8_teil3_clR_47ohm_bandpass_spectrum.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil3_clR_47ohm_bandpass_oszi.png}
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil3_clR_47ohm_bandpass_spectrum.png}
   \caption{Ein- (rot) und Ausgangsspannung (blau) und Frequenzspektrum des überlagerten Signals mit $RLC$-Bandpassfilter mit $47\si{\kilo\ohm}$ Widerstand, bei Spannungsabnahme über den Widerstand.}
   \label{fig:aufgabe8_teil3_clR_47ohm_bandpass}
 \end{figure}
+\newpage\noindent
+Die Amplitude des $4\si{\kilo\hertz}$-Signalanteils liegt in dieser Konfiguration bei einem Wert von $-18.50 \pm 0.02 \mathrm{dBV}$. Dies entspricht im Vergleich zum ungefilterten Signal einer Dämpfung von
+\begin{align}
+  \frac{-8.06\mathrm{dBV}}{-18.50\mathrm{dBV}} = 0.4357 \pm 0.0012.
+\end{align}
+
+Im Vergleich dazu wird die Amplitude des $100\si{\hertz}$-Signals in dieser Filterschaltung auf $-57.56 \pm 0.02 \mathrm{dBV}$ gedämpft, was einer Dämpfung um
+\begin{align}
+  \frac{-3.06\mathrm{dBV}}{-57.56\mathrm{dBV}} = 0.0532 \pm 0.0004,
+\end{align}
+entspricht. Also einer deutlich stärkeren, als für das $4\si{\kilo\hertz}$-Signal.
