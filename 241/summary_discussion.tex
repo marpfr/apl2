@@ -78,4 +78,72 @@ bestimmt. Daraufhin haben wir die durch die Spule verursachten Verluste in der R
 \end{table}
 \renewcommand{\arraystretch}{1}
 
-Die Abweichungen zwischen den Resultaten der beiden Rechenwege sind mit Größen um $1\sigma$ relativ gering und vermutlich hauptsächlich auf Messungenauigkeiten zurückzuführen. 
+Die Abweichungen zwischen den Resultaten der beiden Rechenwege sind mit Größen um $1\sigma$ relativ gering und vermutlich hauptsächlich auf Messungenauigkeiten zurückzuführen. Dass der Verlustwiderstand der Spule über die verschiedenen Widerstandswerte nicht konstant ist, hängt damit zusammen, dass dieser frequenzabhängig ist. Wie auch in der Auswertung dieser Aufgabe zu sehen, ergeben sich für die verschiedenen Widerstände ganz verschiedene Frequenzgänge der Schaltung.
+
+Weiter mit dem Serienschwingkreis haben wir im nächsten Schritt die Frequenzgänge aller drei Bauteile untersucht. Eine Besonderheit bei Betrachtung der Frequenzgänge von Kondensator und Spule ist, dass es bei diesen zu einer sogenannten Resonanzüberhöhung kommt. Dabei steigt bei der jeweiligen Resonanzüberhöhung der Bauteile der Wert der Ausgangsamplitude über den Wert der Eingangamplitude an. Dies konnten wir sehr gut an den aufgezeichneten Frequenzgängen beobachten. Aus diesen haben wir dann für alle drei Bauteile die jeweilige Resonanzfrequenz abgelesen. Um diese mit der theoretischen Voraussage zu vergleichen haben wir zunächst die Dämpfungskonstante des Schwingkreises auf
+\begin{align*}
+  \delta = (3028 \pm 1758)\si{\per\second}
+\end{align*}
+bestimmt. Damit konnten wir die Resonanzfrequenz des Widerstandes, und mithilfe dieser wiederum die Resonanzfrequenzen von Kondensator und Spule berechnen. Die Werte sind zum Vergleich in \tabref{tab:zmf_omega_vergleich} zusammengefasst.
+
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+  \centering
+  \caption{Vergleich der gemessenen und theoretisch vorhergesagten Werte der Resonanzfrequenzen der Bauteile im RLC-Serienschwingkreis.}\vspace*{0.5em}
+  \label{tab:zmf_omega_vergleich}
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+    & $\omega_R\,[\si{\per\second}]$ & $\omega_C\,[\si{\per\second}]$ & $\omega_L\,[\si{\per\second}]$\\\hline
+    Gemessener Wert & $3910 \pm 20$ & $3800 \pm 20$ & $4040 \pm 20$ \\\hline
+    Theoretischer Wert & $3851 \pm 1131$ & $3791 \pm 1149$ & $3911 \pm 1114$\\\hline\hline
+    Abweichung & $0.06\sigma$ & $0.009\sigma$ & $0.12\sigma$\\
+    \hline
+  \end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+Die Fehler der theoretisch Werte sind sehr groß, was ein Grund für die sehr geringe $\sigma$-Abweichung zwischen diesen und den gemessenen Werten ist. Andererseits fällt auch bei Betrachtung der absoluten Unterschiede auf, dass die Theorie sehr nahe an der Praxis ist.
+
+Bevor wir zum mehr praxisorientierten Teil fortgefahren sind, haben wir noch einmal kurz einen Parallelschwingkreis betrachtet. Auch für diesen haben wir einen Frequenzgang aufgezeichnet, in welchem sich sehr gut das Einsetzen der Bandsperre bei der Resonanzfrequenz beobachten ließ. Aus dem Grafen haben wir eine Resonanzfrequenz von 
+\begin{align*}
+  f_{0,exp} = (3.94 \pm 0.02)\si{\kilo\hertz}
+\end{align*}
+abgelesen. Die Theorie sagt für die verwendete Konfiguration eine Resonanzfrequenz von 
+\begin{align*}
+  f_{0,theo} = (3.85 \pm 1.14)\si{\kilo\hertz}
+\end{align*}
+voraus. Diese weicht um gerade mal $0.078\sigma$ vom gemessenen Wert ab. Auch hier ist wieder ein großer Fehler im theoretischen Wert für die außergewöhnlich geringe $\sigma$-Abweichung verantwortlich. Allerdings zeigt ein direkter Vergleich der Werte ebenso eine sehr gute Annäherung.
+
+In Aufgabe 8 haben wir uns dann erstmalig mit einer tatsächlichen praktischen Anwendung der RC- und RLC-Glieder auseinandergesetzt. Mit dem Funktionsgenerator haben wir ein Sinussignal aus mehreren überlagerten verschiedenen Frequenzen generiert. Dessen Spektrum sah zunächst wie in \abbref{fig:zmfs_aufgabe8_teil1_osz} zu sehen aus. Die primären Anteile waren ein $100\si{\hertz}$-, ein $4\si{\kilo\hertz}$- und ein $8\si{\kilo\hertz}$-Signal, welche auch leicht im ungefilterten Spektrum zu sehen sind.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil1_spectrum.png}
+  \caption{Frequenzspektrum des überlagerten Signals ohne Filter.}
+  \label{fig:zmfs_aufgabe8_teil1_osz}
+\end{figure}
+
+Mit dem Ziel, den mittig zu sehenden Anteil bei in etwa $4\si{\kilo\hertz}$ zu isolieren und alle umliegenden Frequenzen weitestgehend zu dämpfen haben wir das Signal durch verschiedene Schaltungen gefiltert. Dazu gehörten RC-Hoch- und Tiefpassfilter, ein LC-Tiefpassfilter, sowie verschiedene Konfigurationen des RLC-Bandpassfilters. Die beste Herausstellung des $4\si{\kilo\hertz}$-Anteils, zu sehen in \abbref{fig:zsmf_aufgabe8_teil3_clR_47ohm_bandpass}, konnten wir mit einem RLC-Bandpassfilter mit einem $47\si{\kilo\ohm}$ Widerstand erzielen. Die Ausgangsspannung haben wir hier am Widerstand abgenommen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{files/aufgabe8_teil3_clR_47ohm_bandpass_spectrum.png}
+  \caption{Frequenzspektrum des überlagerten Signals mit $RLC$-Bandpassfilter mit $47\si{\kilo\ohm}$ Widerstand, bei Spannungsabnahme über den Widerstand.}
+  \label{fig:zsmf_aufgabe8_teil3_clR_47ohm_bandpass}
+\end{figure}
+
+Wie im Spektrum zu sehen, haben wir in diese Konfiguration den $8\si{\kilo\hertz}$-Anteil so weit herausgefiltert, dass dieser komplett im Untergrund verschwindet. Der $4\si{\kilo\hertz}$ wurde ebenfalls sehr stark gedämpft. Bei einem Vergleich der gefilterten und ungefilterten Amplitude haben wir für diesen eine Dämpfung von
+\begin{align*}
+  \delta_{100\si{\hertz}} = 0.0532 \pm 0.0004
+\end{align*}
+berechnet. Besonders gut zu sehen ist in diesem Spektrum nun der $4\si{\kilo\hertz}$-Anteil. Diese erfuhr durch die Filterschaltung eine Dämpfung von
+\begin{align*}
+  \delta_{4\si{\kilo\hertz}} = 0.4357 \pm 0.0012.
+\end{align*}
+
+Als zweites Anwendungsgebiet haben wir mit einer RLC-Schaltung einen AM-Empfänger simuliert. Über eine Sendeantenne im Versuchsraum wurde ein kontinuierliches Sinussignal ausgesendet. Dieses haben wir über eine Antenne empfangen und versucht, es durch die Filterschaltung möglichst störungsfrei am Oszilloskop anzuzeigen. Dabei haben wir außerdem die Auswirkungen der Variation der Kapazität im Schwingkreis, sowie eines Eisenkerns  in der Spule qualitativ beobachtet.
+
+Wir konnten beobachten, dass die Amplitude des empfangenen Signals bis zu einem Maximum mit Erhöhung der Kapazitäten zu- und dann wieder abnahm. Beim Entfernen des Eisenkerns aus der Spule konnten wir eine Abnahme der Amplitude beobachten. Tatsächlich schafften wir es, durch etwas fine-tuning an der Filterschaltung ein nur noch leicht verzerrtes Sinussignal am Oszilloskop anzuzeigen.
+
+Weiter versuchten wir ein tatsächliches Audiosignal, welches im Raum durch einen Spulenaufbau ausgesendet wurde, zu empfangen und mit der Filterschaltung aufzulösen. Leider schlugen hierbei all unsere Versuche fehl und wir haben es nicht geschafft, ein über Kopfhörer hörbares Signal zu bekommen.

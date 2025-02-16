@@ -132,7 +132,16 @@ Für diesen Aufgabenteil betrachten wir erstmals einen Serienschwingkreis, also 
 \begin{align}
   L &= \frac{1}{\omega_R^2 C}
 \end{align}
-mit der Kapazität $C$, sowie gemessenen Resonanzfrequenz $\omega_R$, welche wir zuvor durch den Faktor $2\pi$ noch in eine Kreisfrequenz umrechnen. In der Durchführung haben wir die Messungen für drei unterschiedliche Widerstände durchgeführt, also drei verschiedene Resonanzfrequenzen gemessen. Für die drei Frequenzen berechnen wir jeweils eine Induktivität und nehmen davon den Mittelwert von
+mit der Kapazität $C$, sowie gemessenen Resonanzfrequenz $\omega_R$, welche wir zuvor durch den Faktor $2\pi$ noch in eine Kreisfrequenz umrechnen. In der Durchführung haben wir die Messungen für drei unterschiedliche Widerstände durchgeführt und dafür die Frequenzgänge, zu sehen in \abbref{fig:aufgabe4_frequenzgang_schwingkreis} aufgezeichnet. Aus den Maxima der Frequenzgänge haben wir dann die Resonanzfrequenz abgelesen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.8\textwidth]{files/aufgabe4_frequenzgang_schwingkreis.png}
+  \caption{Frequenzgang des RLC-Schwingkreises für drei verschiedene Widerstände.}
+  \label{fig:aufgabe4_frequenzgang_schwingkreis}
+\end{figure}
+
+Für die drei Frequenzen berechnen wir jeweils eine Induktivität und nehmen davon den Mittelwert von
 \begin{align}
   L = (3.63 \pm 0.22) \cdot 10^{-2} \si{\henry}
 \end{align}
@@ -268,7 +277,7 @@ Die Formel für die Resonanzfrequenz der Spule \eqref{eq:rlc_omega_l} ist dazu s
   \end{tabular}
 \end{table}
 \renewcommand{\arraystretch}{1}
-
+\newpage
 \subsection{Parallelschwingkreis-Bandsperre}
 
 Bevor wir zum anwendungsbezogenen Teil des Versuchs fortfahren, betrachten wir abschließend einen Parallelschwingkreis. Wir haben die Ausgangsspannung über den Widerstand abgegriffen erneut den Frequenzgang, zu sehen in \abbref{fig:aufgabe7_parallel_bandsperre}, aufgezeichnet.
@@ -283,7 +292,7 @@ Bevor wir zum anwendungsbezogenen Teil des Versuchs fortfahren, betrachten wir a
 
 Aus dem Grafen können wir ablesen, dass die Bandsperre bei einer Resonanzfrequenz von $(3.94 \pm 0.02)\si{\kilo\hertz}$ greift. Die Ausgangsamplitude sinkt an dieser Stelle also auf $0\si{\volt}$ ab. Die Theorie sagt voraus, dass für die Resonanzfrequenz gilt $\omega_0 = \flatfrac{1}{\sqrt{LC}}$. Wir setzen die Werte für Kapazität und Induktivität ein und erhalten damit einen Wert von
 \begin{align}
-  \omega_0 &= (3851 \pm 1131) \si{\per\second}.
+  f_0 &= (3851 \pm 1131) \si{\hertz}.
 \end{align}
 Dieser weicht um $0.078\sigma$ von dem von uns gemessenen Wert ab.
 \newpage
