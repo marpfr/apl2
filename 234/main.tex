@@ -1,0 +1,128 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{enumerate}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{stackengine}
+\usepackage{dsfont}
+\usepackage{titlesec}
+\usepackage{float}
+
+\input{../global/commands.tex}
+
+\setlength{\textheight}{26cm} \setlength{\footskip}{1cm}
+\setlength{\topmargin}{-20mm} \setlength{\headheight}{5mm}
+\setlength{\headsep}{5mm} \setlength{\textwidth}{16cm}
+\setlength{\evensidemargin}{0mm} \setlength{\oddsidemargin}{0mm}
+
+
+% NÜTZLICHE TRICKS
+
+% Benutze kein \left( \right), der "physics" package hat \pqty{} (runde Klammern), \bqty{} (eckige Klammern), die die Größe der Klammern automatisch anpassen mehr zum phyisics package hier: http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/physics/physics.pdf
+
+% 
+
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+\DeclareSIPrePower\quartic{4}
+\sisetup{per-mode=fraction}
+\sisetup{exponent-product=\cdot}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\setlength{\parindent}{0pt}
+\newcounter{versuchnr}
+\newcounter{gruppe}
+\allowdisplaybreaks
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\it}
+
+\renewcommand{\arraystretch}{1.2}
+
+
+
+
+
+\begin{document}
+	
+	%%%%%%% Name(n) der Abgebenden
+	\newcommand{\name}{Marius Pfeiffer}
+
+	%%%%%%% Daten Versuch
+	\setcounter{versuchnr}{234}
+	\newcommand{\versuchtitel}{Lichtquellen und Gitterspektroskopie}
+	\newcommand{\protocolpdf}{files/messprotokoll234.pdf}
+	\newcommand{\titleimg}{files/versuchsaufbau.png}
+	\newcommand{\betreuer}{Henri Valentin Lurtz}
+	\newcommand{\datum}{12.02.2025}
+	
+	
+	\begin{center}
+		{Physikalisches Anfängerpraktikum II für Lehramtsstudierende}\\[3mm]
+	\end{center}
+	
+	\vspace*{5mm}
+	
+	\noindent Name: \name{}
+	\hfill Matrikel-Nr.: 4188573\\
+	E-Mail: marius.pfeiffer@stud.uni-heidelberg.de
+	
+	\vspace*{2mm}
+	\noindent Betreut durch: \betreuer
+    \hfill \datum
+
+	\vspace*{2mm}
+	\hrule \vspace*{10mm}
+
+  \begin{center}
+    {\bf \large Versuch \arabic{versuchnr}: \it \bf \versuchtitel}
+  \end{center}
+
+  \vspace*{10mm}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{\titleimg}
+    \caption{Versuchsaufbau}
+  \end{figure}
+	
+  \tableofcontents
+  \newpage\noindent
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Einleitung}
+	
+	\input{intro}
+	
+	
+  
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\includepdf[scale=0.83,pages=1,pagecommand=\section{Messprotokoll}]{\protocolpdf}
+  \includepdf[scale=0.83,pages=2-,pagecommand={\thispagestyle{plain}}]{\protocolpdf}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newpage\noindent
+	\input{evaluation_analysis}
+	
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newpage\noindent
+	\input{summary_discussion}
+	
+	
+\end{document}
+
