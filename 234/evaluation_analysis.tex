@@ -102,7 +102,9 @@ Am Spektrum der Glühlampe ist zu erkennen, dass sich ein nicht ungewisser Teil 
 
 \subsection{Untersuchung des Natriumspektrums}
 
-Im folgenden haben wir drei verschiedene Bereiche des Spektrums einer Natriumdampflampe aufgezeichnet und möchten nun die beobachtbaren Spektrallinien mit den theoretischen Vorhersagen der Zustandsübergänge vergleichen. \abbref{fig:na_spek_350_550} zeigt die Linien geringer Intensität, welche im Bereich einer Wellenlänge von $350\si{\nano\meter}$ bis $550\si{\nano\meter}$ zu finden sind. 
+\subsubsection*{Beobachtete Spektrallinien}
+
+Im folgenden haben wir drei verschiedene Bereiche des Spektrums einer Natriumdampflampe aufgezeichnet und möchten im weiteren Verlauf die beobachtbaren Spektrallinien mit den theoretischen Vorhersagen der Zustandsübergänge vergleichen. \abbref{fig:na_spek_350_550} zeigt die Linien geringer Intensität, welche im Bereich einer Wellenlänge von $350\si{\nano\meter}$ bis $550\si{\nano\meter}$ zu finden sind. 
 
 
 \begin{figure}[H]
@@ -140,3 +142,119 @@ Als letztes Betrachten wir den oberen Bereich des Natriumspektrums von $650$ bis
   \caption{Natriuspektrum im Wellenlängenbereich von $350$ bis $550\si{\nano\meter}$.}
   \label{fig:na_spek_650_850}
 \end{figure}
+
+Nun möchten wir die beobachteten Spektrallinien mit den Vorhersagen der Theorie vergleichen.
+
+\subsubsection*{Erwartete Linien für die 1. Nebenserie $md \to 3p$}
+
+Den Korrekturterm $\Delta_{d}$ können wir für diese Serie vernachlässigen. Für die Wellenlänge $\lambda_m$ für die Übergänge $md \to 3p$ gilt
+\begin{align}
+  \lambda_m &= \frac{hc}{\frac{E_{Ry}}{m^2} - E_{3p}}.
+\end{align}
+Hierbei sind die Rydbergenergie $E_{3p} = -13.605\unit{\electronvolt}$, sowie $hc = 1.2398 \cdot 10^{3} \si{\nano\meter \electronvolt}$ als Konstanten gesetzt. $E_{3p}$ können wir mit dieser Formel berechnen, indem wir $m = 3$ und entsprechend $\lambda_3$ gleich der gemessenen Linie im Bereich von $819\si{\nano\meter}$ setzen. Die von uns gemessene Linie, welche am nächsten an dieser ist, liegt bei $817.7\si{\nano\meter}$. Damit erhalten wir einen Wert von
+\begin{align}
+  E_{3p} = -3.0279 \pm 0.0019\si{\electronvolt}.
+\end{align}
+
+Setzen wir nun diese Energie und die Quantenzahl $m$ im Bereich von $3$ bis $12$ in die obige Formel ein, so erhalten wir die erwarteten Wellenlängen für die jeweiligen Übergänge. Diese sind in \tabref{tab:wellenlaengen_1ns} zu sehen, gemeinsam mit der zugeordneten Spektrallinie aus unseren Beobachtungen, sowie der jeweiligen Abweichung.
+
+\begin{table}[H]
+  \centering
+  \caption{Vergleich der berechneten und gemessenen Wellenlängen der 1. Nebenserie $md \to 3p$.}
+  \vspace*{0.5em}
+  \begin{tabular}{c c c c}
+      \hline
+      $m$ & $\lambda_{\text{theo.}}$ [nm] & $\lambda_{\text{beob.}}$ [nm] & Abweichung \\
+      \hline
+      3  & $817.7 \pm 1.000$ & $817.7 \pm 1$ & 0.01$\sigma$ \\
+      4  & $569.4 \pm 0.5$ & $567.1 \pm 1$ & 2.03$\sigma$ \\
+      5  & $499.2 \pm 0.4$ & $496.9 \pm 2$ & 1.13$\sigma$ \\
+      6  & $467.9 \pm 0.4$ & $469.2 \pm 1$ & 1.28$\sigma$ \\
+      7  & $450.8 \pm 0.4$ & $450.0 \pm 1$ & 0.77$\sigma$ \\
+      8  & $440.4 \pm 0.3$ & $438.1 \pm 1$ & 2.20$\sigma$ \\
+      9  & $433.5 \pm 0.3$ & $432.6 \pm 1$ & 0.88$\sigma$ \\
+      10 & $428.7 \pm 0.3$ & $429.2 \pm 1$ & 0.46$\sigma$ \\
+      11 & $425.3 \pm 0.3$ & $426.0 \pm 1$ & 0.72$\sigma$ \\
+      12 & $422.7 \pm 0.3$ & $423.1 \pm 1$ & 0.44$\sigma$ \\
+      \hline
+  \end{tabular}
+  \label{tab:wellenlaengen_1ns}
+\end{table}
+
+\subsubsection*{Erwartete Linien für die 2. Nebenserie $ms \to 3p$}
+
+Bei der Betrachtung der 2. Nebenserie können wir den Korrekturterm $\Delta_s$ nicht vernachlässigen. Die Bindungsenergie des Grundzustandes $E_{3s}$ berechnen wir nach der Formel
+\begin{align}
+  E_{3s} = E_{3p} - \frac{hc}{\lambda}.
+\end{align}
+
+Für die Wellenlänge $\lambda$ setzen wir die beobachtete Wellenlänge der D-Linie ein, da diese dem Übergang $3p \to 3s$ entspricht. In unseren Aufzeichnungen können wir diese Linie bei in etwa $\lambda = (590.5 \pm 1) \si{\nano\meter}$ beobachten. Damit erhalten wir eine Bindungsenergie von
+\begin{align}
+  E_{3s} = (-5.127 \pm 0.005) \si{\electronvolt}.
+\end{align}
+Durch Umstellen der Gleichung
+\begin{align}
+  E_{3s} = \frac{E_{Ry}}{(3 - \Delta_s)^2}
+\end{align}
+berechnen wir den Wert des Korrekturterms zu
+\begin{align}
+  \Delta_s = 1.3711 \pm 0.0007.
+\end{align}
+
+Die erwarteten Werte für die Wellenlängen der Linien können wir dann pro Quantenzahl $m$ mit der Formel
+\begin{align}
+  \lambda_m \approx \frac{hc}{\frac{E_{Ry}}{(m - \Delta_s)^2} - E_{3p}}
+\end{align}
+berechnen. Die Werte für $m$ im Bereich von $4$ bis $9$ sind in der \tabref{tab:wellenlaengen_2ns} wiederzufinden.
+
+\begin{table}[H]
+  \centering
+  \caption{Vergleich der berechneten und gemessenen Wellenlängen der 2. Nebenserie $ms \to 3p$.}
+  \vspace*{0.5em}
+  \begin{tabular}{c c c c}
+      \hline
+      $m$ & $\lambda_{\text{theo.}}$ [nm] & $\lambda_{\text{beob.}}$ [nm] & Abweichung \\
+      \hline
+      4  & $1170.366 \pm 1.302$ & -     & -     \\
+      5  & $621.527 \pm 0.692$  & $622.34 \pm 1$ & $0.67\sigma$ \\
+      6  & $518.112 \pm 0.577$  & $517.50 \pm 1$ & $0.53\sigma$ \\
+      7  & $477.124 \pm 0.531$  & $474.00 \pm 1$ & $2.76\sigma$ \\
+      8  & $456.100 \pm 0.508$  & $454.40 \pm 1$ & $1.52\sigma$ \\
+      9  & $443.719 \pm 0.494$  & $445.30 \pm 1$ & $1.42\sigma$ \\
+      \hline
+  \end{tabular}
+  \label{tab:wellenlaengen_2ns}
+\end{table}
+
+\subsubsection*{Erwartete Linien für die Hauptserie $mp \to 3s$}
+
+Zu guter Letzt betrachten wir noch die erwarteten Linien der Hauptserie $mp \to 3s$. Hierzu benötigen wir den Korrekturterm $\Delta_p$, welchen wir ähnlich zur vorherigen Betrachtung durch Umstellen der Gleichung
+\begin{align}
+  E_{3p} = \frac{E_{Ry}}{(3 - \Delta_p)^2}
+\end{align}
+zu
+\begin{align}
+  \Delta_p = 0.8803 \pm 0.0007
+\end{align}
+berechnen.
+
+Mit diesem Wert berechnen wir nach der Gleichung
+\begin{align}
+  \lambda_m \approx \frac{hc}{\frac{E_{Ry}}{(m - \Delta_p)^2} - E_{3s}}
+\end{align}
+die erwarteten Wellenlängen der Linien mit den Quantenzahlen $m = 4$ und $5$. Diese sind in der \tabref{tab:wellenlaengen_hs} zu finden. Da wir den Bereich des Spektrums, in dem sich diese Linien befinden, nicht aufgezeichnet haben, können wir diese nicht mit beobachteten Werten vergleichen.
+
+\begin{table}[H]
+  \centering
+  \caption{Berechneten Wellenlängen der Hauptserie $mp \to 3s$.}
+  \vspace*{0.5em}
+  \begin{tabular}{c c c c}
+      \hline
+      $m$ & $\lambda_{\text{theo.}}$ [nm] & $\lambda_{\text{beob.}}$ [nm] & Abweichung \\
+      \hline
+      4  & $332.4 \pm 0.6$ & -     & -     \\
+      5  & $286.6 \pm 0.5$  & - & - \\
+      \hline
+  \end{tabular}
+  \label{tab:wellenlaengen_hs}
+\end{table}
