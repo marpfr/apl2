@@ -149,7 +149,7 @@ Nun möchten wir die beobachteten Spektrallinien mit den Vorhersagen der Theorie
 
 Den Korrekturterm $\Delta_{d}$ können wir für diese Serie vernachlässigen. Für die Wellenlänge $\lambda_m$ für die Übergänge $md \to 3p$ gilt
 \begin{align}
-  \lambda_m &= \frac{hc}{\frac{E_{Ry}}{m^2} - E_{3p}}.
+  \lambda_m &\approx \frac{hc}{\frac{E_{Ry}}{m^2} - E_{3p}}.
 \end{align}
 Hierbei sind die Rydbergenergie $E_{3p} = -13.605\unit{\electronvolt}$, sowie $hc = 1.2398 \cdot 10^{3} \si{\nano\meter \electronvolt}$ als Konstanten gesetzt. $E_{3p}$ können wir mit dieser Formel berechnen, indem wir $m = 3$ und entsprechend $\lambda_3$ gleich der gemessenen Linie im Bereich von $819\si{\nano\meter}$ setzen. Die von uns gemessene Linie, welche am nächsten an dieser ist, liegt bei $817.7\si{\nano\meter}$. Damit erhalten wir einen Wert von
 \begin{align}
@@ -258,3 +258,78 @@ die erwarteten Wellenlängen der Linien mit den Quantenzahlen $m = 4$ und $5$. D
   \end{tabular}
   \label{tab:wellenlaengen_hs}
 \end{table}
+
+\subsection{Bestimmung der Serienenergien und der l-abhängigen Korrekturfaktoren}
+
+Die Funktionen, welche wir bisher genutzt hatten, um die Wellenlängen der Spektrallinie berechnen, können wir umgekehrt auch verwenden um die Rydbergenergie, sowie die Korrekturterme zu berechnen. Dazu tragen wir die gemessenen Wellenlängen der ersten Nebenserie in ein Diagramm auf und Fitten an diese Daten die Funktion
+\begin{align}
+  \lambda_m = \frac{hc}{\frac{E_{Ry}}{(m-\Delta_d)^2} - E_{3p}}.
+\end{align}
+
+Hierbei lassen wir $E_{Ry}, E_{3p}$ und $\Delta_d$ freie Parameter, welche wir mit den Startwerten 
+\begin{align}
+  E_{Ry} = -13.6\, [\si{\electronvolt}], \quad
+  E_{3p} = -3\, [\si{\electronvolt}], \quad
+  \Delta_d = -0.02
+\end{align}
+vorbelegen. \abbref{fig:na_1ns_fit} zeigt die aufgetragenen Messdaten sowie das grafische Resultat des Fits.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/na_1ns_fit.png}
+  \caption{Resultat für den Fit an die Wellenlängen der 1. Nebenserie.}
+  \label{fig:na_1ns_fit}
+\end{figure}
+
+Die durch den Fit optimierten Werte der Parameter entsprechen
+\begin{align}
+  E_{Ry} = -13.0 \pm 0.5\, [\si{\electronvolt}], \quad
+  E_{3p} = -3.023 \pm 0.006\, [\si{\electronvolt}], \quad
+  \Delta_d = 0.07 \pm 0.05.
+\end{align}
+
+Die Güte des Fits bestimmen wir durch das Berechnen der $\chisq$-Summe nach
+\begin{align}
+  \chisq = \sum_{i}^{N} \qty(\frac{\text{Funktionswert}_i - \text{Messwert}_i}{\text{Fehler}_i})^2,
+\end{align}
+sowie dem reduzierten $\chisq$-Wert nach $\chisqrd = \flatfrac{\chisq}{\#\text{Freiheitsgrade}}$.
+
+Aus dem gezeigten Fit erhalten wir für diese Werte von
+\begin{align}
+  \chisq = 10.53,\qquad \chisqrd = 1.50.
+\end{align}
+
+Für die Fitwahrscheinlichkeit erhalten wir einen Wert von $16.0\%$.
+
+Den gleichen Prozess führen wir nun noch einmal für die 2. Nebenserie durch. Dafür fitten wir die Funktion
+\begin{align}
+  \lambda_m = \frac{hc}{\frac{E_{Ry}}{(m - \Delta_s)^2} - E_{3p}}
+\end{align}
+an die gemessenen Wellenlängen. Die Variablen initialisieren wir erneut mit den Startwerten
+\begin{align}
+  E_{Ry} = -13.6\, [\si{\electronvolt}], \quad
+  E_{3p} = -3\, [\si{\electronvolt}], \quad
+  \Delta_d = -0.02.
+\end{align}
+
+Das grafische Resultat ist in \abbref{fig:na_2ns_fit} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/na_2ns_fit.png}
+  \caption{Resultat für den Fit an die Wellenlängen der 2. Nebenserie.}
+  \label{fig:na_2ns_fit}
+\end{figure}
+
+Wir erhalten die folgenden optimierten Werte für die Variablen:
+\begin{align}
+  E_{Ry} = -11.6 \pm 2.1\, [\si{\electronvolt}], \quad
+  E_{3p} = -3.01 \pm 0.04\, [\si{\electronvolt}], \quad
+  \Delta_s = 1.62 \pm 0.25.
+\end{align}
+
+Die Güte des Fits wird mit
+\begin{align}
+  \chisq = 8.55,\qquad \chisqrd = 4.28.
+\end{align}
+bewertet und die Fitwahrscheinlichkeit beläuft sich auf einen Wert von $1.0\%$.
