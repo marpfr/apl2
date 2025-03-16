@@ -29,20 +29,20 @@ Am Tag der Versuchsdurchführung war das Wetter leider stark bewölkt, weshalb w
   \label{fig:absorption_glas}
 \end{figure}
 
-Die vielen im Spektrum sichtbaren lokalen Minima sind gerade die Wellenlängen der Frauenhoferlinien, welche durch Absorption von Licht bestimmter Wellenlängen in der Sonnen- und Erdatmosphäre entstehen. \abbref{fig:spektrum_frauenhofer_balmer} zeigt erneut das Spektrum des Sonnenlichts, ohne Fensterscheibe. Markiert sind hier in Orange nun die Minima im Spektrum, welche jeweils am nächsten an der erwarteten Wellenlänge einer Frauenhoferlinie liegen. Zusätzlich sind in Grün die Literaturwerte der Wellenlänge der Balmer-Serie von Wasserstoff eingezeichnet.
+Die vielen im Spektrum sichtbaren lokalen Minima sind gerade die Wellenlängen der Fraunhoferlinien, welche durch Absorption von Licht bestimmter Wellenlängen in der Sonnen- und Erdatmosphäre entstehen. \abbref{fig:spektrum_fraunhofer_balmer} zeigt erneut das Spektrum des Sonnenlichts, ohne Fensterscheibe. Markiert sind hier in Orange nun die Minima im Spektrum, welche jeweils am nächsten an der erwarteten Wellenlänge einer Fraunhoferlinie liegen. Zusätzlich sind in Grün die Literaturwerte der Wellenlänge der Balmerserie von Wasserstoff eingezeichnet.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{files/plots/spektrum_frauenhofer_balmer.png}
-  \caption{Frauenhoferlinien und Balmerserie}
-  \label{fig:spektrum_frauenhofer_balmer}
+  \includegraphics[width=\textwidth]{files/plots/spektrum_fraunhofer_balmer.png}
+  \caption{Fraunhoferlinien und Balmerserie}
+  \label{fig:spektrum_fraunhofer_balmer}
 \end{figure}
 
-\tabref{tab:frauenhofer_vergleich} zeigt eine Aufschlüsselung der erwarteten Wellenlänge der Frauenhoferlinien, die von uns aus dem Spektrum abgelesenen werte, sowie die Abweichung zwischen den Werten. Als Fehler für die abgelesenen Wellenlängen haben wir hier einen Wert von $\pm 1 \si{\nano\meter}$ verwendet. Es ist zu sehen, dass sich die Abweichung, bis auf wenige ausnahmen auf unter einem $\sigma$ beläuft.
+\tabref{tab:fraunhofer_vergleich} zeigt eine Aufschlüsselung der erwarteten Wellenlänge der Fraunhoferlinien und der Linien der Balmerserie, die von uns aus dem Spektrum abgelesenen Werte, sowie die Abweichung zwischen den Werten. Als Fehler für die abgelesenen Wellenlängen haben wir hier einen Wert von $\pm 1 \si{\nano\meter}$ verwendet. Es ist zu sehen, dass sich die Abweichung, bis auf wenige ausnahmen auf unter einem $\sigma$ beläuft.
 
 \begin{table}[h]
   \centering
-  \caption{Vergleich der erwarteten und gemessenen Wellenlängen der Frauenhoferlinien}
+  \caption{Vergleich der erwarteten und gemessenen Wellenlängen der Fraunhofer- und Balmerlinien}
   \vspace*{0.5em}
   \begin{tabular}{c|c|c|c}
       \hline
@@ -60,9 +60,14 @@ Die vielen im Spektrum sichtbaren lokalen Minima sind gerade die Wellenlängen d
       C  & 656.3 & 655.0 & 1.3 \\
       B  & 686.7 & 686.7 & 0.0 \\
       A  & 759.4 & 759.4 & 0.0 \\
+      \hline\hline
+      $\mathrm{H}_{\alpha}$ & 656.3 & 655.0 & 1.3\\
+      $\mathrm{H}_{\beta}$ & 486.1 & 485.2 & 0.91\\
+      $\mathrm{H}_{\gamma}$ & 434.0 & 433.4 & 0.61\\
+      $\mathrm{H}_{\delta}$ & 410.1 & 409.5 & 0.61\\
       \hline
   \end{tabular}
-  \label{tab:frauenhofer_vergleich}
+  \label{tab:fraunhofer_vergleich}
 \end{table}
 
 \newpage
@@ -151,7 +156,7 @@ Den Korrekturterm $\Delta_{d}$ können wir für diese Serie vernachlässigen. F�
 \begin{align}
   \lambda_m &\approx \frac{hc}{\frac{E_{Ry}}{m^2} - E_{3p}}.
 \end{align}
-Hierbei sind die Rydbergenergie $E_{3p} = -13.605\unit{\electronvolt}$, sowie $hc = 1.2398 \cdot 10^{3} \si{\nano\meter \electronvolt}$ als Konstanten gesetzt. $E_{3p}$ können wir mit dieser Formel berechnen, indem wir $m = 3$ und entsprechend $\lambda_3$ gleich der gemessenen Linie im Bereich von $819\si{\nano\meter}$ setzen. Die von uns gemessene Linie, welche am nächsten an dieser ist, liegt bei $817.7\si{\nano\meter}$. Damit erhalten wir einen Wert von
+Hierbei sind die Rydbergenergie $E_{Ry} = -13.605\unit{\electronvolt}$, sowie $hc = 1.2398 \cdot 10^{3} \si{\nano\meter \electronvolt}$ als Konstanten gesetzt. $E_{3p}$ können wir mit dieser Formel berechnen, indem wir $m = 3$ und entsprechend $\lambda_3$ gleich der gemessenen Linie im Bereich von $819\si{\nano\meter}$ setzen. Die von uns gemessene Linie, welche am nächsten an dieser ist, liegt bei $817.7\si{\nano\meter}$. Damit erhalten wir einen Wert von
 \begin{align}
   E_{3p} = -3.0279 \pm 0.0019\si{\electronvolt}.
 \end{align}
