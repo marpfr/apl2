@@ -1,3 +1,27 @@
+In Versuch 255 setzen wir uns mit der Funktionsweise einer Röntgenröhre, sowie dem charakteristischen Spektrum der Röntenstrahlung auseinander. Neben quantitativen Untersuchungen des Röntgenspektrums selbst, nutzen wir das Prinzip der Bragg-Reflexion, um unter anderem die Gitterkonstante eines NaCl-Kristalls zu bestimmen.
+
 \subsection{Physikalische Grundlagen}
+
+\subsubsection*{Die Röntgenröhre}
+Eine Röntgenröhre ist aufgebaut aus einer Glühkathode und einer Anode, welche sich in einem evakuierten Glaskolben befinden. Durch Glühemmission werden aus der Kathode Elektronen freigesetzt, welche durch eine Beschleunigungsspannung von $10$ bis $100\si{\kilo\volt}$, welche zwischen Kathode und Anode anliegt beschleunigt werden. Der kontinuierliche Teil des Röntgenspektrums wird durch die ausgehende Bremsstrahlung beim Abbremsen der Elektronen im Anodenmaterial verursacht. Diese Strahlung setzt bei einer bestimmten Grenzwellenlänge $\lambda_{gr}$ ein, welche sich nach
+\begin{align}
+  \lambda_{gr} = \frac{hc}{eU}
+\end{align}
+berechnen lässt. Hierbei sind $h,c,e$ das Plank'sche Wirkungsquantum, die Lichtgeschwindigkeit und die Elementarladung. $U$ ist die an der Röntgenröhre anliegende Beschleunigungsspannung. Durch frei werdende Strahlung bei der Ionisation des Anodenmaterials ist dem kontinuierlichen Spektrum ein diskretes Spektrum überlagert, welches charakteristisch für das jeweilige Anodenmaterial ist. Die Positionen der Linien im diskreten Spektrum sind abhängig von der Ursprungs- und Ziel-Schale von bzw. zu welcher der Übergang des Elektrons stattfindet. Beispielsweise bezeichnen wir die Strahlung der Übergänge von der $L$- auf die $K$-Schale als $K_{\alpha}$-Strahlung, die für die Übergänge der $M$- auf die $K$-Schale als $K_{\beta}$-Strahlung. Die freiwerdende Energie eines Übergangs von der $n$-ten zur $m$-ten Schale lässt sich durch das Moseley'sche Gesetz
+\begin{align}
+  E_{n\to m} = hc R_{\infty} (Z-A)^2 \qty(\frac{1}{m^2} - \frac{1}{n^2})
+\end{align}
+berechnen. Hier gehen die Rydbergkonstante $R_{\infty}$, sowie die Kernladungszahl $Z$ und die Abschirmung der Kernladung als Abschirmungskonstante $A$ mit ein. Nähert man die Abschirmungskonstante als $A \approx 1$ an, so lässt sich mit dem Moseley'schen Gesetz eine näherung der Energie für die $K_{\alpha}$-Strahlung abhängig von der Kernladungszahl angeben:
+\begin{align}
+  E_{2 \to 1} = hc R_{\infty} (Z - 1)^2 \qty(\frac{1}{1}- \frac{1}{2^2}) = \frac{3}{4} hc R_{\infty} (Z - 1)^2.
+\end{align}
+
+Es ist zu beachten, dass bei genauerer Betrachtung, neben der Hauptquantenzahl, noch eine Entartung der Drehimpuls- und Spinquantenzahl in die freigesetzte Energie der Übergänge eingeht. Das Moseley'sche Gesetz gibt somit nur eine Näherung an.
+
+\subsubsection*{Bragg-Reflexion}
+
+Als Bragg-Reflexion bezeichnet man die Beugung von Röntenstrahlung durch die Gitterstruktur von Kristallen. Die Atomabstände in der Kristallstruktur befinden sich in der gleichen Größenordnung wie die Wellenlängen der Röntenstrahlung, weshalb sich die Bragg-Reflexion zur Untersuchung des Röntgenspektrums eigenet.
+
+
 
 \subsection{Versuchsdurchführung}

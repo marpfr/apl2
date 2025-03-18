@@ -142,7 +142,7 @@ Im letzten Teil der Auswertung passten wir die Funktion
 \begin{align}
   f(m;E_{Ry}, E_{3p}, \Delta_{d(s)}) = \frac{hc}{\frac{E_{Ry}}{(m - \Delta_{d(s)})^2} - E_{3p}} = \lambda_m
 \end{align}
-abhängig von der Quantenzahl $m$ an die Werte der beobachteten Wellenlängen der 1. und 2. Nebenserie an, um die Parameter $E_{Ry}, E_{3p}$ und $\Delta_{d}$ bzw. $\Delta_{s}$ zu bestimmen.
+abhängig von der Quantenzahl $m$ an die Werte der beobachteten Wellenlängen der 1. und 2. Nebenserie an, um die Parameter $E_{Ry}, E_{3p}$ und $\Delta_{d}$ bzw. $\Delta_{s}$ zu bestimmen. Die optimierten Parameter aus der Anpassung an die 1. Nebenserie sind in \tabref{tab:fit_1ns_vergl} zusammengefasst. Zusätzlich ist hier auch die Abweichung zu den Werten, welche wir im vorherigen Aufgabenteil berechnet hatten, angegeben.
 
 
 \begin{table}[H]
@@ -151,7 +151,7 @@ abhängig von der Quantenzahl $m$ an die Werte der beobachteten Wellenlängen de
   \vspace*{0.5em}
   \begin{tabular}{c c c c}
       \hline
-      Parameter & Wert & Fehler & Abweichung \\
+      Parameter & Wert & Fehler & Abw. vom zuvor berechneten Wert \\
       \hline
       $E_{Ry}$  & $-13.0 \si{\electronvolt}$ & $0.5\si{\electronvolt}$ & $1.53\sigma$ \\
       $E_{3p}$  & $-3.023\si{\electronvolt}$  & $0.006\si{\electronvolt}$ & $0.75\sigma$ \\
@@ -161,6 +161,9 @@ abhängig von der Quantenzahl $m$ an die Werte der beobachteten Wellenlängen de
   \label{tab:fit_1ns_vergl}
 \end{table}
 
+Die reduzierte $\chisq$-Summe liegt mit einem Wert von $\chisqrd = 1.50$ nahe am optimalen Wert $1$. Somit können wir bei diesen Fit die Beschreibung der Daten durch das gegebene Modell bzw. die gegebene Funktion allgemein als gut Bewerten. Dies ist auch durch relativ geringen Unsicherheiten der optimierten Parameter zu erkennen. Die Fitwahrscheinlichkeit liegt allerdings nur bei $16.0\%$. Wie aber auch in der Praktikumsanleitung angeführt, liegt dies daran, dass $\Delta_d$ nur eine empirische Näherungsformel ist und in Wirklichkeit auch schwach von der Hauptquantenzahl $n$ abhängt. Die Abweichungen von den zuvor berechneten Werten sind mit Werten von um einem $\sigma$ nicht ausschlaggebend.
+
+Im Anschluss führten wir noch einen Fit an die Wellenlängen der 2. Nebenserie durch. Hierbei optimierten wir anstatt dem Korrekturterm $\Delta_d$, den Term $\Delta_s$, welchen wir auch bereits im vorherigen Aufgabenteil verwendet hatten. Die optimierten Werte der Parameter sind, in gleicher Form wie zuvor, in \tabref{tab:fit_2ns_vergl} zusammengefasst.
 
 \begin{table}[H]
   \centering
@@ -168,12 +171,14 @@ abhängig von der Quantenzahl $m$ an die Werte der beobachteten Wellenlängen de
   \vspace*{0.5em}
   \begin{tabular}{c c c c}
       \hline
-      Parameter & Wert & Fehler & Abweichung \\
+      Parameter & Wert & Fehler & Abw. vom zuvor berechneten Wert \\
       \hline
       $E_{Ry}$  & $-11.6 \si{\electronvolt}$ & $2.1\si{\electronvolt}$ & $1.01\sigma$ \\
       $E_{3p}$  & $-3.01\si{\electronvolt}$  & $0.04\si{\electronvolt}$ & $0.68\sigma$ \\
-      $\Delta_{d}$  & $1.62$  & $0.25$ & $1.03\sigma$ \\
+      $\Delta_{s}$  & $1.62$  & $0.25$ & $1.03\sigma$ \\
       \hline
   \end{tabular}
   \label{tab:fit_2ns_vergl}
 \end{table}
+
+Für diesen Fit hatten wir nur halb so viele Datenpunkte wie im vorherigen Fit zur Verfügung. Dies spiegelt sich auch in den nun sehr hohen Ungenauigkeiten der optimierten Parameter, sowie der Bewertung der Güte des Fits wider. Die reduzierte $\chisq$-Summe beträgt hier $\chisqrd = 4.28$, was für eine schlechte Beschreibung der Daten durch das verwendete Modell steht. Mit gerade einmal $1\%$ ist auch hier die Fitwahrscheinlichkeit sehr schlecht, was erneut auf das zum vorherigen Fit beschriebene Problem zurückzuführen sein könnte. Die Abweichungen zu den zuvor berechneten Werten der optimierten Parameter sind in diesem Fit geringer als im vorherigen, was allerdings daran liegt, dass die Unsicherheiten hier deutlich größer sind.
