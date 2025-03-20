@@ -5,7 +5,7 @@ In Versuch 255 setzen wir uns mit der Funktionsweise einer Röntgenröhre, sowie
 \subsubsection*{Die Röntgenröhre}
 Eine Röntgenröhre ist aufgebaut aus einer Glühkathode und einer Anode, welche sich in einem evakuierten Glaskolben befinden. Durch Glühemmission werden aus der Kathode Elektronen freigesetzt, welche durch eine Beschleunigungsspannung von $10$ bis $100\si{\kilo\volt}$, welche zwischen Kathode und Anode anliegt beschleunigt werden. Der kontinuierliche Teil des Röntgenspektrums wird durch die ausgehende Bremsstrahlung beim Abbremsen der Elektronen im Anodenmaterial verursacht. Diese Strahlung setzt bei einer bestimmten Grenzwellenlänge $\lambda_{gr}$ ein, welche sich nach
 \begin{align}
-  \lambda_{gr} = \frac{hc}{eU}
+  \lambda_{gr} = \frac{hc}{eU}\label{eq:grenzfreq}
 \end{align}
 berechnen lässt. Hierbei sind $h,c,e$ das Plank'sche Wirkungsquantum, die Lichtgeschwindigkeit und die Elementarladung. $U$ ist die an der Röntgenröhre anliegende Beschleunigungsspannung. Durch frei werdende Strahlung bei der Ionisation des Anodenmaterials ist dem kontinuierlichen Spektrum ein diskretes Spektrum überlagert, zu sehen in \abbref{fig:roentgenspektrum}, welches charakteristisch für das jeweilige Anodenmaterial ist. 
 
@@ -31,7 +31,7 @@ Es ist zu beachten, dass bei genauerer Betrachtung, neben der Hauptquantenzahl, 
 
 Als Bragg-Reflexion bezeichnet man die Beugung von Röntenstrahlung durch die Gitterstruktur von Kristallen. Die Atomabstände in der Kristallstruktur befinden sich in der gleichen Größenordnung wie die Wellenlängen der Röntenstrahlung, weshalb sich die Bragg-Reflexion zur Untersuchung des Röntgenspektrums eignet. Die Bragg-Reflexion beruht darauf, dass auf den Kristall treffende Röntgenstrahlung sowohl an der Oberfläche, als auch den tieferliegenden Netzebenen der Kristallstruktur reflektiert wird. Beträgt der Gangunterschied $\Delta s = 2 d \sin(\vartheta)$ zweier Teilbündel, die unter dem Winkel $\vartheta$ eintreffen, siehe \abbref{fig:bragg_reflexion_drehkristall_a}, ein Vielfaches der Wellenlänge $\lambda$, so interferieren diese Konstruktiv, andernfalls destruktiv. Dies ist festgehalten durch das Bragg'sche Gesetz
 \begin{align}
-  2 d \sin(\vartheta) = n \lambda, \quad n \in \N.
+  2 d \sin(\vartheta) = n \lambda, \quad n \in \N. \label{eq:bragg}
 \end{align}
 
 \begin{figure}[H]
@@ -73,7 +73,7 @@ Aus den Beiträgen können ablesen, dass zu jeder Elementarzelle $4$ Chlor- (Flu
 \end{align}
 Dabei ist $V_{Mol}$ das Molvolumen eines einzelnen Moleküls und $V$ das Volumen einer Elementarzelle. Dieses lässt sich aus dem Netzabstand $d$, welcher hier $\flatfrac{a}{2}$ beträgt, berechnen. Somit gilt
 \begin{align}
-  N_A = 4 \frac{V_{Mol}}{(2d)^3} = 4 \frac{M_{Mol}}{\rho (2d)^3} = \frac{1}{2}\frac{M_{Mol}}{\rho d^3}.
+  N_A = 4 \frac{V_{Mol}}{(2d)^3} = 4 \frac{M_{Mol}}{\rho (2d)^3} = \frac{1}{2}\frac{M_{Mol}}{\rho d^3}.\label{eq:avogadro}
 \end{align}
 
 \subsection{Versuchsdurchführung}
