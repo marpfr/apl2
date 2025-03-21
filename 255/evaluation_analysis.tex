@@ -61,3 +61,81 @@ Die Grenzwellenlänge $\lambda_{grenz}$ können wir weitergehend einsetzen, um d
 \begin{align}
   \vartheta_{0,2. Ord} = (9.813 \pm 0.016)\si{\degree}.
 \end{align}
+
+\subsection{Bestimmung der Wellenlängen der $K_{\alpha,\beta}$-Linien}
+
+Wir betrachten nun die Wellenlängenbereiche, in welchen die $K_{\alpha}$- und $K_{\beta}$-Linien erster und zweiter Ordnung zu sehen sind, genauer. Die Ausschnitte, aufgenommen in Winkelschritten von $0.1\si{\degree}$, sind in \abbref{fig:lif_kalpha_kbeta} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.95\textwidth]{files/plots/lif_kalpha_1ord.png}
+  \end{minipage}\hfill
+  \begin{minipage}{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.95\textwidth]{files/plots/lif_kbeta_1ord.png}
+  \end{minipage}\\
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.95\textwidth]{files/plots/lif_kalpha_2ord.png}
+\end{minipage}\hfill
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.95\textwidth]{files/plots/lif_kbeta_2ord.png}
+\end{minipage}
+\caption{$K_{\alpha}$- und $K_{\beta}$-Linien erster Ordnung (oben) und zweiter Ordnung (unten).}
+\label{fig:lif_kalpha_kbeta}
+\end{figure}
+
+Um die Lage der Linien, sowie die Halbwertsbreite, zu ermitteln, fitten wir an die Daten eine Exponentialfunktion der Form
+\begin{align}
+  f(x;A,\mu,\sigma,c) = \frac{A}{\sqrt{2 \pi}\sigma} \exp(\frac{-(x - \mu)^2}{2 \sigma^2}) + c.
+\end{align}
+Die Halbwertsbreite ermitteln wir dann aus der Standardabweichung $\sigma$ nach der Formel
+\begin{align}
+  \fwhm = 2\sqrt{2\ln(2)}\sigma.
+\end{align}
+
+Der optimierte Wert von $\mu$ beschreibt hier erneut den \textit{Winkel}, des Kristalls, bei welchem sich die Linie befindet. Um daraus die zugehörige Wellenlängen zu berechnen, verwenden wir wieder das Bragg'sche Gesetz \eqref{eq:bragg}, mit entsprechendem $n \in \qty{1,2}$ für die Linien erster bzw. zweiter Ordnung.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c|c|c|c|c}
+    Linie & Ordnung & Winkel $\qty[\si{\degree}]$ & Stabw. $\qty[\si{\degree}]$ & FWHM $\qty[\si{\degree}]$ & $\lambda$ $\qty[\si{\pico\meter}]$\\\hline
+    $K_{\alpha}$ & 1 & $10.191 \pm 0.005$ & $0.104 \pm 0.005$ & $0.245 \pm 0.011$ & $71.27 \pm 0.04$ \\
+    $K_{\beta}$  & 1 & $9.038 \pm 0.007$  & $0.110 \pm 0.008$ & $0.260 \pm 0.018$ & $63.27 \pm 0.05$ \\\hline
+    $K_{\alpha}$ & 2 & $20.665 \pm 0.004$ & $0.125 \pm 0.004$ & $0.294 \pm 0.008$ & $71.074 \pm 0.011$ \\
+    $K_{\beta}$  & 2 & $18.311 \pm 0.011$ & $0.109 \pm 0.011$ & $0.256 \pm 0.025$ & $63.27 \pm 0.04$ \\\hline
+  \end{tabular}
+  \caption{Ergebnisse des Röntgenspektrums (LiF) für die $K_{\alpha}$- und $K_{\beta}$-Linien in der 1. und 2. Ordnung.}
+  \label{tab:roentgenspektrum}
+\end{table}
+
+Aus den Werten der Wellenlängen der Linien erster und zweiter Ordnung bilden wir nun noch die Mittelwerte, um mit diesen später weiterzurechnen:
+\begin{align}
+  \lambda_{K_{\alpha}} = (71.171 \pm 0.018)\si{\pico\meter},\\[1em]
+  \lambda_{K_{\beta}} = (63.274 \pm 0.029)\si{\pico\meter}.
+\end{align}
+
+Diese beiden Werte sind charakteristisch für die Molybdänanode der Röntgenröhre.
+
+\subsection{Zählrate als Funktion der Beschleunigungsspannung}
+
+Bei einem festen Winkel des LiF-Kristalls von $7.5\si{\degree}$ haben wir die Zählraten für die Beschleunigungsspannungen im Bereich von $20$ bis $35\si{\kilo\volt}$ aufgezeichnet. Die Daten sind in \abbref{fig:lif_ang75_volt_fit} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/lif_ang75_volt_fit.png}
+  \caption{Zählraten bei steigender Beschleunigungsspannung unter einem Winkel von $7.5\si{\degree}$.}
+  \label{fig:lif_ang75_volt_fit}
+\end{figure}
+
+Ebenfalls in \abbref{fig:lif_ang75_volt_fit} zu sehen ist eine linearer Funktion, welchen wir an diese Daten angepasst haben, um die Nullstelle, also den Punkt, ab dem die Aussendung von Bremsstrahlung einsetzt, zu finden. Nach dem gleichen Schema wie zuvor, können wir anhand der optimierten Parameter der linearen Funktion deren Nullstelle zu einem Wert von
+\begin{align}
+  U_0 = (22.9 \pm 1.1)\si{\kilo\volt}
+\end{align}
+bestimmen. Die zu einem Winkel von $7.5\si{\degree}$ korrespondierende Wellenlänge berechnen wir auf
+\begin{align}
+  \lambda_{7.5} = (52.6 \pm 0.4)\si{\pico\meter}.
+\end{align}
