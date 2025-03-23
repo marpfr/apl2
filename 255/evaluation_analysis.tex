@@ -97,25 +97,25 @@ Die Halbwertsbreite ermitteln wir dann aus der Standardabweichung $\sigma$ nach 
   \fwhm = 2\sqrt{2\ln(2)}\sigma.
 \end{align}
 
-Der optimierte Wert von $\mu$ beschreibt hier erneut den \textit{Winkel}, des Kristalls, bei welchem sich die Linie befindet. Um daraus die zugehörige Wellenlängen zu berechnen, verwenden wir wieder das Bragg'sche Gesetz \eqref{eq:bragg}, mit entsprechendem $n \in \qty{1,2}$ für die Linien erster bzw. zweiter Ordnung.
+Der optimierte Wert von $\mu$ beschreibt hier erneut den \textit{Winkel} des Kristalls, bei welchem sich die Linie befindet. Um daraus die zugehörigen Wellenlängen zu berechnen, verwenden wir wieder das Bragg'sche Gesetz \eqref{eq:bragg}, mit entsprechendem $n \in \qty{1,2}$ für die Linien erster bzw. zweiter Ordnung. Bei der Berechnung der Wellenlänge verwenden wir den Wert $\flatfrac{\sigma}{\sqrt{N}}$ als Fehler des Winkels. Hierbei ist $\sigma$ die Standardabweichung der optimierten Gaußkurve und $N$ die Länge des Datensatzes, auf dem der Fit durchgeführt wurde. Die Ergebnisse sind in \tabref{tab:lif_k_alpha_beta} zusammengefasst.
 
 \begin{table}[H]
   \centering
-  \begin{tabular}{c|c|c|c|c|c}
-    Linie & Ordnung & Winkel $\qty[\si{\degree}]$ & Stabw. $\qty[\si{\degree}]$ & FWHM $\qty[\si{\degree}]$ & $\lambda$ $\qty[\si{\pico\meter}]$\\\hline
-    $K_{\alpha}$ & 1 & $10.191 \pm 0.005$ & $0.104 \pm 0.005$ & $0.245 \pm 0.011$ & $71.27 \pm 0.04$ \\
-    $K_{\beta}$  & 1 & $9.038 \pm 0.007$  & $0.110 \pm 0.008$ & $0.260 \pm 0.018$ & $63.27 \pm 0.05$ \\\hline
-    $K_{\alpha}$ & 2 & $20.665 \pm 0.004$ & $0.125 \pm 0.004$ & $0.294 \pm 0.008$ & $71.074 \pm 0.011$ \\
-    $K_{\beta}$  & 2 & $18.311 \pm 0.011$ & $0.109 \pm 0.011$ & $0.256 \pm 0.025$ & $63.27 \pm 0.04$ \\\hline
+  \begin{tabular}{c|c|c|c|c||c}
+    Linie & Ordnung & Mittelw. $\qty[\si{\degree}]$ & Stabw. $\qty[\si{\degree}]$ & FWHM $\qty[\si{\degree}]$ & $\lambda$ $\qty[\si{\pico\meter}]$\\\hline
+    $K_{\alpha}$ & 1 & $10.191 \pm 0.005$ & $0.104 \pm 0.005$ & $0.245 \pm 0.011$ & $71.27 \pm 0.19$ \\
+    $K_{\beta}$  & 1 & $9.038 \pm 0.007$  & $0.110 \pm 0.008$ & $0.260 \pm 0.018$ & $63.27 \pm 0.26$ \\\hline
+    $K_{\alpha}$ & 2 & $20.665 \pm 0.004$ & $0.125 \pm 0.004$ & $0.294 \pm 0.008$ & $71.07 \pm 0.12$ \\
+    $K_{\beta}$  & 2 & $18.311 \pm 0.011$ & $0.109 \pm 0.011$ & $0.256 \pm 0.025$ & $63.27 \pm 0.10$ \\\hline
   \end{tabular}
   \caption{Ergebnisse des Röntgenspektrums (LiF) für die $K_{\alpha}$- und $K_{\beta}$-Linien in der 1. und 2. Ordnung.}
-  \label{tab:roentgenspektrum}
+  \label{tab:lif_k_alpha_beta}
 \end{table}
 
 Aus den Werten der Wellenlängen der Linien erster und zweiter Ordnung bilden wir nun noch die Mittelwerte, um mit diesen später weiterzurechnen:
 \begin{align}
-  \lambda_{K_{\alpha}} = (71.171 \pm 0.018)\si{\pico\meter},\label{res:wl_kalp}\\[1em]
-  \lambda_{K_{\beta}} = (63.274 \pm 0.029)\si{\pico\meter}.\label{res:wl_kbet}
+  \lambda_{K_{\alpha}} = (71.17 \pm 0.12)\si{\pico\meter},\label{res:wl_kalp}\\[1em]
+  \lambda_{K_{\beta}} = (63.27 \pm 0.14)\si{\pico\meter}.\label{res:wl_kbet}
 \end{align}
 
 Diese beiden Werte sind charakteristisch für die Molybdänanode der Röntgenröhre.
@@ -164,14 +164,14 @@ ermitteln können.
 
 Hierzu ermitteln wir nun erneut die Winkelpositionen der $K_{\alpha}$- und $K_{\beta}$-Linien erster Ordnung, um diese mit den Wellenlängen der Linien aus Aufgabe 2 zu identifizieren. Dies können wir tun, da diese Werte charakteristisch für die Molybdänanode der Röntgenröhre sind und damit unabhängig von der Art des Kristalls. Mit einem Fit zweier Gaußkurven an die beiden Linien erster Ordnung, zu sehen in \abbref{fig:nacl_k_1ord_fit}, ermitteln wir die Winkel zu
 \begin{align}
-  \beta_{K_{\alpha}} = 6.459 \pm 0.021\si{\degree},\\[0.5em]
-  \beta_{K_{\beta}} = 7.291 \pm 0.016\si{\degree}.
+  \beta_{K_{\alpha}} = 7.30 \pm 0.05\si{\degree},\\[0.5em]
+  \beta_{K_{\beta}} = 6.46 \pm 0.06\si{\degree}.
 \end{align}
 
 Diese Werte setzen wir nun mit den Wellenlängen \eqref{res:wl_kalp} und \eqref{res:wl_kbet} aus Aufgabe 2 und $n = 1$ für die erste Ordnung in Gleichung \eqref{eq:d_by_bragg} ein. Wir erhalten damit die beiden Werte für $d$:
 \begin{align}
-  d_{K_{\alpha}} = (281.2 \pm 0.9)\si{\pico\meter},\\[0.5em]
-  d_{K_{\beta}} =(280.4 \pm 0.6)\si{\pico\meter}.
+  d_{K_{\alpha}} = (280.4 \pm 1.8)\si{\pico\meter},\\[0.5em]
+  d_{K_{\beta}} =(281.2 \pm 2.3)\si{\pico\meter}.
 \end{align}
 
 \begin{figure}[H]
@@ -184,10 +184,15 @@ Diese Werte setzen wir nun mit den Wellenlängen \eqref{res:wl_kalp} und \eqref{
 
 Für den Mittelwert dieser beiden Werte gilt also
 \begin{align}
-  d = (280.8 \pm 0.6)\si{\pico\meter}.
+  d = (280.8 \pm 1.5)\si{\pico\meter}.
 \end{align}
 
 Dies ist der Netzebenenabstand von NaCl. Um die Gitterkonstante zu berechnen, verdoppeln wir diesen und erhalten
 \begin{align}
-  a = 2d = (561.6 \pm 1.1)\si{\pico\meter}.
+  a = 2d = (561.6 \pm 2.9)\si{\pico\meter}.
+\end{align}
+
+Außerdem können wir nach Gleichung \eqref{eq:avogadro} anhand des Netzebenenabstands die Avogadrokonstante $N_A$ berechnen. Hierzu ziehen wir noch die Dichte von NaCl, $\rho = 2.164\si{\gram\per\centi\meter\cubed}$, und dessen Molekulargewicht, $M = 58.44\si{\gram}$, hinzu. Wir kommen damit auf einen Wert von
+\begin{align}
+  N_A = (6.10 \pm 0.10) \cdot 10^{23} \si{\per\mol}.
 \end{align}
