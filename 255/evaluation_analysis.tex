@@ -47,7 +47,7 @@ Mithilfe des Bragg'schen Gesetzes \eqref{eq:bragg} können wir daraus nach
 \begin{align}
   \lambda = \frac{2d\sin(\vartheta)}{n}
 \end{align}
-die entsprechende Grenzwellenlänge berechnen. Da es sich hierbei um den Einsatz des Spektrums erster Ordnung handelt, setzen wir $n = 1$. Den Netzabstand $d$ des LiF-Kristalls entnehmen wir aus der Praktikumsanleitung als $d = 201.4\si{\pico\meter}$. Damit erhalten wir für die Grenzwellenlänge einen Wert von
+die entsprechende Grenzwellenlänge berechnen. Da es sich hierbei um den Einsatz des Spektrums erster Ordnung handelt, setzen wir $n = 1$. Den Netzebenenabstand $d$ des LiF-Kristalls entnehmen wir aus der Praktikumsanleitung als $d = 201.4\si{\pico\meter}$. Damit erhalten wir für die Grenzwellenlänge einen Wert von
 \begin{align}
   \lambda_{Grenz} = (34.33 \pm 3.08) \si{\pico\meter}.
 \end{align}
@@ -114,8 +114,8 @@ Der optimierte Wert von $\mu$ beschreibt hier erneut den \textit{Winkel}, des Kr
 
 Aus den Werten der Wellenlängen der Linien erster und zweiter Ordnung bilden wir nun noch die Mittelwerte, um mit diesen später weiterzurechnen:
 \begin{align}
-  \lambda_{K_{\alpha}} = (71.171 \pm 0.018)\si{\pico\meter},\\[1em]
-  \lambda_{K_{\beta}} = (63.274 \pm 0.029)\si{\pico\meter}.
+  \lambda_{K_{\alpha}} = (71.171 \pm 0.018)\si{\pico\meter},\label{res:wl_kalp}\\[1em]
+  \lambda_{K_{\beta}} = (63.274 \pm 0.029)\si{\pico\meter}.\label{res:wl_kbet}
 \end{align}
 
 Diese beiden Werte sind charakteristisch für die Molybdänanode der Röntgenröhre.
@@ -143,4 +143,51 @@ bestimmen. Die zu einem Winkel von $7.5\si{\degree}$ korrespondierende Wellenlä
 Die ermittelte Wellenlänge und die Einsatzspannung können wir nun erneut in Gleichung \eqref{eq:grenzfreq} einsetzen, um das Planck'sche Wirkungsquantum zu bestimmen. Hier erhalten wir einen Wert von
 \begin{align}
   h = (6.43 \pm 0.30) \cdot 10^{-34}
+\end{align}
+
+\subsection{Röntgenspektrum mit NaCl-Kristall}
+
+Wir haben die Messung aus Versuchsteil 1 wiederholt und die Drehkristallmethode mit einem NaCl-Kristall angewandt, um das Röntgengenspektrum in einem Winkelbereich von $3\si{\degree}$ bis $18\si{\degree}$ aufzuzeichnen. Dieses ist in Gänze in \abbref{fig:spektrum_nacl_komplett} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/spektrum_nacl_komplett.png}
+  \caption{spektrumnackomplett}
+  \label{fig:spektrum_nacl_komplett}
+\end{figure}
+
+Ziel ist es in diesem Aufgabenteil, die Gitterkonstante von NaCl zu ermitteln. Wir wissen, dass diese gerade dem Doppelten des Netzebenenabstands $d$ entspricht, welchen wir über das Bragg'sche Gesetz 
+\begin{align}
+  d = \frac{n \lambda}{2 \sin(\vartheta)}\label{eq:d_by_bragg}
+\end{align}
+ermitteln können.
+
+Hierzu ermitteln wir nun erneut die Winkelpositionen der $K_{\alpha}$- und $K_{\beta}$-Linien erster Ordnung, um diese mit den Wellenlängen der Linien aus Aufgabe 2 zu identifizieren. Dies können wir tun, da diese Werte charakteristisch für die Molybdänanode der Röntgenröhre sind und damit unabhängig von der Art des Kristalls. Mit einem Fit zweier Gaußkurven an die beiden Linien erster Ordnung, zu sehen in \abbref{fig:nacl_k_1ord_fit}, ermitteln wir die Winkel zu
+\begin{align}
+  \beta_{K_{\alpha}} = 6.459 \pm 0.021\si{\degree},\\[0.5em]
+  \beta_{K_{\beta}} = 7.291 \pm 0.016\si{\degree}.
+\end{align}
+
+Diese Werte setzen wir nun mit den Wellenlängen \eqref{res:wl_kalp} und \eqref{res:wl_kbet} aus Aufgabe 2 und $n = 1$ für die erste Ordnung in Gleichung \eqref{eq:d_by_bragg} ein. Wir erhalten damit die beiden Werte für $d$:
+\begin{align}
+  d_{K_{\alpha}} = (281.2 \pm 0.9)\si{\pico\meter},\\[0.5em]
+  d_{K_{\beta}} =(280.4 \pm 0.6)\si{\pico\meter}.
+\end{align}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/nacl_k_1ord_fit.png}
+  \caption{naclk1ordfit}
+  \label{fig:nacl_k_1ord_fit}
+\end{figure}
+
+
+Für den Mittelwert dieser beiden Werte gilt also
+\begin{align}
+  d = (280.8 \pm 0.6)\si{\pico\meter}.
+\end{align}
+
+Dies ist der Netzebenenabstand von NaCl. Um die Gitterkonstante zu berechnen, verdoppeln wir diesen und erhalten
+\begin{align}
+  a = 2d = (561.6 \pm 1.1)\si{\pico\meter}.
 \end{align}
