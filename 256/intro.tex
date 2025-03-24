@@ -1,3 +1,20 @@
+Nachdem wir in Versuch 255 das Röntgenspektrum genauer untersucht hatten, setzen wir uns in Versuch 256 mit der sogenannten Röntgenfluoreszens auseinander. Röntgenfluoreszens beschreibt die Abstrahlung einer sekundären Röntgenstrahlung, bei der Interaktion von Röntgenstrahlung mit Materie.
+
+
 \subsection{Physikalische Grundlagen}
+
+Trifft Röntgenstrahlung auf Atome von Materie, kann diese Elektronen aus den inneren Schalen der Atome herauslösen. Rücken daraufhin Elektronen von den äußeren Schalen in die dadurch entstandenen Fehlstellen nach, so wird die dabei frei werdende Energie in Form einer sekundären Röntgenstrahlung abgestrahlt. Für die frei werdende Energie bei einem Elektronenübergang von der Schale $n_2$ zur Schale $n_1$ gilt, angenähert aus dem Bohr'schen Atommodell,
+\begin{align}
+  \Delta E = E_{2} - E_{1} = ch R_{\infty} \qty(\frac{(Z- \sigma_{n1})^2}{n_1^2} - \frac{(Z- \sigma_{n2})^2}{n_2^2}).
+\end{align}
+In diese Rechnung gehen neben der Lichtgeschwindigkeit $h$, dem Planck'schen Wirkungsquantum $h$ und der Rydberg-Konstante $R_{\infty}$ auch die Kernladungszahl $Z$ und die Abschirmkonstanten $\sigma_i$ ein, welche beide Materialabhängig sind. Daher ist die Röntgenfluoreszens charakteristisch für die bestrahlte Probe. Mit einer mittleren Abschirmkonstante $\sigma_{12}$, welche die $\sigma_{i}$ ersetzt und der Rydberg-Energie $E_{R} = ch R_{\infty}\, (\approx 13.6\si{\electronvolt})$ können wir die obige Gleichung umschreiben zu
+\begin{align}
+  \Delta E = E_2 - E_1 = E_{R} (Z - \sigma_{12})^2 \qty(\frac{1}{n_1^2} - \frac{1}{n_2^2}).
+\end{align}
+
+Betrachten wir speziell die $K_{\alpha}$-Strahlung der Übergänge $n_{2} = 2\to n_{1} = 1$, lässt sich die Abschirmkonstante für nicht zu schwere Kerne mit einer Ladungszahl bis etwa $Z \approx 30$ mit $\sigma_{12} \approx 1$ annähern. Damit können wir die Gleichung weiter vereinfachen zu
+\begin{align}
+  \sqrt{\frac{E}{E_R}} = (Z - 1) \sqrt{\frac{3}{4}}.
+\end{align}
 
 \subsection{Versuchsdurchführung}
