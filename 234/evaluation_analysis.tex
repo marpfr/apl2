@@ -25,14 +25,14 @@ Am Tag der Versuchsdurchführung war das Wetter leider stark bewölkt, weshalb w
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{files/plots/himmel_m_o_g.png}
-  \caption{Sonnen}
+  \caption{Tageslichtspektrum direkt (blau) und durch Fensterglas (orange).}
   \label{fig:himmel_m_o_g}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{files/plots/absorption_glas.png}
-  \caption{Absorption}
+  \caption{Absorption des Tageslichts durch das Fensterglas, abhängig von der Wellenlänge.}
   \label{fig:absorption_glas}
 \end{figure}
 
@@ -41,11 +41,11 @@ Die vielen im Spektrum sichtbaren lokalen Minima sind gerade die Wellenlängen d
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{files/plots/spektrum_fraunhofer_balmer.png}
-  \caption{Fraunhoferlinien und Balmerserie}
+  \caption{Fraunhoferlinien und Balmerserie im Tageslichtspektrum.}
   \label{fig:spektrum_fraunhofer_balmer}
 \end{figure}
 
-\tabref{tab:fraunhofer_vergleich} zeigt eine Aufschlüsselung der erwarteten Wellenlänge der Fraunhoferlinien und der Linien der Balmerserie, die von uns aus dem Spektrum abgelesenen Werte, sowie die Abweichung zwischen den Werten. Als Fehler für die abgelesenen Wellenlängen haben wir hier einen Wert von $\pm 1 \si{\nano\meter}$ verwendet. Es ist zu sehen, dass sich die Abweichung, bis auf wenige ausnahmen auf unter einem $\sigma$ beläuft.
+\tabref{tab:fraunhofer_vergleich} zeigt eine Aufschlüsselung der erwarteten Wellenlänge der Fraunhoferlinien und der Linien der Balmerserie, die von uns aus dem Spektrum abgelesenen Werte, sowie die Abweichung zwischen den Werten. Als Fehler für die abgelesenen Wellenlängen verwenden wir hier jeweils einen Wert von $1.0 \si{\nano\meter}$. Es ist zu sehen, dass sich die Abweichung, bis auf wenige ausnahmen auf unter einem $\sigma$ beläuft.
 
 \begin{table}[h]
   \centering
@@ -159,7 +159,7 @@ Nun möchten wir die beobachteten Spektrallinien mit den Vorhersagen der Theorie
 
 \subsubsection*{Erwartete Linien für die 1. Nebenserie $md \to 3p$}
 
-\textit{Vorbemerkung: In den folgenden Berechnungen gehen wir für die Konstanten von den Werten $E_{Ry} = -13.605\si{\electronvolt}$ und $hc = 1.2398 * 10^3 \si{\nano\meter \electronvolt}$ aus.}
+\textit{Vorbemerkung: In den folgenden Berechnungen gehen wir für die Konstanten von den Werten $E_{Ry} = -13.605\si{\electronvolt}$ und $hc = 1.2398 \times 10^3 \si{\nano\meter \electronvolt}$ aus.}
 
 Den Korrekturterm $\Delta_{d}$ können wir für diese Serie vernachlässigen. Für die Wellenlänge $\lambda_m$ für die Übergänge $md \to 3p$ gilt
 \begin{align}
@@ -167,7 +167,7 @@ Den Korrekturterm $\Delta_{d}$ können wir für diese Serie vernachlässigen. F�
 \end{align}
 Hierbei sind die Rydbergenergie $E_{Ry} = -13.605\unit{\electronvolt}$, sowie $hc = 1.2398 \cdot 10^{3} \si{\nano\meter \electronvolt}$ als Konstanten gesetzt. $E_{3p}$ können wir mit dieser Formel berechnen, indem wir $m = 3$ und entsprechend $\lambda_3$ gleich der gemessenen Linie im Bereich von $819\si{\nano\meter}$ setzen. Die von uns gemessene Linie, welche am nächsten an dieser ist, liegt bei $817.7\si{\nano\meter}$. Damit erhalten wir einen Wert von
 \begin{align}
-  E_{3p} = -3.0279 \pm 0.0019\si{\electronvolt}.
+  E_{3p} = (-3.0279 \pm 0.0019)\si{\electronvolt}.
 \end{align}
 
 Setzen wir nun diese Energie und die Quantenzahl $m$ im Bereich von $3$ bis $12$ in die obige Formel ein, so erhalten wir die erwarteten Wellenlängen für die jeweiligen Übergänge. Diese sind in \tabref{tab:wellenlaengen_1ns} zu sehen, gemeinsam mit der zugeordneten Spektrallinie aus unseren Beobachtungen, sowie der jeweiligen Abweichung.
@@ -180,16 +180,16 @@ Setzen wir nun diese Energie und die Quantenzahl $m$ im Bereich von $3$ bis $12$
       \hline
       $m$ & $\lambda_{\text{theo.}}$ [nm] & $\lambda_{\text{beob.}}$ [nm] & Abweichung \\
       \hline
-      3  & $817.7 \pm 1.000$ & $817.7 \pm 1$ & 0.01$\sigma$ \\
-      4  & $569.4 \pm 0.5$ & $567.1 \pm 1$ & 2.03$\sigma$ \\
-      5  & $499.2 \pm 0.4$ & $496.9 \pm 2$ & 1.13$\sigma$ \\
-      6  & $467.9 \pm 0.4$ & $469.2 \pm 1$ & 1.28$\sigma$ \\
-      7  & $450.8 \pm 0.4$ & $450.0 \pm 1$ & 0.77$\sigma$ \\
-      8  & $440.4 \pm 0.3$ & $438.1 \pm 1$ & 2.20$\sigma$ \\
-      9  & $433.5 \pm 0.3$ & $432.6 \pm 1$ & 0.88$\sigma$ \\
-      10 & $428.7 \pm 0.3$ & $429.2 \pm 1$ & 0.46$\sigma$ \\
-      11 & $425.3 \pm 0.3$ & $426.0 \pm 1$ & 0.72$\sigma$ \\
-      12 & $422.7 \pm 0.3$ & $423.1 \pm 1$ & 0.44$\sigma$ \\
+      3  & $817.7 \pm 1.000$ & $817.7 \pm 1.0$ & 0.01$\sigma$ \\
+      4  & $569.4 \pm 0.5$ & $567.1 \pm 1.0$ & 2.03$\sigma$ \\
+      5  & $499.2 \pm 0.4$ & $496.9 \pm 2.0$ & 1.13$\sigma$ \\
+      6  & $467.9 \pm 0.4$ & $469.2 \pm 1.0$ & 1.28$\sigma$ \\
+      7  & $450.8 \pm 0.4$ & $450.0 \pm 1.0$ & 0.77$\sigma$ \\
+      8  & $440.4 \pm 0.3$ & $438.1 \pm 1.0$ & 2.20$\sigma$ \\
+      9  & $433.5 \pm 0.3$ & $432.6 \pm 1.0$ & 0.88$\sigma$ \\
+      10 & $428.7 \pm 0.3$ & $429.2 \pm 1.0$ & 0.46$\sigma$ \\
+      11 & $425.3 \pm 0.3$ & $426.0 \pm 1.0$ & 0.72$\sigma$ \\
+      12 & $422.7 \pm 0.3$ & $423.1 \pm 1.0$ & 0.44$\sigma$ \\
       \hline
   \end{tabular}
   \label{tab:wellenlaengen_1ns}
@@ -202,7 +202,7 @@ Bei der Betrachtung der 2. Nebenserie können wir den Korrekturterm $\Delta_s$ n
   E_{3s} = E_{3p} - \frac{hc}{\lambda}.
 \end{align}
 
-Für die Wellenlänge $\lambda$ setzen wir die beobachtete Wellenlänge der D-Linie ein, da diese dem Übergang $3p \to 3s$ entspricht. In unseren Aufzeichnungen können wir diese Linie bei in etwa $\lambda = (590.5 \pm 1) \si{\nano\meter}$ beobachten. Damit erhalten wir eine Bindungsenergie von
+Für die Wellenlänge $\lambda$ setzen wir die beobachtete Wellenlänge der D-Linie ein, da diese dem Übergang $3p \to 3s$ entspricht. In unseren Aufzeichnungen können wir diese Linie bei in etwa $\lambda = (590.5 \pm 1.0) \si{\nano\meter}$ beobachten. Damit erhalten wir eine Bindungsenergie von
 \begin{align}
   E_{3s} = (-5.127 \pm 0.005) \si{\electronvolt}.
 \end{align}
@@ -230,11 +230,11 @@ berechnen. Die Werte für $m$ im Bereich von $4$ bis $9$ sind in der \tabref{tab
       $m$ & $\lambda_{\text{theo.}}$ [nm] & $\lambda_{\text{beob.}}$ [nm] & Abweichung \\
       \hline
       4  & $1170.4 \pm 1.4$ & -     & -     \\
-      5  & $621.5 \pm 0.7$  & $622.3 \pm 1$ & $0.67\sigma$ \\
-      6  & $518.1 \pm 0.6$  & $517.5 \pm 1$ & $0.53\sigma$ \\
-      7  & $477.1 \pm 0.6$  & $474.0 \pm 1$ & $2.76\sigma$ \\
-      8  & $456.1 \pm 0.6$  & $454.4 \pm 1$ & $1.52\sigma$ \\
-      9  & $443.7 \pm 0.5$  & $445.3 \pm 1$ & $1.42\sigma$ \\
+      5  & $621.5 \pm 0.7$  & $622.3 \pm 1.0$ & $0.67\sigma$ \\
+      6  & $518.1 \pm 0.6$  & $517.5 \pm 1.0$ & $0.53\sigma$ \\
+      7  & $477.1 \pm 0.6$  & $474.0 \pm 1.0$ & $2.76\sigma$ \\
+      8  & $456.1 \pm 0.6$  & $454.4 \pm 1.0$ & $1.52\sigma$ \\
+      9  & $443.7 \pm 0.5$  & $445.3 \pm 1.0$ & $1.42\sigma$ \\
       \hline
   \end{tabular}
   \label{tab:wellenlaengen_2ns}
