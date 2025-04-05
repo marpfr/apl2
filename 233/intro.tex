@@ -87,4 +87,63 @@ Die sogenannten Fourierkoeffizienten $a_n$ und $b_n$ sind definiert durch
   b_n = \frac{2}{L} \int_{-\flatfrac{L}{2}}^{\flatfrac{L}{2}} f(x) \sin(\frac{2\pi n}{L} x) \dd x.
 \end{align}
 
+Zur Veranschaulichung können wir die Fourierkoeffizienten am Beispiel der Funktion
+\begin{align}
+  f(x) = \begin{cases}
+    1, &-\ffrac{l}{2} < x < \ffrac{l}{2}\\
+    0, &\ffrac{l}{2} > |x| < \ffrac{L}{2}
+  \end{cases},
+\end{align}
+dargestellt in \abbref{}, ausrechnen.
+
+Aus Symmetriegründen verfallen alle Koeffizienten $b_n$. Für $a_0$ gilt
+\begin{align}
+  a_0 = \frac{2}{L}\int_{-\ffrac{l}{2}}^{\ffrac{l}{2}} \dd x = \frac{2l}{L}.
+\end{align}
+Für alle weiteren $a_n$ gilt
+\begin{align}
+  a_n = \frac{2}{L} \int_{-l/2}^{l/2} \cos( \frac{2\pi n}{L} x ) \dd{x}
+= \frac{1}{\pi n} \eval{ \sin( \frac{2\pi n}{L} x ) }_{-l/2}^{l/2}
+= \frac{2}{\pi n} \sin( \pi n \frac{l}{L} ).
+\end{align}
+
+Setzen wir das Verhältnis $L:l = 2:1$, so erhalten wir die folgenden Summanden als erste Glieder der zugehörigen Fourierreihe:
+\begin{align}
+  f(x) = \frac{1}{2} 
++ \frac{2}{\pi} \cos( \frac{2\pi}{L} x ) 
+- \frac{2}{3\pi} \cos( \frac{6\pi}{L} x ) 
++ \frac{2}{5\pi} \cos( \frac{10\pi}{L} x ) 
+- \dots
+\end{align}
+
+\abbref{fig:fourierentwicklung_rechteck_beispiel} zeigt die Fourierentwicklung der Funktion für verschiedene, aufsteigende $n$ bis zu einem Wert von $n = 27$. Es ist zu sehen, dass die Linearkombination aus trigonometrischen Funktionen sich immer weiter der rechteckigen Form der Ausgangsfunktion annähert.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.9\textwidth]{files/fourierentwicklung_rechteck_beispiel.png}
+    \caption{Fourierentwicklungen der gezeigten Rechtecksfunktion für verschiedene $n$.}
+    \label{fig:fourierentwicklung_rechteck_beispiel}
+\end{figure}
+
+Die Gleichung
+\begin{align}
+  f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(n\omega t) + b_n \sin(n\omega t).
+\end{align}
+zeigt einen besonderen Anwendungsfall der Fourierentwicklung. Hier wurde $x$ durch die Zeit $t$ und die Periode $L$ durch die Periodendauer $T = \frac{2\pi}{\omega}$ mit der Frequenz $\omega$ ersetzt. In dieser Variante kann die Fourierreihe genutzt werden, um die verschiedenen anteiligen Frequenzen und Amplituden eines zeitperiodischen Signals zu ermitteln.
+
+Während sie zwar nicht als Fourier\textit{reihe} dargestellt werden können, können wir auch nichtperiodische Funktionen dennoch mithilfe von trigonometrischen Funktionen darstellen. Für den Fall $L\to\infty$ geht die Fourierreihe in ein Integral und die Koeffizienten zu kontinuierlichen Funktionen über. Die kontinuierlichen Fouriertransformation ist dann definiert durch
+\begin{align}
+  f(x) = \int_{-\infty}^{\infty} F(k) \e{ikx} \dd k.
+\end{align}
+
+Dabei ist $F$ die Fouriertransformierte von $f$. Diese erhalten wir durch die Rücktransformation
+\begin{align}
+  F(k) = \frac{1}{2\pi} \int_{-\infty}^{\infty} f(x) \e{-ikx} \dd x.
+\end{align}
+
+Falls $x$ eine Ortsvariable ist, so nennen wir $k$ die Raum- oder Ortsfrequenz.
+
+\subsubsection*{Die Fourierdarstellung der Fraunhoferbeugung}
+
+\newpage
 \subsection{Versuchsdurchführung}
