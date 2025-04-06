@@ -145,5 +145,120 @@ Falls $x$ eine Ortsvariable ist, so nennen wir $k$ die Raum- oder Ortsfrequenz.
 
 \subsubsection*{Die Fourierdarstellung der Fraunhoferbeugung}
 
+Zu Herleitung der Fraunhoferschen Beugung aus der Fouriertheorie betrachten wir zunächst eine beliebige Öffnung $S$, wie sie in \abbref{fig:geometrie_herleitung_fourier_fraunhofer} dargestellt ist. Wir gehen davon aus, dass die Öffnung mit monochromatischem Licht bestrahlt wird, somit geht von jedem Flächenelement $\dd{S}(x = 0, y, z)$ eine Kugelwelle der Form 
+\begin{align}
+  \frac{\e{ikr}}{r}
+\end{align}
+mit der Quellstärke $\epsilon$ pro Einheitsfläche aus. Für das Feld am Ort $P$ in den Koordinaten $X,Y,Z$ gilt dann
+\begin{align}
+  \dd{E} = \epsilon \frac{\e{ikr}}{r} \dd{S}. \label{eq:dE_bei_P}
+\end{align}
+Der Abstand von $\dd{S}$ zu diesem Punkt $P(X,Y,Z)$ beträgt gerade
+\begin{align}
+  r = \sqrt{X^2 + (Y - y)^2 + (Z - z)^2}.
+\end{align}
+Der Abstand $R$ vom Mittelpunkt der Öffnung zum Punkt $P(X,Y,Z)$ beträgt
+\begin{align}
+  R = \sqrt{X^2 + Y^2 + Z^2}.
+\end{align}
+Damit können wir den Abstand $r$ umformen zu
+\begin{align}
+  r = R\sqrt{1 + \frac{(y^2 + z^2)}{R^2} - \frac{2 (Yy + Zz)}{R^2}}.
+\end{align}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=0.8\textwidth]{files/geometrie_herleitung_fourier_fraunhofer.png}
+    \caption{Geometrie des Spalts zur Herleitung der Fraunhoferbeugung aus der Fouriertheorie.}
+    \label{fig:geometrie_herleitung_fourier_fraunhofer}
+\end{figure}
+
+Nun können wir annehmen, dass der Abstand $\overline{OP}$ deutlich größer gegenüber der Spaltöffnung ist. Dadurch gilt zum einen, dass wir $r$ im Amplitudenterm \eqref{eq:dE_bei_P} durch $R$ ersetzen können. Zum anderen gilt die Abschätzung
+\begin{align}
+  \frac{x^2 + y^2}{R^2} \ll 1
+\end{align}
+und somit
+\begin{align}
+  r = R \sqrt{1 - \frac{2(Yy + Zz)}{R^2}}
+\end{align}
+
+Gehen wir weiter davon aus, dass der Term in der Wurzel deutlich kleiner als $1$ ist, so können wir den Ausdruck weiter zu
+\begin{align}
+  r = R\qty(1 - \frac{Yy + Zz}{R^2})
+\end{align}
+vereinfachen. Diese Definition können wir nun ein Gleichung \eqref{eq:dE_bei_P} einsetzen und diese über die Gesamte Öffnung $S$ integrieren. So erhalten wir zunächst
+\begin{align}
+  E(R) = \epsilon \frac{\e{ikR}}{R} \int \int \e{-\frac{ik}{R}(Yy+Zz)} \dd{y} \dd{z}.
+\end{align}
+
+Nun nehmen wir zuerst die Annäherung vor, dass wir uns auf einen kleinen Bereich um $R$ beschränken und somit den Term $\ffrac{\e{ikR}}{R}$ als Konstant annehmen können. Weiter erweitern wir die Quellstärke $\epsilon$ um eine Abhängigkeit von $y$ und $z$, also
+\begin{align}
+  \epsilon \to \epsilon(y, z) = A(y,z) = A_0(y, z)\e{i\varphi(y,z)}.
+\end{align}
+Die \textit{Öffnungsfunktion} $A(y,z) \dd{y} \dd{z}$ ist proportional zum Feld der vom Flächenelement $\dd{y}\dd{z}$ ausgehenden Welle.  Mit dieser Definition ergibt sich das Integral
+\begin{align}
+  E(Y,Z) = \int\int_{S} A(y,z) \e{-\frac{ik}{r}(Yy + Zz)} \dy\dz.
+\end{align}
+Nun können wir die Raumfrequenzen durch
+\begin{align}
+  k_y = k\frac{Y}{R}, \qquad k_z = k \frac{Z}{R}
+\end{align}
+definieren. Setzen wir diese in das Integral
+\begin{align}
+  E(k_y, k_z) = \int\int_S A(y,z) \e{-i(k_y y + k_z z)} \dy \dz
+\end{align}
+ein, so erhalten wir gerade die \textbf{zweidimensionale Fouriertransformation der Öffnungsfunktion} $A(y,z)$.
+
+\subsubsection*{Das Beugungsbild des Spalts als Fouriertransformierte der Spaltöffnung}
+
+Als erste Anwendung der gerade erlangten Erkenntnisse betrachten wir die Öffnungsfunktion
+\begin{align}
+  A(y,z) = f(y) = \begin{cases}
+    1, & |y| \leq \ffrac{d}{2},\\
+    0, & |y| > \ffrac{d}{2}.
+  \end{cases}
+\end{align}
+Die Fouriertransformation dieser Funktion lässt sich wie folgt ausrechnen:
+\begin{align}
+  F(k_y) &= \int_{-\infty}^{\infty} f(y) \e{-ik_y y} \dy\\
+          &= \int_{-\ffrac{d}{2}}^{\ffrac{d}{2}} f(y) \e{-ik_y y} \dy\\
+          &= -\frac{1}{ik_y} \eval{\e{ik_y y}}_{-\ffrac{d}{2}}^{\ffrac{d}{2}}\\
+          &= \frac{1}{ik_y}\qty(\e{\ffrac{ik_yd}{2}} - \e{-\ffrac{ik_yd}{2}}).
+\end{align}
+
+Unter Verwendung der Eulerschen Formel entspricht dies der Funktion
+\begin{gather}
+  F(k_y) = d\frac{\sin(\ffrac{k_y d}{2})}{\ffrac{k_y d}{2}} = \sinc(\ffrac{k_y d}{2}) d
+  \intertext{mit den Nullstellen}
+  k_y = \frac{2\pi n}{d}, \qquad n\in \N.
+\end{gather}
+
+Um die Intensitätsverteilung zu erhalten, müssen wir dieses Ergebnis lediglich noch quadrieren.
+
+Aus Symmetriegründen ($F(k_y) = F(-k_y)$) entspricht die Rücktransformierte gerade dem Integral
+\begin{align}
+  f(y) = \frac{d}{\pi}\int_0^{+\infty} \frac{\sin(\ffrac{k_y d}{2})}{\ffrac{k_y d}{2}} \cos(k_y y) \dd{k_y},
+\end{align}
+welches nur numerisch Lösbar ist. Mit der oberen Grenze $\infty$ erhalten wir damit genau die Rechtecksfunktion des Spalts. In diesem Versuch untersuchen wir durch das Abblenden von Teilstrahlen nur das Aussehen einer rudimentären Spaltfunktion. Mathematisch können wir dies durch Einsetzen der $n$-ten Nullstelle von $F(k_y)$,
+\begin{align}
+  k_{y,n} = k_0 \sin(\alpha_n) = \frac{k_0 n \lambda}{d} = \frac{2n\pi}{d}
+\end{align}
+als obere Integrationsgrenze erzielen.
+
+\subsubsection*{Die Fouriertransformierte des Doppelspalts}
+Zu Herleitung der Fouriertransformierten des Doppelspalts können wir diesen als zwei nach links, beziehungsweise nach rechts verschobene Einzelspalte betrachten und unsere Resultate aus dem vorherigen Abschnitt anwenden. Es gilt damit
+\begin{align}
+  F = F(k_y, rechts) + F(k_y, links) = 2\cos(\ffrac{k_y g}{2}) d \frac{\sin(\ffrac{k_y d}{2})}{\ffrac{k_y d}{2}}.
+\end{align}
+Hierbei ist $d$ erneut die Spaltbreite und $g$ ist der Abstand zwischen den Mittelpunkt der beiden Spalte. Der Vorfaktor, die Gitterfunktion $\cos(\dots)$, ergibt sich dadurch, dass die Integrationsgrenzen der Einzelspalte hier nun nicht um den Nullpunkt zentriert, sondern verschoben sind. Durch Einführen der Substitution $k_y = k_0 \sin(\alpha) = \frac{2\pi}{\lambda} \sin(\alpha)$ und quadrieren erhalten wir die Beugungsfigur des Doppelspalts als
+\begin{align}
+  I = 4 \cos^2(\ffrac{\pi g}{\lambda} \sin(\alpha)) d^2 \sinc(\ffrac{\pi d}{\lambda} \sin(\alpha))^2.
+\end{align}
+
+Auch hieraus können wir wieder die Rücktransformierte unter Einschränkung der betrachteten Beugungsmaxima berechnen:
+\begin{align}
+  F_{mod.}(y) \propto \qty[f_{mod}]^2 = \qty[\frac{2d}{\pi} \int_0^{k_{y,n}} \cos(\ffrac{k_y g}{2}) \frac{\sin(\ffrac{k_y g}{2})}{\ffrac{k_y g}{2}} \cos(k_y y) \dd{k_y}]^2.
+\end{align}
+
 \newpage
 \subsection{Versuchsdurchführung}
