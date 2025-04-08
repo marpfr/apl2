@@ -1,1 +1,150 @@
 \section{Auswertung}
+
+\subsection*{Vorbemerkungen}
+
+Sofern nicht anders angegeben, berechnen wir die Fehler zusammengesetzter Werte anhand der standardmäßigen Gauß'schen Fehlerfortpflanzung. Die $\sigma$-Abweichung zweier fehlerbehafteter Werte $x \pm \Delta x$ und $y \pm \Delta y$ berechnen wir anhand der Formel
+\begin{align}
+  \sigma = \frac{\qty|x - y|}{\sqrt{\Delta x^2 + \Delta y^2}}.
+\end{align}
+
+Für die Breite des Analysierspalts, abgelesen von der Messuhr, verwedenen wir einen konstanten Fehler von $\pm0.01\si{\milli\meter}$. Für abgelesene Pixelwerte nehmen wir mit einem Fehler von $\pm 4$px an.
+
+\subsection{Eichung der Abszisse}
+
+Wir beginnen die Auswertung der Ergebnisse mit der Eichung der Abszisse, bestimmen also einen Faktor, um im weiteren Verlauf der Rechnungen Pixel in Millimeter umrechnen zu können. Hierzu tragen wir zunächst die Abstände der links- und rechtsseitigen Minima von der fünften bis zur ersten gegen die Breite des Analysierspalts, zu welcher diese gerade noch sichtbar waren, auf.
+
+\begin{table}[H]
+  \centering
+  \caption{Abstände der Minima 1. bis 5. Ordnung mit zugehöriger Spaltbreite des Analysierspalts}
+  \vspace*{0.5em}
+  \begin{tabular}{c|c|c|c}
+    Ordnung & Pixel (l) $\to$ Pixel (r) [px] & Abstand [px] & Spaltbreite [mm]\\\hline
+    5 & $338 \pm 4 \to 1263 \pm 4$ & $925 \pm 6$ & $0.79 \pm 0.01$\\
+    4 & $438 \pm 4 \to 1164 \pm 4$ & $726 \pm 6$  & $0.59 \pm 0.01$\\
+    3 & $507 \pm 4 \to 1075 \pm 4$ & $568 \pm 6$ & $0.48 \pm 0.01$\\
+    2 & $609 \pm 4 \to 984 \pm 4$ & $375 \pm 6$ & $0.30 \pm 0.01$\\
+    1 & $689 \pm 4 \to 890 \pm 4$ & $201 \pm 6$ & $0.16 \pm 0.01$
+  \end{tabular}
+\end{table}
+
+\abbref{grthrth} zeigt die Breiten des Analysierspalts über den jeweiligen Pixelwerten. An die Messdaten fitten wir eine standardmäßige lineare Funktion der Form
+\begin{align}
+  f(x;a,b) = ax + b.
+\end{align}
+
+Die aus dem Fit resultierenden optimierten Werte von $a$ und $b$ lauten
+\begin{align}
+  a &= (8.63 \pm 0.18) \cdot 10^{-4} \frac{\si{\milli\meter}}{\mathrm{px}},\\[1em]
+  b &= -0.018 \pm 0.011 \si{\milli\meter}.
+\end{align}
+
+Die Steigung $a$ werden wir fortan als Umrechnungsfaktor verwenden, es gilt also
+\begin{align}
+  1\mathrm{px} = (8.63 \pm 0.18) \cdot 10^{-4}\si{\milli\meter}.
+\end{align}
+Zur Verbesserung der Genauigkeit verwenden wir hierbei nicht den hier angegebenen gerundeten Wert, sondern den ungerundeten, nur durch die Genauigkeit des \texttt{float}-Datentyps begrenzten Wert.
+
+\subsection{Quantitative Untersuchung der Beugung am Einzelspalt}
+
+Wir entnehmen zunächst die Positionen der links- und rechtsseitigen Minima erster bis fünfter Ordnung aus den Intensitätsverteilungen. Zunächst aus der, in welcher das Hauptmaximum nicht in Sättigung ist (\abbref{rthrt}), dann aus der Verteilung, in welcher das Hauptmaximum in Sättigung ist und die weiter außen liegenden Maxima ebenfalls sichtbar sind (\abbref{rtshrsth}). Die Positionen sind in \tabref{} zusammengefasst. Außerdem ist hier direkt deren Abstand für die weiteren Berechnungen ausgerechnet.
+
+\begin{table}[H]
+  \centering
+  \caption{Abstände der linksseitigen (l) und rechtsseitigen (r) Minima 1. bis 5. Ordnung}
+  \vspace*{0.5em}
+  \begin{tabular}{c|c|c}
+    Ordnung & Pixel (l) $\to$ Pixel (r) [px] & Abstand [px]\\\hline
+    5 & $324 \pm 4 \to 1264 \pm 4$ & $940 \pm 6$\\
+    4 & $415 \pm 4 \to 1169 \pm 4$ & $754 \pm 6$\\
+    3 & $510 \pm 4 \to 1075 \pm 4$ & $565 \pm 6$\\
+    2 & $603 \pm 4 \to 979 \pm 4$ & $376 \pm 6$\\
+    1 & $696 \pm 4 \to 885 \pm 4$ & $189 \pm 6$
+  \end{tabular}
+\end{table}
+
+Zusätzlich entnehmen wir den Daten noch die Positionen der links- und rechtsseitigen Maxima erster bis fünfter Ordnung, gleichermaßen zusammengefasst in \tabref{ehrerg}.
+
+\begin{table}[H]
+  \centering
+  \caption{Abstände der linksseitigen (l) und rechtsseitigen (r) Maxima 1. bis 5. Ordnung}
+  \vspace*{0.5em}
+  \begin{tabular}{c|c|c}
+    Ordnung & Pixel (l) $\to$ Pixel (r) [px] & Abstand [px]\\\hline
+    5 & $273 \pm 4 \to 1305 \pm 4$ & $1032 \pm 6$\\
+    4 & $371 \pm 4 \to 1210 \pm 4$ & $839 \pm 6$\\
+    3 & $464 \pm 4 \to 1118 \pm 4$ & $654 \pm 6$\\
+    2 & $559 \pm 4 \to 1021 \pm 4$ & $462 \pm 6$\\
+    1 & $660 \pm 4 \to 924 \pm 4$ & $264 \pm 6$
+  \end{tabular}
+\end{table}
+
+Die Abstände der Minima tragen wir nun über der jeweiligen Ordnung in ein Diagramm auf, zu sehen in \abbref{eorgij}, und fitten an diese Datenpunkte erneut eine lineare Funktion (diesmal ohne y-Abschnitt, da es sich um eine Ursprungsgerade handelt), um die Steigung zu ermitteln. Hierbei erhalten wir den Wert
+\begin{align}
+  a &= 188.2 \pm 0.8 \si{\milli\meter}[1em].
+\end{align}
+
+Diesen können wir nun verwenden, um eine zwei weitere Aufgabenstellungen zu bearbeiten.
+
+\subsubsection*{Berechnung der Spaltbreite}
+
+Aus den Grundlagen der Beugung am Einzelspalt wissen wir, dass für den Winkel $\alpha_n$ eines Minimums $n$-ter Ordnung der Zusammenhang
+\begin{align}
+  b \cdot \sin(\alpha_n) = n \cdot \lambda
+\end{align}
+mit der Spaltbreite $b$ und der Wellenlänge $\lambda$ des einfallenden Lichts gilt. Weiter können wir aus geometrischen Überlegungen des Versuchsaufbaus herleiten, dass für die Position $x_n$ des $n$-ten Minimums auf dem Schirm in Abstand $d$
+\begin{align}
+  \tan(\alpha_n) = \frac{x_n}{d}
+\end{align}
+gilt. Da wir in unserem Aufbau den Schirm genau in der Brennweite $f$ der Sammellinse positioniert haben gilt für uns $d = f$. Für kleine $\alpha_n$ gilt $\sin(\alpha_n) \approx \alpha_n \approx \tan(\alpha_n)$, somit können wir die oberen beiden Gleichungen zusammenfassen zu
+\begin{align}
+  \frac{n\lambda}{b} = \frac{x_n}{f},
+\end{align}
+welche wir zur Spaltbreite $b$ umformen können:
+\begin{align}
+  b = \frac{f \lambda}{\frac{x_n}{n}}.
+\end{align}
+Der Bruch $\frac{x_n}{n}$ entspricht dabei genau der Steigung $a$ der Gerade, welche wir gerade eben an die Abstände der Minima gefittet haben. Somit haben wir mit
+\begin{align}
+  b = \frac{f\lambda}{a}
+\end{align}
+eine Formel für die Spaltbreite hergeleitet. In diese setzen wir die Wellenlänge des Laserlichts von $\lambda = 532 \cdot 10^{-6} \si{\milli\meter}$, die Brennweite $f = 80 \pm 2 \si{\milli\meter}$, sowie die zuvor bestimmte Steigung, welche wir zuvor mit dem Umrechnungsfaktor in Millimeter umrechnen, ein. Wir erhalten damit eine Spaltbreite von
+\begin{align}
+  b = (0.262 \pm 0.007)\si{\milli\meter}.
+\end{align}
+
+\subsubsection*{Bestimmung der Ordnungen der Nebenmaxima}
+
+Das Verhältnis der Ordnungen der Nebenmaxima zu ihren Abständen sollte dem gleichen proportionalen Verhältnis folgen, wie das der Nebenminima. Um dies zu bestätigen, stellen wir das proportionale Verhältnis um, um vom Abstand der links- und rechtsseitigen Maxima auf ihre Ordnung schließen zu können. 
+
+\begin{align}
+  \mathrm{ord}_{\max} = \frac{\mathrm{Abstand}_{\max}}{\mathrm{Steigung}}
+\end{align}
+Die Resultate der Berechnungen sind in \tabref{geigrjoe} zusammengefasst und auch in \abbref{gperjgoie} gegen die Abstände aufgetragen. An den Zahlenwerten sehen wir, dass die Ordnungen immer in etwa zwischen den ganzen Zahlen der Ordnungen der Minima liegen, was sich auch grafisch in \abbref{gperjgoie} bestätigen lässt.
+
+Um diese Werte noch mit den theoretischen Vorhersagen zu vergleichen, betrachten wir die Maxima der $\sinc$-Funktion. Wir in den theoretischen Grundlagen erklärt, gilt für die Intensitätsverteilung des Beugungsbildes des Einzelspalts
+\begin{gather}
+  I(k_y) = F(k_y)^2 = \sinc(\frac{k_y d}{2})^2 d^2
+  \intertext{mit Nullstellen bei}
+  k_y = \frac{2\pi n}{d}.
+\end{gather}
+Setzen wir dies in die Gleichung oben ein, so erhalten wir
+\begin{align}
+  I(n) = \sinc(n\pi)^2 d^2,
+\end{align}
+wobei wir den Faktor $d^2$ vernachlässigen können, da es uns nur um die $x$-Positionen der Extrema geht. Die Maxima bestimmen wir, indem wir die Funktion in den Online-Grafikrechner \texttt{Desmos} eingeben und diese ablesen, wie in \abbref{eogijoergi} zu sehen. Die Abweichung von den Berechneten werten bestimmen wir anhand der $\sigma$-Abweichung mit dem Fehler der berechneten Ordnung.
+
+\begin{table}[H]
+  \centering
+  \caption{Abstände der linksseitigen (l) und rechtsseitigen (r) Maxima, die berechneten Ordnungen und Vergleich zu den theoretischen Vorhersagen.}
+  \vspace*{0.5em}
+  \begin{tabular}{c|c|c|c|c}
+    Pixel (l) $\to$ Pixel (r) [px] & Abstand [px] & Ber. Ord. & Theo. Ord. & Abweichung\\\hline
+    $273 \pm 4 \to 1305 \pm 4$ & $1032 \pm 6$ & $5.48 \pm 0.04$ & $5.48$ & $0$\\
+    $371 \pm 4 \to 1210 \pm 4$ & $839 \pm 6$ & $4.46 \pm 0.04$ & $4.48$ & $0.5\sigma$\\
+    $464 \pm 4 \to 1118 \pm 4$ & $654 \pm 6$ & $3.48 \pm 0.04$ & $3.47$ & $0.25\sigma$\\
+    $559 \pm 4 \to 1021 \pm 4$ & $462 \pm 6$ & $2.46 \pm 0.04$ & $2.46$ & $0$\\
+    $660 \pm 4 \to 924 \pm 4$ & $264 \pm 6$ & $1.40 \pm 0.04$ & $1.43$ & $0.75\sigma$
+  \end{tabular}
+\end{table}
+
+\subsubsection*{Vergleich der Intensitäten}
