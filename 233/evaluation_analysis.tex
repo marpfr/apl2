@@ -27,7 +27,7 @@ Wir beginnen die Auswertung der Ergebnisse mit der Eichung der Abszisse, bestimm
   \end{tabular}
 \end{table}
 
-\abbref{grthrth} zeigt die Breiten des Analysierspalts über den jeweiligen Pixelwerten. An die Messdaten fitten wir eine standardmäßige lineare Funktion der Form
+\abbref{fig:abszisseneichung} zeigt die Breiten des Analysierspalts über den jeweiligen Pixelwerten. An die Messdaten fitten wir eine standardmäßige lineare Funktion der Form
 \begin{align}
   f(x;a,b) = ax + b.
 \end{align}
@@ -44,9 +44,16 @@ Die Steigung $a$ werden wir fortan als Umrechnungsfaktor verwenden, es gilt also
 \end{align}
 Zur Verbesserung der Genauigkeit verwenden wir hierbei nicht den hier angegebenen gerundeten Wert, sondern den ungerundeten, nur durch die Genauigkeit des \texttt{float}-Datentyps begrenzten Wert.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/2/abszisseneichung.png}
+  \caption{Pixel-Abstände über Spaltbreite zur Abszisseneichung}
+  \label{fig:abszisseneichung}
+\end{figure}
+\newpage
 \subsection{Quantitative Untersuchung der Beugung am Einzelspalt}
 
-Wir entnehmen zunächst die Positionen der links- und rechtsseitigen Minima erster bis fünfter Ordnung aus den Intensitätsverteilungen. Zunächst aus der, in welcher das Hauptmaximum nicht in Sättigung ist (\abbref{rthrt}), dann aus der Verteilung, in welcher das Hauptmaximum in Sättigung ist und die weiter außen liegenden Maxima ebenfalls sichtbar sind (\abbref{rtshrsth}). Die Positionen sind in \tabref{} zusammengefasst. Außerdem ist hier direkt deren Abstand für die weiteren Berechnungen ausgerechnet.
+Wir entnehmen zunächst die Positionen der links- und rechtsseitigen Minima erster bis fünfter Ordnung aus den Intensitätsverteilungen. Zunächst aus der, in welcher das Hauptmaximum nicht in Sättigung ist (\abbref{fig:es_nicht_saett_extrema}), dann aus der Verteilung, in welcher das Hauptmaximum in Sättigung ist und die weiter außen liegenden Maxima ebenfalls sichtbar sind (\abbref{fig:es_saett_extrema}). Die Positionen sind in \tabref{tab:es_abst_minima} zusammengefasst. Außerdem ist hier direkt deren Abstand für die weiteren Berechnungen ausgerechnet.
 
 \begin{table}[H]
   \centering
@@ -60,9 +67,10 @@ Wir entnehmen zunächst die Positionen der links- und rechtsseitigen Minima erst
     2 & $603 \pm 4 \to 979 \pm 4$ & $376 \pm 6$\\
     1 & $696 \pm 4 \to 885 \pm 4$ & $189 \pm 6$
   \end{tabular}
+  \label{tab:es_abst_minima}
 \end{table}
 
-Zusätzlich entnehmen wir den Daten noch die Positionen der links- und rechtsseitigen Maxima erster bis fünfter Ordnung, gleichermaßen zusammengefasst in \tabref{ehrerg}.
+Zusätzlich entnehmen wir den Daten noch die Positionen der links- und rechtsseitigen Maxima erster bis fünfter Ordnung, gleichermaßen zusammengefasst in \tabref{tab:es_abst_maxima}.
 
 \begin{table}[H]
   \centering
@@ -76,14 +84,36 @@ Zusätzlich entnehmen wir den Daten noch die Positionen der links- und rechtssei
     2 & $559 \pm 4 \to 1021 \pm 4$ & $462 \pm 6$\\
     1 & $660 \pm 4 \to 924 \pm 4$ & $264 \pm 6$
   \end{tabular}
+  \label{tab:es_abst_maxima}
 \end{table}
 
-Die Abstände der Minima tragen wir nun über der jeweiligen Ordnung in ein Diagramm auf, zu sehen in \abbref{eorgij}, und fitten an diese Datenpunkte erneut eine lineare Funktion (diesmal ohne y-Abschnitt, da es sich um eine Ursprungsgerade handelt), um die Steigung zu ermitteln. Hierbei erhalten wir den Wert
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/2/es_nicht_saett_extrema.png}
+  \caption{Intensitätsverteilung bei Beugung am Einzelspalt mit Hauptmaximum nicht in Sättigung}
+  \label{fig:es_nicht_saett_extrema}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/2/es_saett_extrema.png}
+  \caption{Intensitätsverteilung bei Beugung am Einzelspalt mit Hauptmaximum in Sättigung}
+  \label{fig:es_saett_extrema}
+\end{figure}
+
+Die Abstände der Minima tragen wir nun über der jeweiligen Ordnung in ein Diagramm auf, zu sehen in \abbref{fig:es_fit_ordnung_ohne_maxima}, und fitten an diese Datenpunkte erneut eine lineare Funktion (diesmal ohne y-Abschnitt, da es sich um eine Ursprungsgerade handelt), um die Steigung zu ermitteln. Hierbei erhalten wir den Wert
 \begin{align}
   a &= 188.2 \pm 0.8 \si{\milli\meter}[1em].
 \end{align}
 
 Diesen können wir nun verwenden, um eine zwei weitere Aufgabenstellungen zu bearbeiten.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/2/es_fit_ordnung_ohne_maxima.png}
+  \caption{Ordnungen gegenüber der Abstände der jeweiligen Minima mit linearem Fit.}
+  \label{fig:es_fit_ordnung_ohne_maxima}
+\end{figure}
 
 \subsubsection*{Berechnung der Spaltbreite}
 
@@ -119,9 +149,9 @@ Das Verhältnis der Ordnungen der Nebenmaxima zu ihren Abständen sollte dem gle
 \begin{align}
   \mathrm{ord}_{\max} = \frac{\mathrm{Abstand}_{\max}}{\mathrm{Steigung}}
 \end{align}
-Die Resultate der Berechnungen sind in \tabref{geigrjoe} zusammengefasst und auch in \abbref{gperjgoie} gegen die Abstände aufgetragen. An den Zahlenwerten sehen wir, dass die Ordnungen immer in etwa zwischen den ganzen Zahlen der Ordnungen der Minima liegen, was sich auch grafisch in \abbref{gperjgoie} bestätigen lässt.
+Die Resultate der Berechnungen sind in \tabref{tab:es_maxima_ord_ber_vergl} zusammengefasst und auch in \abbref{fig:es_fit_ordnung} gegen die Abstände aufgetragen. An den Zahlenwerten sehen wir, dass die Ordnungen immer in etwa zwischen den ganzen Zahlen der Ordnungen der Minima liegen, was sich auch grafisch in \abbref{fig:es_fit_ordnung} bestätigen lässt.
 
-Um diese Werte noch mit den theoretischen Vorhersagen zu vergleichen, betrachten wir die Maxima der $\sinc$-Funktion. Wir in den theoretischen Grundlagen erklärt, gilt für die Intensitätsverteilung des Beugungsbildes des Einzelspalts
+Um diese Werte noch mit den theoretischen Vorhersagen zu vergleichen, betrachten wir die Maxima der sinc-Funktion. Wir in den theoretischen Grundlagen erklärt, gilt für die Intensitätsverteilung des Beugungsbildes des Einzelspalts
 \begin{gather}
   I(k_y) = F(k_y)^2 = \sinc(\frac{k_y d}{2})^2 d^2
   \intertext{mit Nullstellen bei}
@@ -131,7 +161,7 @@ Setzen wir dies in die Gleichung oben ein, so erhalten wir
 \begin{align}
   I(n) = \sinc(n\pi)^2 d^2,
 \end{align}
-wobei wir den Faktor $d^2$ vernachlässigen können, da es uns nur um die $x$-Positionen der Extrema geht. Die Maxima bestimmen wir, indem wir die Funktion in den Online-Grafikrechner \texttt{Desmos} eingeben und diese ablesen, wie in \abbref{eogijoergi} zu sehen. Die Abweichung von den Berechneten werten bestimmen wir anhand der $\sigma$-Abweichung mit dem Fehler der berechneten Ordnung.
+wobei wir den Faktor $d^2$ vernachlässigen können, da es uns nur um die $x$-Positionen der Extrema geht. Die Maxima bestimmen wir, indem wir die Funktion in den Online-Grafikrechner \texttt{Desmos} eingeben und diese ablesen, wie in \abbref{fig:maxima_normed_sinc} zu sehen. Die Abweichung von den Berechneten werten bestimmen wir anhand der $\sigma$-Abweichung mit dem Fehler der berechneten Ordnung.
 
 \begin{table}[H]
   \centering
@@ -145,6 +175,21 @@ wobei wir den Faktor $d^2$ vernachlässigen können, da es uns nur um die $x$-Po
     $559 \pm 4 \to 1021 \pm 4$ & $462 \pm 6$ & $2.46 \pm 0.04$ & $2.46$ & $0$\\
     $660 \pm 4 \to 924 \pm 4$ & $264 \pm 6$ & $1.40 \pm 0.04$ & $1.43$ & $0.75\sigma$
   \end{tabular}
+  \label{tab:es_maxima_ord_ber_vergl}
 \end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/2/es_fit_ordnung.png}
+  \caption{Ordnungen gegenüber der Abstände der jeweiligen Minima mit linearem Fit und berechnete Ordnungen der Maxima.}
+  \label{fig:es_fit_ordnung}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{files/plots/2/maxima_normed_sinc.png}
+  \caption{Maxima der normierten sinc-Funktion.}
+  \label{fig:maxima_normed_sinc}
+\end{figure}
 
 \subsubsection*{Vergleich der Intensitäten}
