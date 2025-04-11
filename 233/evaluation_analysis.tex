@@ -193,3 +193,123 @@ wobei wir den Faktor $d^2$ vernachlässigen können, da es uns nur um die $x$-Po
 \end{figure}
 
 \subsubsection*{Vergleich der Intensitäten}
+
+An dieser Stelle der Auswertung würden wir die Intensitäten der Maxima in den Aufgezeichneten Beugungsbildern mit den theoretisch erwarteten Beugungsbildern vergleichen. Wie allerdings bereits auf den Abbildungen \ref{fig:es_nicht_saett_extrema} und \ref{fig:es_saett_extrema} zu sehen ist, ist uns bei der Aufzeichnung der Intensitätsverteilungen ein Fehler unterlaufen, sodass die Maxima 0. und 1. Ordnung bereits sehr stark in Sättigung sind. Möglicherweise war hier die Belichtungszeit bereits bei der Aufnahme mit der Kamera zu hoch eingestellt, oder wir hatten beim Export über \texttt{Gwyddeon} eine falsche Einstellung gewählt. 
+
+Theoretisch würden wir wie folgt vorgehen: Anhand der Intensität 0. Maximums und der Beachtung der verschiedenen Belichtungszeiten können wir die beiden Intensitätsverteilung normieren, sodass wir einen verhältnismäßigen Abstieg der Maxima 1. bis 5. Ordnung im Vergleich zum Maximum 0. Ordnung erhalten.
+
+Dann generieren wir ein theoretisches Beugungsbild anhand des in der Praktikumsanleitung bereitgestellten Skripts, wie sie in \abbref{fig:es_theorie_beugungsbild} zu sehen ist.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/2/es_theorie_beugungsbild.png}
+  \caption{Theoretisches Beugungsbild des Einzelspalts.}
+  \label{fig:es_theorie_beugungsbild}
+\end{figure}
+
+In diesem Beugungsmuster sind die Intensitäten ebenfalls anhand der Intensität des Maximums 0. Ordnung normiert. Nun können wir diese auslesen, entweder mit numerischen Methoden in Python oder wieder anhand von einem Online-Grafikrechner, und anschließend mit den gemessenen, normierten Intensitäten vergleichen.
+
+\subsection{Quantitative Untersuchung der Beugung am Doppelspalt}
+
+Einleitend zu dieser Aufgabe haben wir qualitativ die Auswirkungen verschiedener Geometrien des Doppelspalts betrachtet. Dazu waren auf dem Dia drei verschiedene Doppelspalte, in drei verschiedenen Breiten, angebracht.
+
+Auf dem Beugungsbild des breitesten Doppelspalts, zu sehen in \abbref{fig:breit} konnten wir deutlich das mittlere Hauptmaximum mit drei bis view Nebenmaxima, sowie viele weitere Hauptmaxima mit jeweils etwa ein bis zwei Nebenmaxima beobachten.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/3/breit.png}
+  \caption{Beugungsbild des breiten Doppelspalts.}
+  \label{fig:breit}
+\end{figure}
+
+
+Das Beugungsbild des schmalen Doppelspalts (\abbref{fig:schmal}) zeigte ein sehr breites Hauptmaximum 0. Ordnung, ebenfalls mit etwa drei bis vier Nebenmaxima. Allerdings waren hier fast keine weiteren Hauptmaxima höherer Ordnung zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/3/schmal.png}
+  \caption{Beugungsbild des schmalen Doppelspalts.}
+  \label{fig:schmal}
+\end{figure}
+
+
+Das Beugungsbild des mittelgroßen Doppelspalts (\abbref{fig:mittel}), bestand aus einem etwas schmaleren Hauptmaximum 0. Ordnung mit etwa drei Nebenmaxima und weiteren weniger gut sichtbaren Hauptmaxima mit etwa einem Nebenmaximum. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/3/mittel.png}
+  \caption{Beugungsbild des mittleren Doppelspalts.}
+  \label{fig:mittel}
+\end{figure}
+
+Mit dem mittelgroßen Doppelspalt haben wir auch die weiteren Messungen für diese Aufgabe durchgeführt.
+
+\abbref{fig:ds_theorie_beugungsbild} zeigt das theoretische Beugungsbild des Doppelspalts, generiert mit dem in der Praktikumsanleitung gegebenen Python-Skript. Wir verwenden hierfür den Spaltabstand und die Spaltbreite, wie wir sie in Aufgabe 5 bestimmt haben.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/3/ds_theorie_beugungsbild.png}
+  \caption{Theoretisches Beugungsbild des Doppelspalts mit Funktion des Einzelspalts und Gitterfunktion.}
+  \label{fig:ds_theorie_beugungsbild}
+\end{figure}
+
+Es ist hier deutlich zu sehen, wie die einhüllende Funktion des Einzelspalts maßgeblich die Form des Beugungsbildes des Doppelspalts beeinflusst. Die Übergänge zwischen den Hauptmaxima bilden sich immer dort, wo sowohl die Gitterfunktion, als auch die Einzelspaltfunktion eine Nullstelle besitzen. Minima innerhalb der Hauptmaxima bilden sich durch Nullstellen der Gitterfunktion, während die Einzelspaltfunktion größer Null ist.
+
+Im Vergleich mit dem gemessenen Beugungsbild zeigen sich, wie zu erwarten, sehr ähnliche Strukturen. Dieses ist in \abbref{fig:ds_gemessen_beugungsbild} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/3/ds_gemessen_beugungsbild.png}
+  \caption{Gemessenes Beugungsbild des Doppelspalts.}
+  \label{fig:ds_gemessen_beugungsbild}
+\end{figure}
+
+Auch hier sehen wir die fünf Maxima, welche gemeinsam zum mittleren Hauptmaximum 0. Ordnung gehören. Darauf folgt ein breiteres Minimum, welches den Übergang zum Hauptmaximum 1. Ordnung darstellt. In diesem finden sich, wie im theoretischen Bild, zwei kleinere Nebenmaxima.
+
+Wir möchten nun, so wie bereits in Theorie für den Einzelspalt erklärt, die Intensitäten der Nebenmaxima innerhalb der Einhüllenden des nullten Hauptmaximums mit den theoretischen Werten vergleichen. Die Vergleichswerte ermitteln wir wieder numerisch mit dem Online-Grafikrechner, wie in \abbref{fig:ds_intensitaeten_desmos} zu sehen.
+
+Um die Intensitäten vergleichen zu können, berechnen wir zunächst den Normierungsfaktor aus der Intensität des 0. Hauptmaximums
+\begin{align}
+  N = \frac{1}{I_{0,0}} = (9.78500 \pm 0.00957) \cdot 10^{-4}.
+\end{align}
+
+Mit diesem Wert multiplizieren wir nun die Intensität aller in \abbref{fig:ds_gemessen_beugungsbild} Maxima, um so die auf 1 normierten Intensitäten zu erhalten. Diese können wir dann mit den theoretischen Werten vergleichen. Die Resultate des Vergleichs sind in \tabref{tab:es_vergleich_intensitaet} aufgelistet.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/3/ds_intensitaeten_desmos.png}
+  \caption{Numerische Bestimmung der normierten Intensitäten des 0. Hauptmaximums des Doppelspalts.}
+  \label{fig:ds_intensitaeten_desmos}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Vergleich der Intensitäten der Nebenmaxima des 0. Hauptmaximums beim Einzelspalt.}
+  \vspace*{0.5em}
+  \begin{tabular}{|c|c|c|c|c|}\hline
+    Ordnung & Intensität & Intensität (normiert) & Intensität (theo.) & Abw.\\\hline
+    \multicolumn{5}{|l|}{Linksseitige Maxima}\\\hline
+    1 & $628 \pm 2$   & $0.6146 \pm 0.0021$    &  $0.5417 \pm 0.0001$     &   $35.52\sigma$\\
+    2 & $58 \pm 2$    & $0.0568 \pm 0.0020$    &  $0.0448 \pm 0.0001$     &   $6.1\sigma$\\\hline
+    \multicolumn{5}{|l|}{Rechtsseitige Maxima}\\\hline
+    1 & $616 \pm 2$  &  $0.6028 \pm 0.0021$    &  $0.5417 \pm 0.0001$   &     $29.84\sigma$\\
+    2 & $55 \pm 2$   &  $0.0538 \pm 0.0020$    &  $0.0448 \pm 0.0001$   &     $4.61\sigma$\\\hline
+  \end{tabular}
+  \label{tab:es_vergleich_intensitaet}
+\end{table}
+
+
+
+%Normfaktor: (9.78500 \pm 0.00957)e-4
+%O I          I (normiert)           I (theo)               Abw
+%Linksseitige Maxima
+%1 628 \pm 2    0.61450 \pm 0.00205      0.5417 \pm 0.0001        35.52σ
+%2 58 \pm 2     0.05675 \pm 0.00196      0.0448 \pm 0.0001        6.1σ
+%Rechtsseitige Maxima
+%1 616 \pm 2    0.60276 \pm 0.00204      0.5417 \pm 0.0001        29.84σ
+%2 55 \pm 2     0.05382 \pm 0.00196      0.0448 \pm 0.0001        4.61σ
+
+\newpage
+\subsection{Das Objektbild als Fouriersynthese des Beugungsbildes am Beispiel des Einfachspalts}
