@@ -1,12 +1,28 @@
 \section{Zusammenfassung und Diskussion}
 
-\begin{align}
-  x &= 3 \frac{1}{|\cm|}\\
-  x &= 3 \cmm\\
-  H &= \frac{\vec{p}^2}{2m}+ \frac{m}{2} \omega^2 \vec{q}\\
-  \vec{p}^2 &= \delta_{ij} p_i p_j\\
-  \vec{q}^2 &= \delta_{kl} q_k q_l\\
-  \qty{L_i, H} &=\qty{\varepsilon_{abc} q_b p_c, \frac{\delta_{ij} p_i p_j}{2m}+ \frac{m}{2} \omega^2 \delta_{kl} q_k q_l}\\
-  &= \varepsilon_{abc} \qty{q_b p_c, \frac{\delta_{ij} p_i p_j}{2m}+ \frac{m}{2} \omega^2 \delta_{kl} q_k q_l}\\
-  &= \varepsilon_{abc} \qty(\frac{1}{2m} \qty{q_b p_c, \delta_{ij} p_i p_j} + \frac{m}{2} \omega^2 \qty{q_b p_c, \delta_{kl} q_k q_l})\\
-\end{align}
+In Versuch 233 beschäftigten wir uns mit der mathematischen Formulierung der Fraunhoferschen Beugung von Licht mit den Werkzeugen der Fourieranalyse. Hierzu betrachteten wir die Beugungs- und Objektbilder eines Einzel- und eines Doppelspalts und verglichen die Lage und Intensitäten der Maxima und Minima der beobachteten Bilder mit den theoretisch vorhergesagten Werten. In der Fourieroptik entspricht das Beugungsbild, welches durch einen Spalt beziehungsweise eine Öffnung, beschrieben durch eine bestimmte Öffnungsfunktion $A$, erzeugt wird, gerade deren Fouriertransformierten 
+\begin{gather*}
+  E(k_y, k_z) = \int\int_S A(y,z) \e{-i(k_y y + k_z z)} \dy \dz,
+\intertext{beziehungsweise im eindimensionalen Fall}
+  F(k_y) = \int_{-\infty}^{\infty} f(y) \e{-ik_y y} \dy.\\
+\end{gather*}
+Umgekehrt lässt sich durch die Rücktransformation vom Beugungsbild auf das Objektbild schließen. Somit ergibt sich als Intensitätsverteilung des Beugungsbildes des Einzelspalts mit der Spaltbreite $d$
+\begin{align*}
+  I = \sinc(\frac{\pi d}{\lambda} \sin(\alpha))^2 d^2.
+\end{align*}
+Für den Doppelspalt mit Breite $d$ je Spalt und dem Spaltabstand $g$ ergibt sich
+\begin{align*}
+  I = 4 \cos(\frac{\pi g}{\lambda} \sin(\alpha))^2 d^2 \sinc(\frac{\pi d}{\lambda} \sin(\alpha))^2.
+\end{align*}
+
+Die Versuchsapparatur erlaubte es uns, verschiedene Objekte, also Spalte einzusetzen. Wir verwendeten einen Variablen Einzelspalt, dessen Breite und Rotation sich frei verstellen ließ. Für die Analyse des Doppelspalts verwendeten wir einen von drei gegebenen festen Doppelspalten. Neben diesen war im Strahlengang der Apparatur ein variabler Analysierspalt angebracht, mit welchem wir die Beugungs- und Objektbilder seitlich abschneiden konnten, um so beispielsweise Beugungsmaxima auszublenden.
+
+Wir begannen die Durchführung des Versuchs mit verschiedenen qualitativen Betrachtungen am Einzelspalt. Hierbei untersuchten wir ganz grob die Auswirkungen der Geometrie des Spalts, wie dessen Breite und Rotation, sowie den Einfluss verschiedener Breiten des Analysierspalts auf das Beugungsbild.
+
+Unsere quantitativen Messungen begannen wir zunächst damit, die Abszisse des Intensitätsprofils zu Eichen. Durch den Export aus der Kamerasoftware war diese zunächst in Pixeln angegeben. Hierfür trugen wir die Abstände der Beugungsminima von der ersten bis zur fünften Ordnung (in Pixeln) gegen die jeweils zugehörige Spaltbreite des Analysierspalts (in Millimetern) auf. An diese Daten optimierten wir eine lineare Funktion, deren Steigung von
+\begin{align*}
+  a &= (8.63 \pm 0.18) \cdot 10^{-4} \frac{\si{\milli\meter}}{\mathrm{px}}
+\end{align*}
+wir fortan als Umrechnungsfaktor verwendeten.
+
+Wir fuhren fort mit den quantitativen Untersuchungen des Beugungsbildes des Einzelspalts. Hierzu zeichneten wir zunächst zwei Intensitätsverteilungen mit unterschiedlich starken Belichtungszeiten auf. Das erste so, dass das Maximum 0. gerade nicht in Sättigung war, das zweite so, dass die Maxima 1. Ordnung gerade nicht in Sättigung und weitere Maxima höherer Ordnung sichtbar waren. So konnten wir, unter Beachtung der Korrektur durch die Änderung der Belichtungszeit, die Lage und Intensitäten der ersten fünf Maxima und Minima ablesen.
