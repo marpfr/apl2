@@ -300,16 +300,134 @@ Mit diesem Wert multiplizieren wir nun die Intensität aller in \abbref{fig:ds_g
   \label{tab:es_vergleich_intensitaet}
 \end{table}
 
-
-
-%Normfaktor: (9.78500 \pm 0.00957)e-4
-%O I          I (normiert)           I (theo)               Abw
-%Linksseitige Maxima
-%1 628 \pm 2    0.61450 \pm 0.00205      0.5417 \pm 0.0001        35.52σ
-%2 58 \pm 2     0.05675 \pm 0.00196      0.0448 \pm 0.0001        6.1σ
-%Rechtsseitige Maxima
-%1 616 \pm 2    0.60276 \pm 0.00204      0.5417 \pm 0.0001        29.84σ
-%2 55 \pm 2     0.05382 \pm 0.00196      0.0448 \pm 0.0001        4.61σ
-
 \newpage
 \subsection{Das Objektbild als Fouriersynthese des Beugungsbildes am Beispiel des Einfachspalts}
+
+Mit der Betrachtung des Objektbilds untersuchen wir in den folgenden beiden Versuchsteilen nun experimentell die Rücktransformation. Der Maßstab der aufgezeichneten Objektbilder wird durch die Linse L1 im Versuchsaufbau beeinflusst. Um aus der Größe $B$ des Bildes die tatsächliche Größe $G$ des Gegenstandes, in diesem Fall das Spaltbild, zu berechnen, ziehen wir zunächst die Linsengleichung
+\begin{align}
+  \frac{1}{b} + \frac{1}{g} = \frac{1}{f}
+\end{align}
+heran, welche die Bildweite $b$, die Gegenstandsweite $g$ und die Brennweite $f$ in Verbindung bringt. Mit der Relation
+\begin{align}
+  \frac{B}{G} = \frac{b}{g}
+\end{align}
+und der Linsengleichung können wir die Formel
+\begin{align}
+  \frac{B}{G} = \frac{b - f}{f} = \frac{b}{f} - 1
+\end{align}
+herleiten. Diese enthält gerade die zwei Werte, Bildweite und Brennweite, welche wir während den Messungen zu diesem Versuchsteil aufgeschrieben haben. Somit können wir einen Umrechnungsfaktor von
+\begin{align}
+  \frac{B}{G} = 3.38 \pm 0.17
+\end{align}
+ausrechnen. In unseren Aufzeichnungen geht der Spalt von Pixel $274$ bis Pixel $915$, was mit einem Fehlerwert von $\pm 4$ Pixeln pro Seite, einer Breite von $641 \pm 6 px$ im Bildmaßstab entspricht. Zur Umrechnung von Pixel in Millimeter gibt die Praktikumsanleitung einen Faktor von $3.45 \cdot 10^{-3} \frac{\si{\milli\meter}}{\mathrm{px}}$ an. Multiplizieren wir unseren Wert mit diesem Faktor und teilen durch $\ffrac{B}{G}$, so erhalten wir eine reale Spaltbreite von
+\begin{align}
+  d = (0.66 \pm 0.04)\si{\milli\meter}.
+\end{align}
+
+Nun können wir damit fortfahren, die theoretisch erwarteten Objektbilder zu generieren. Hierzu betrachten wir die Funktion
+\begin{align}
+  f(k_y, y) = \frac{d}{\pi} \sinc(\frac{kd}{2}) \cos(yk),
+\end{align}
+welche gerade dem Integranden der Rücktransformation, vorgestellt in der theoretischen Einführung, entspricht. Diese integrieren wir nun numerisch. Dabei setzen wir die untere Integrationsgrenze auf $0$, die obere Grenze auf den Wert
+\begin{align}
+  k_{y,n} = \frac{2\pi n}{d},
+\end{align}
+wobei $n$ der Ordnung angibt, bis zu welcher wir integrieren möchten. Die Integration führen wir für $400$ Werte von $y$ im Bereich von $-d$ bis $d$ durch. Abschließend wird das Ergebnis quadriert und die Gesamtmenge der Ergebnisse so normiert, dass der maximale Wert $1$ entspricht.
+
+Wir führen diesen Prozess für die Werte $1, 2, 3, 5$ von $n$ durch, um die theoretischen Objektbilder zu allen von uns aufgezeichneten Bildern zum Vergleich zu erhalten. Zusätzlich setzen wir für einen weiteren Durchgang $n$ auf $51$, um zu sehen, wie sich das tatsächliche Spaltbild im Grenzverhalten $n \to \infty$ ergibt. Die theoretischen Bilder sind in den Abbildungen \ref{fig:es_theorie_objektbild_ord0} bis \ref{fig:es_theorie_objektbild_ord4} zu sehen.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_theorie_objektbild_ord0.png}
+  \caption{Theoretisches Objektbild aus Rücktransformation bis zur 0. Ordnung.}
+  \label{fig:es_theorie_objektbild_ord0}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_theorie_objektbild_ord1.png}
+  \caption{Theoretisches Objektbild aus Rücktransformation bis zur 1. Ordnung.}
+  \label{fig:es_theorie_objektbild_ord1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_theorie_objektbild_ord2.png}
+  \caption{Theoretisches Objektbild aus Rücktransformation bis zur 2. Ordnung.}
+  \label{fig:es_theorie_objektbild_ord2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_theorie_objektbild_ord4.png}
+  \caption{Theoretisches Objektbild aus Rücktransformation bis zur 4. Ordnung.}
+  \label{fig:es_theorie_objektbild_ord4}
+\end{figure}
+
+Bereits in dieser Abfolge von Plots ist zu sehen, wie mit steigender Ordnung die Kanten steiler und die \glqq{}Wiggles\grqq{} auf dem Plateaubereich kleiner werden und sich das Bild immer näher der rechteckigen Form des Einzelspalts annähert. Besonders deutlich wird dies auf dem Resultat zur Integration bis zu Ordnung $50$ (\abbref{fig:es_theorie_objektbild_ord50}). 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_theorie_objektbild_ord50.png}
+  \caption{Theoretisches Objektbild aus Rücktransformation bis zur 50. Ordnung.}
+  \label{fig:es_theorie_objektbild_ord50}
+\end{figure}
+
+Die Theorie möchten wir nun mit den tatsächlich experimentell aufgezeichneten Objektbildern vergleichen. Diese sind in den Abbildungen \ref{fig:es_praxis_objektbild_ord0} bis \ref{fig:es_praxis_objektbild_ord4} dargestellt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_praxis_objektbild_ord0.png}
+  \caption{Experimentell bestimmtes Objektbild entsprechend der 0. Ordnung.}
+  \label{fig:es_praxis_objektbild_ord0}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_praxis_objektbild_ord1.png}
+  \caption{Experimentell bestimmtes Objektbild entsprechend der 1. Ordnung.}
+  \label{fig:es_praxis_objektbild_ord1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_praxis_objektbild_ord2.png}
+  \caption{Experimentell bestimmtes Objektbild entsprechend der 2. Ordnung.}
+  \label{fig:es_praxis_objektbild_ord2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/4/es_praxis_objektbild_ord4.png}
+  \caption{Experimentell bestimmtes Objektbild entsprechend der 4. Ordnung.}
+  \label{fig:es_praxis_objektbild_ord4}
+\end{figure}
+
+
+Die Abszisse in den Messdaten ist in Pixeln in der Abbildungsebene angegeben. Außerdem sind die Objektbilder hier nicht, wie bei den theoretischen Objektbildern, um den Nullpunkt des Koordinatensystems zentriert. Zum Vergleich der Lage der Maxima und Minima wenden wir deshalb eine relative Betrachtungsweise, bezogen auf das erste Maximum jedes Objektbildes an. Möchten wir beispielsweise die Lage des linken Maximums im Objektbild bis zur ersten Ordnung vergleichen, so gehen wir wie folgt vor:
+\begin{enumerate}[label=\arabic*.)]
+  \item Lese Lage des 1. Maximums aus $\to x_{0, B}$ (in Pixeln in der Abbildungsebene).
+  \item Lese Lage des 2. Maximums aus $\to x_{1, B}$ (in Pixeln in der Abbildungsebene).
+  \item Berechne Distanz der beiden Werte $x_{\overline{01}, B} = |x_{1} - x_{0}|$ (in Pixeln in der Abbildungsebene).
+  \item Berechne reale Distanz der Maxima $x_{\overline{01}, G} = x_{\overline{01}, B} \cdot \ffrac{3.45 \cdot 10^{-3} \frac{\si{\milli\meter}}{\mathrm{px}}}{\frac{B}{G}}$.
+  \item Berechne Distanz der beiden Maxima im theoretischen Objektbild (in $\si{\milli\meter}$ in der Gegenstandsebene).
+  \item Vergleiche die beiden Werte.
+\end{enumerate} 
+
+Um die Intensitäten zu vergleichen, müssen wir nicht mit den Maßstäben der Abszisse herumrechnen. Hier normieren wir aber zur Vergleichbarkeit die Intensitäten der Maxima so, dass die Intensität des ersten Maximums $1$ entspricht.
+
+Da diese Methode des Vergleichs immer mindestens zwei Maxima benötigt, können wir damit logischerweise erst beim Objektbild 1. Ordnung beginnen.
+\newpage
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+    \multirow{2}{*}{\#} & \multicolumn{3}{c|}{Praxis} & \multicolumn{2}{c|}{Theorie} & \multirow{2}{*}{Abw.}\\\cline{2-6}
+        & Pos. [px] & $\Delta$ 1. Max [px] & $\Delta$ Umger. [mm] & Pos. [mm] & $\Delta$1. Max [mm] & \\\hline
+    \multicolumn{7}{|l|}{Maxima}\\\hline
+    1   & $265 \pm 4$ & -                 & -             & $-0.16$ & -                 & - \\
+    2   & $ 569 \pm 4$ & $304 \pm 6$ & $0.311 \pm 0.006$ & $0.16$ & $0.33$ & $2.5\sigma$\\\hline
+    \multicolumn{7}{|l|}{Minima}\\\hline
+    1   & $423 \pm 4$ & $158 \pm 6$ & $0.162 \pm 0.006$ & $0.00$ & $0.16$ & $0.1\sigma$\\\hline
+  \end{tabular}
+\end{table}
