@@ -244,7 +244,7 @@ Das Beugungsbild des mittelgroßen Doppelspalts (\abbref{fig:mittel}), bestand a
 
 Mit dem mittelgroßen Doppelspalt haben wir auch die weiteren Messungen für diese Aufgabe durchgeführt.
 
-\abbref{fig:ds_theorie_beugungsbild} zeigt das theoretische Beugungsbild des Doppelspalts, generiert mit dem in der Praktikumsanleitung gegebenen Python-Skript. Wir verwenden hierfür den Spaltabstand und die Spaltbreite, wie wir sie in Aufgabe 5 bestimmt haben.
+\abbref{fig:ds_theorie_beugungsbild} zeigt das theoretische Beugungsbild des Doppelspalts, generiert mit dem in der Praktikumsanleitung gegebenen Python-Skript. 
 
 \begin{figure}[H]
   \centering
@@ -252,6 +252,19 @@ Mit dem mittelgroßen Doppelspalt haben wir auch die weiteren Messungen für die
   \caption{Theoretisches Beugungsbild des Doppelspalts mit Funktion des Einzelspalts und Gitterfunktion.}
   \label{fig:ds_theorie_beugungsbild}
 \end{figure}
+
+Die dafür verwendete Funktion lautet
+\begin{align}
+  I(x) = \sinc(x)^2 \cos(vx)^2.
+\end{align}
+Der Faktor $v$ im Cosinus, der Gitterfunktion, stellt das Verhältnis zwischen Spaltabstand und Spaltbreite dar. Hierfür verwenden wir die Werte, welche wir im Messprotokoll für Aufgabe 5 notiert haben. Den Spaltabstand ermitteln wir als Differenz der beiden Spaltmittelpunkte
+\begin{align}
+  g = s_{2,m} - s_{1,m},
+\end{align}
+die Spaltbreite als Durchschnitt der Spaltbreite der beiden einzelnen Spalten, berechnet aus Anfangs- und Endpunkt der Spalte
+\begin{align}
+  d = \frac{(s_{1,e} - s_{1,a}) + (s_{2,e} - s_{2,a})}{2}.
+\end{align}
 
 Es ist hier deutlich zu sehen, wie die einhüllende Funktion des Einzelspalts maßgeblich die Form des Beugungsbildes des Doppelspalts beeinflusst. Die Übergänge zwischen den Hauptmaxima bilden sich immer dort, wo sowohl die Gitterfunktion, als auch die Einzelspaltfunktion eine Nullstelle besitzen. Minima innerhalb der Hauptmaxima bilden sich durch Nullstellen der Gitterfunktion, während die Einzelspaltfunktion größer Null ist.
 
@@ -522,10 +535,10 @@ Die nachfolgenden Tabellen \ref{tab:vergl_objbild_ma_mi_i_ord1} bis \ref{tab:ver
         & I [b.E.] & I norm. auf 1. Max & I [b.E.] & \\\hline
     \multicolumn{5}{|l|}{Maxima}\\\hline
     1 & $488 \pm 2$ & - & $1.0$ & - \\
-    2 & $477 \pm 2$ & $0.97888 \pm 0.006$ & $0.91$ &  $12.76\sigma$ \\
-    3 & $477 \pm 2$ & $0.97867 \pm 0.006$ & $0.89$ &  $14.92\sigma$ \\
-    4 & $537 \pm 2$ & $1.10152 \pm 0.007$ & $0.91$ &  $32.10\sigma$ \\
-    5 & $605 \pm 2$ & $1.24118 \pm 0.007$ & $1.0$ &  $36.90\sigma$ \\\hline
+    2 & $477 \pm 2$ & $0.979 \pm 0.006$ & $0.91$ &  $12.76\sigma$ \\
+    3 & $477 \pm 2$ & $0.979 \pm 0.006$ & $0.89$ &  $14.92\sigma$ \\
+    4 & $537 \pm 2$ & $1.102 \pm 0.007$ & $0.91$ &  $32.10\sigma$ \\
+    5 & $605 \pm 2$ & $1.241 \pm 0.007$ & $1.0$ &  $36.90\sigma$ \\\hline
     \multicolumn{5}{|l|}{Minima}\\\hline
     1 & $398 \pm 2$ & $0.817 \pm 0.006$ & $0.73$ & $16.83\sigma$ \\
     2 & $429 \pm 2$ & $0.880 \pm 0.006$ & $0.76$ & $22.28\sigma$ \\
@@ -535,16 +548,95 @@ Die nachfolgenden Tabellen \ref{tab:vergl_objbild_ma_mi_i_ord1} bis \ref{tab:ver
   \label{tab:vergl_objbild_ma_mi_i_ord4}
 \end{table}
 
+Damit ist auch dieser Teil der Analyse abgeschlossen und wir können zum Objektbild des Doppelspalts fortfahren.
 
-%\begin{table}[H]
-%  \centering
-%  \begin{tabular}{|c|c|c|c|c|c|c|}\hline
-%    \multirow{2}{*}{\#} & \multicolumn{3}{c|}{Praxis} & \multicolumn{2}{c|}{Theorie} & \multirow{2}{*}{Abw.}\\\cline{2-6}
-%        & Pos. [px] & $\Delta$ 1. Max [px] & $\Delta$ Umger. [mm] & Pos. [mm] & $\Delta$1. Max [mm] & \\\hline
-%    \multicolumn{7}{|l|}{Maxima}\\\hline
-%    1   & $$ & -                 & -             & $$ & -                 & - \\
-%    2   & $$ & $$ & $$ & $$ & $$ & $$\\\hline
-%    \multicolumn{7}{|l|}{Minima}\\\hline
-%    1   & $$ & $$ & $$ & $$ & $$ & $$\\\hline
-%  \end{tabular}
-%\end{table}
+\subsection{Das Objektbild als Fouriersynthese des Beugungsbildes am Beispiel des Doppelspalts}
+
+Wir gehen für diese Aufgabe ähnlich vor wie in der vorherigen. Auch hier haben wir zuerst die Dimensionen des verwendeten Doppelspalts in Pixeln in der Bildebene vermessen. Für die Breiten und den Abstand der Spalte in der Bildebene haben wir bereits im Zuge von Aufgabe zum theoretischen Beugungsbild des Doppelspalts die Werte
+\begin{align}
+  &\text{Breite } d = (251 \pm 4) \mathrm{px}\\[1em]
+  &\text{Abstand } g = (580 \pm 6) \mathrm{px}
+\end{align}
+berechnet. Diese müssen wir nun wieder in Millimeter in der Gegenstandsebene umrechnen. Hierzu wenden wir die gleichen Faktoren an, wie wir sie bereits in der vorherigen Aufgabe verwendet haben und erhalten so
+\begin{align}
+  d &= (0.257 \pm 0.014)\si{\milli\meter}, \\[1em]
+  g &= (0.593 \pm 0.030)\si{\milli\meter}.
+\end{align}
+
+Diese Parameter setzen wir nun in die Funktion
+\begin{align}
+  f(k_y,y) = \frac{d}{\pi} \cos(\frac{k_y g}{2}) \sinc(\frac{k_y d}{2}) \cos(y k_y)
+\end{align}
+ein, welche dem Integranden der Rücktransformation des Beugungsbildes des Doppelspalts entspricht. Für den ersten Teil dieser Aufgabe führen wir für die Ordnung $n = 1$ erneut eine numerische Integration mit den Grenzen $0$ bis $\frac{2\pi n}{d}$ durch. Für $y$ wählen wir den Bereich $-d$ bis $d$, wieder in $400$ Schritte unterteilt. Auch das Quadrieren und Normieren führen wir wie beim Einzelspalt durch und erhalten so das Objektbild erster Ordnung, zu sehen in \abbref{fig:ds_theorie_objektbild_ord1}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/5/ds_theorie_objektbild_ord1.png}
+  \caption{Theoretisches Objektbild des Doppelspalts aus Rücktransformation bis zur 1. Ordnung.}
+  \label{fig:ds_theorie_objektbild_ord1}
+\end{figure}
+
+Das Objektbild zu dieser Ordnung haben wir auch experimentell Aufgezeichnet. Dieses ist in \abbref{fig:ds_praxis_objektbild_ord1} dargestellt. Es ist zu sehen, dass Theorie und Praxis grundsätzlich die gleiche Struktur aufweisen. Allerdings besteht auch hier der unterschied, dass die Intensitäten der beiden Maxima im experimentell bestimmten Objektbild nicht gleich sind. Genauer ist das rechte Maximum um etwa $(1.124 \pm 0.004)$-Mal höher als das linke.
+
+In der Theorie liegen die beiden Maxima $0.597\si{\milli\meter}$ weit auseinander, was auch, passenderweise, in etwa dem zuvor berechneten Spaltabstand entspricht. Entsprechend dem Abbildungsmaßstab und der Umrechnung von Pixeln in Millimeter transformiert, liegen die Maxima im experimentell bestimmten Objektbild $(0.583 \pm 0.030)\si{\milli\meter}$ weit auseinander. Dies entspricht einer Abweichung um etwa $0.51\sigma$ von der Theorie.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/5/ds_praxis_objektbild_ord1.png}
+  \caption{Experimentell bestimmtes Objektbild des Doppelspalts entsprechend der 1. Ordnung.}
+  \label{fig:ds_praxis_objektbild_ord1}
+\end{figure}
+
+Verringert man die Breite des Analysierspalt weiter, so verschwimmen beim Objektbild mit der Zeit die zwei Maxima zu einer \glqq{}Gauß-ähnlichen\grqq{} Funktion mit einem Plateau, wie ein \abbref{fig:ds_praxis_objektbild_plateau} zu sehen.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/5/ds_praxis_objektbild_plateau.png}
+  \caption{Experimentell bestimmtes Objektbild des Doppelspalts bei weiterer Schließung des Analysierspalts.}
+  \label{fig:ds_praxis_objektbild_plateau}
+\end{figure}
+
+Auch das theoretische Objektbild lässt sich an diese Form annähern, indem man bei der numerischen Integration das $n$ in der oberen Integrationsgrenze langsam gegen $0$ gehen lässt. \abbref{fig:ds_theorie_objektbild_annaeherung_plateau} zeigt diese Annäherung, ausgehend vom Wert $n = 0.305$ in absteigenden Schritten von $0.002$ bis zum Wert $n = 0.283$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{files/plots/5/ds_theorie_objektbild_annaeherung_plateau.png}
+  \caption{Annäherung des theoretischen Objektbilds an das experimentelle Bild.}
+  \label{fig:ds_theorie_objektbild_annaeherung_plateau}
+\end{figure}
+
+Da in unserem experimentell bestimmten Bild noch kein perfektes Plateau, sondern noch zwei minimale \glqq{}Peaks\grqq{} zu sehen sind, entscheiden wir uns für den Wert $n = (0.295 \pm 0.002)$, für die beste Beschreibung der experimentellen Daten.
+
+Mit diesem angenäherten Wert von $n$ können wir nun $k_{y}$ nach der Formel
+\begin{align}
+  k_{y} = \frac{2 \pi n}{d}
+\end{align}
+mit der Spaltbreite $d$ bestimmen. Wir erhalten hierbei einen Wert von
+\begin{align}
+  k_{y,\mathrm{ang.}} = (7.2 \pm 0.4)\si{\per\milli\meter}.
+\end{align}
+
+Einen Vergleichswert für $k_{y,n}$ können wir uns aus einigen geometrischen Überlegungen an der Linse L1 herleiten. Für die $y$-Komponente des Wellenvektors $\vec{k}_0$ für einen Strahl im Winke $\alpha$ gilt 
+\begin{align}
+  k_{0,y} = |\vec{k}_0| \cdot \sin(\alpha)
+\end{align}
+mit $|\vec{k}_0| = \ffrac{2\pi}{\lambda}$. Gleichzeitig gilt
+\begin{align}
+  \tan(\alpha) = \frac{y}{f}.
+\end{align}
+Mit der Kleinwinkelnäherung für $\alpha$ können wir hier, wie bereits einmal in dieser Ausarbeitung gemacht, $\sin(\alpha)$ und $\tan(\alpha)$ gleichsetzen. Damit erhalten wir
+\begin{align}
+  k_{0,y} = \frac{2\pi y}{\lambda f}.
+\end{align}
+
+Nun setzen wir für $y$ die Breite des Analysierspalts 
+\begin{align}
+  d_A = (0.03 \pm 0.01)\si{\milli\meter},
+\end{align}
+welche wir bei der Aufzeichnung des Objektbildes eingestellt hatten, ein. Damit, und den bekannten Werten für Wellenlänge und Brennweite, erhalten wir einen weiteren Wert für $k_y$ von
+\begin{align}
+  k_{y,\mathrm{lin.}} = (4.4 \pm 1.5) \si{\per\milli\meter}.
+\end{align}
+
+Von diesem Wert weicht unser zuvor berechnete Wert $k_{y,\mathrm{ang.}}$ um $1.83\sigma$ ab.
